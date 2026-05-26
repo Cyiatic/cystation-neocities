@@ -7,35 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <div id="container">
-            <div id="headerArea">
-                <div id="header" style="height: 189px;"></div>
-                <nav id="navbar" style="margin-bottom: 5px;">
-                </nav>
-            </div>
-          
-            <div id="flex">
-                
-                <main>
-                   Credit to Sadgrl's layout builder for providing the template this site uses: https://codepen.io/sadness97/full/XJbLxNj 
-                </main>
-                
-            <aside id="rightSidebar" style="margin-left: 10px;"><h2>Navigation</h2>
-                <p>Use the links below to navigate!</p>
-                <ul style="padding-left:10px;">
+    <div id="container">
+        <div id="headerArea">
+            <div id="header"></div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="index.html" target="_self">Home</a></li>
+                    <li><a href="aboutme.html" target="_self">About Me</a></li>
+                    <li><a href="navigation.html" target="_self">Navigation</a></li>
+                    <li><a href="projects.html" target="_self">Projects</a></li>
+                    <li><a href="links.html" target="_self">Links</a></li>
+                    <li><a href="credits.html" target="_self">Credits</a></li>
                 </ul>
-                <img src="/images/conktail.gif" style="max-height: 32px; max-width: 32px;"/> 
-                <a href="https://cystation.neocities.org/" target="_self">&ensp;&ensp;Home</a>
-                <br>
-                <br>
-                <img src="images/scribes_feather.gif" style="max-height: 32px; max-width: 32px;"/>
-                <a href="https://cystation.neocities.org/aboutme.html" target="_self">&ensp;About Me</a>
-                <br>
-                <br>
-                <img src="/images/goldballoon.png" style="max-height: 32px; max-width: 32px;"/> 
-                <a href="https://cystation.neocities.org/credits.html" target="_self">&ensp;Credits</a>
-            </aside></div>
-            <footer id="footer" style="margin-top: 10px;">Footer 2026</footer>
+            </nav>
         </div>
+        <div id="flex">
+            <main>
+                <h1>Credits</h1>
+                <p>Credit to Sadgrl's layout builder for providing the template this site uses: <a href="https://codepen.io/sadness97/full/XJbLxNj" target="_blank" rel="noopener">Sadgrl Layout Builder</a>.</p>
+            </main>
+            <aside id="rightSidebar">
+                <h2>Links</h2>
+                <p>Use the links below to navigate!</p>
+                <div class="sidebar-links">
+                    <a class="icon-link" href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener">
+                        <img src="images/iararenobg.png" alt="">
+                        Internet Archive
+                    </a>
+                    <a class="icon-link" href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener">
+                        <img src="images/ytnobgrare.png" alt="">
+                        YouTube
+                    </a>
+                    <a class="icon-link" href="navigation.html" target="_self">
+                        <img src="images/conktail.gif" alt="">
+                        Navigation
+                    </a>
+                </div>
+            </aside>
+        </div>
+        <footer id="footer">CyStation 2026</footer>
+    </div>
 </body>
 </html>
