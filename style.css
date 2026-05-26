@@ -13,7 +13,7 @@ body {
     background-size: 65px;
     color: #c88c2e;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    letter-spacing: 0;
+    letter-spacing: 2px;
 }
 
 * {
