@@ -154,6 +154,37 @@ h2 img.year-sprite {
     max-width: 100%;
     max-height: none;
 }
+
+.project-year {
+    margin: 28px 0 30px;
+}
+
+.project-year .year-heading {
+    margin: 0 0 14px;
+}
+
+.project-log {
+    display: grid;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    column-gap: 14px;
+    row-gap: 12px;
+    align-items: start;
+}
+
+.project-log h3 {
+    margin: 0;
+    line-height: 1.45;
+    white-space: nowrap;
+}
+
+.project-log ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.project-log li + li {
+    margin-top: 4px;
+}
 strong {
     color: #fff700;
 }
@@ -193,5 +224,12 @@ img {
     }
     #navbar ul {
         flex-wrap: wrap;
+    }
+    .project-log {
+        grid-template-columns: 1fr;
+        row-gap: 6px;
+    }
+    .project-log ul {
+        margin: -2px 0 10px;
     }
 }
