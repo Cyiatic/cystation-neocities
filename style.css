@@ -27,9 +27,10 @@ body {
 
 /* Container */
 #container {
-    max-width: 900px;
+    max-width: 1020px;
     min-height: 100vh;
     margin: 0 auto;
+    background-color: #000060;
     display: flex;
     flex-direction: column;
 }
