@@ -138,6 +138,12 @@ h2 img {
     width: auto;
     vertical-align: middle;
 }
+h2 img.year-sprite {
+    width: 82px;
+    height: 23px;
+    max-width: 100%;
+    max-height: none;
+}
 strong {
     color: #fff700;
 }
