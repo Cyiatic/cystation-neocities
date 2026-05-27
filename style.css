@@ -139,8 +139,8 @@ h2 img {
     vertical-align: middle;
 }
 h2 img.year-sprite {
-    width: 82px;
-    height: 23px;
+    width: auto;
+    height: auto;
     max-width: 100%;
     max-height: none;
 }
