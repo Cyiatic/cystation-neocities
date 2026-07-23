@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CyStation 480i patch releases and retro game preservation work by Cyiatic.">
-    <title>CyStation · 480i Patch Select</title>
+    <title>CyStation &middot; 480i Patch Select</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="home-page">
+    <!--
+    THESIS: CyStation is an open Rarewhere signal stage, not a stack of patch cards.
+    OWN-WORLD: Deep blue space, authentic character cutouts, gold orbit rails, cream copy, and illuminated circular controls.
+    STORY: Visitors rotate between a released patch, the next project, and the archive, then follow the destination that matches its state.
+    FIRST VIEWPORT: Bond leads a three-figure spindle; Conker and Scribes recede behind him while project identity and action remain directly below.
+    FORM: A user-specified character selector extending the established Rareware-inspired world; no concept seed was needed for this precise interaction.
+    -->
     <a class="skip-link" href="#patch-select">Skip to 480i patches</a>
     <div id="container">
         <div id="headerArea">
@@ -25,46 +32,76 @@
                 <header class="station-intro">
                     <p class="station-label">CY STATION // VIDEO OUTPUT LAB</p>
                     <h1>480i Patch Select</h1>
-                    <p>Choose a patch, follow the work in progress, or head deeper into the archive. CyStation is a home for game modding, preservation, and the best ways to play the games worth keeping.</p>
+                    <p>480i patches, preservation work, and the best ways to play the games worth keeping.</p>
                 </header>
 
                 <section class="patch-select" id="patch-select" aria-labelledby="patch-select-heading">
-                    <div class="select-heading">
-                        <p class="select-prompt">SELECT A PATCH</p>
-                        <h2 id="patch-select-heading">Featured output</h2>
-                    </div>
+                    <span class="station-watermark" aria-hidden="true"></span>
+                    <header class="select-heading">
+                        <p class="select-prompt">CHOOSE YOUR SIGNAL</p>
+                        <h2 id="patch-select-heading">Patch select</h2>
+                        <p>Three stations are standing by. Use the arrows, your keyboard, or choose a figure directly.</p>
+                    </header>
 
                     <div class="patch-carousel" data-patch-carousel>
-                        <div class="patch-carousel__stage" data-carousel-stage tabindex="0" aria-label="Selection 1 of 2: Tomorrow Never Dies 6480i Patch. Use left and right arrow keys to change selection.">
-                            <div class="patch-carousel__art-frame">
-                                <button class="patch-control" type="button" data-carousel-previous disabled aria-label="Previous patch">
-                                    <span aria-hidden="true">←</span>
+                        <div class="patch-carousel__stage" data-carousel-stage tabindex="0" aria-label="Selection 1 of 3: Tomorrow Never Dies 6480i Patch. Use left and right arrow keys to change selection.">
+                            <button class="patch-control patch-control--previous" type="button" data-carousel-previous disabled aria-label="Previous patch">
+                                <span aria-hidden="true">&larr;</span>
+                            </button>
+
+                            <div class="character-orbit" data-character-orbit role="group" aria-label="Available patches">
+                                <span class="orbit-arc orbit-arc--back" aria-hidden="true"></span>
+
+                                <button class="selector-character selector-character--bond" type="button" data-patch-index="0" data-slot="front" aria-pressed="true" aria-label="Select Tomorrow Never Dies 6480i">
+                                    <span class="character-art">
+                                        <img src="images/tnd-bond-selector.png" alt="">
+                                    </span>
                                 </button>
-                                <div class="patch-carousel__art" data-carousel-art>
-                                    <img src="images/tnd-bond-selector.png" alt="James Bond character art pointing a pistol from Tomorrow Never Dies">
-                                </div>
-                                <button class="patch-control" type="button" data-carousel-next disabled aria-label="Next patch">
-                                    <span aria-hidden="true">→</span>
+
+                                <button class="selector-character selector-character--conker" type="button" data-patch-index="1" data-slot="rear-right" aria-pressed="false" aria-label="Select CBFD480i">
+                                    <span class="character-art character-art--conker">
+                                        <img src="images/cbfd-conker-rare.png" alt="">
+                                        <span class="character-patch-lockup" aria-hidden="true">
+                                            <img src="images/cbfd-logo.png" alt="">
+                                            <strong>480i</strong>
+                                        </span>
+                                    </span>
                                 </button>
+
+                                <button class="selector-character selector-character--scribes" type="button" data-patch-index="2" data-slot="rear-left" aria-pressed="false" aria-label="Select the Patch Log">
+                                    <span class="character-art">
+                                        <img src="images/scribes-selector.png" alt="">
+                                    </span>
+                                </button>
+
+                                <span class="orbit-arc orbit-arc--front" aria-hidden="true"></span>
                             </div>
 
-                            <article class="patch-entry">
-                                <div class="patch-entry__body">
-                                    <div class="patch-entry__logo" data-carousel-logo aria-hidden="true">
-                                        <img src="images/tnd6480i-logo.png" alt="">
-                                    </div>
-                                    <p class="patch-status" data-carousel-status>Released · July 2026</p>
-                                    <h3 data-carousel-title>Tomorrow Never Dies 6480i Patch</h3>
-                                    <p data-carousel-description>A released 480i patch for <em>Tomorrow Never Dies</em>. Open the project page for the release and technical details.</p>
-                                </div>
-                                <a class="patch-action" data-carousel-action href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">↗</span></a>
-                            </article>
+                            <button class="patch-control patch-control--next" type="button" data-carousel-next disabled aria-label="Next patch">
+                                <span aria-hidden="true">&rarr;</span>
+                            </button>
                         </div>
-                        <p class="patch-carousel__counter" data-carousel-counter aria-live="polite">01 / 02</p>
+
+                        <div class="patch-carousel__readout">
+                            <p class="patch-carousel__counter" data-carousel-counter>01 / 03</p>
+                            <p class="patch-carousel__signal" data-carousel-signal aria-live="polite">ON AIR &middot; TND6480i</p>
+                        </div>
+
+                        <article class="patch-entry" data-carousel-details>
+                            <div class="patch-entry__logo is-wide" data-carousel-logo aria-hidden="true">
+                                <img src="images/tnd6480i-logo.png" alt="">
+                            </div>
+                            <div class="patch-entry__body">
+                                <p class="patch-status" data-carousel-status>Released &middot; July 2026</p>
+                                <h3 data-carousel-title>Tomorrow Never Dies 6480i Patch</h3>
+                                <p data-carousel-description>A released 480i patch for Tomorrow Never Dies. Open the project page for the release and technical details.</p>
+                                <a class="patch-action" data-carousel-action href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">&nearr;</span></a>
+                            </div>
+                        </article>
                     </div>
                 </section>
 
-                <section class="coming-soon" aria-labelledby="coming-soon-heading">
+                <section class="coming-soon" id="coming-soon" aria-labelledby="coming-soon-heading">
                     <header class="coming-soon__header">
                         <div>
                             <p class="select-prompt">NEXT IN QUEUE</p>
@@ -73,23 +110,19 @@
                         <p class="coming-soon__count" aria-label="1 project queued">01 PROJECT QUEUED</p>
                     </header>
 
-                    <div class="coming-soon__list">
-                        <article class="coming-soon__entry">
-                            <span class="coming-soon__index" aria-hidden="true">01</span>
-                            <div class="coming-soon__art" aria-hidden="true">
-                                <img src="images/conktail.gif" width="100" height="250" loading="lazy" alt="">
-                            </div>
-                            <div class="coming-soon__body">
-                                <p class="patch-status">Coming soon</p>
-                                <h3>CBFD480i</h3>
-                                <p>Public project details, releases, and downloads are not available yet.</p>
-                            </div>
-                            <p class="coming-soon__availability">
-                                <strong>No public build</strong>
-                                <span>Watch this station</span>
-                            </p>
-                        </article>
-                    </div>
+                    <article class="coming-soon__entry">
+                        <span class="coming-soon__index" aria-hidden="true">01</span>
+                        <div class="coming-soon__body">
+                            <p class="patch-status">In development</p>
+                            <h3>CBFD480i</h3>
+                            <p>Conker has taken his place in the selector. Public project details, releases, and downloads are not available yet.</p>
+                        </div>
+                        <p class="coming-soon__availability">
+                            <strong>No public build</strong>
+                            <span>Watch this station</span>
+                        </p>
+                        <button class="tune-action" type="button" data-select-patch="1">Bring into focus <span aria-hidden="true">&uarr;</span></button>
+                    </article>
                 </section>
 
                 <section class="station-routes" aria-labelledby="station-routes-heading">
@@ -132,7 +165,7 @@
                 </div>
             </aside>
         </div>
-        <footer id="footer">CyStation 2026 · Signal maintained by Cyiatic</footer>
+        <footer id="footer">CyStation 2026 &middot; Signal maintained by Cyiatic</footer>
     </div>
     <script>
         (() => {
@@ -140,7 +173,6 @@
             if (!carousel) return;
 
             const stage = carousel.querySelector('[data-carousel-stage]');
-            const art = carousel.querySelector('[data-carousel-art]');
             const logo = carousel.querySelector('[data-carousel-logo]');
             const previous = carousel.querySelector('[data-carousel-previous]');
             const next = carousel.querySelector('[data-carousel-next]');
@@ -149,55 +181,52 @@
             const description = carousel.querySelector('[data-carousel-description]');
             const action = carousel.querySelector('[data-carousel-action]');
             const counter = carousel.querySelector('[data-carousel-counter]');
+            const signal = carousel.querySelector('[data-carousel-signal]');
+            const details = carousel.querySelector('[data-carousel-details]');
+            const characters = [...carousel.querySelectorAll('[data-patch-index]')];
+            const tuneActions = document.querySelectorAll('[data-select-patch]');
             const patches = [
                 {
-                    status: 'Released · July 2026',
+                    status: 'Released \u00b7 July 2026',
+                    signal: 'ON AIR \u00b7 TND6480i',
                     title: 'Tomorrow Never Dies 6480i Patch',
                     description: 'A released 480i patch for Tomorrow Never Dies. Open the project page for the release and technical details.',
                     action: 'Open patch on GitHub',
                     href: 'https://github.com/Cyiatic/TND6480i',
                     external: true,
                     logo: 'images/tnd6480i-logo.png',
-                    art: {
-                        src: 'images/tnd-bond-selector.png',
-                        alt: 'James Bond character art pointing a pistol from Tomorrow Never Dies'
-                    }
+                    logoClass: 'is-wide'
+                },
+                {
+                    status: 'In development \u00b7 No public build',
+                    signal: 'NEXT SIGNAL \u00b7 CBFD480i',
+                    title: "Conker's Bad Fur Day 480i Patch",
+                    description: 'The next 480i project is on the bench. Public builds and project details will appear here when they are ready.',
+                    action: 'View coming-soon status',
+                    href: '#coming-soon',
+                    external: false,
+                    logo: 'images/cbfd-logo.png',
+                    logoSuffix: '480i',
+                    logoClass: 'is-cbfd'
                 },
                 {
                     status: 'Station archive',
+                    signal: 'ARCHIVE LINE \u00b7 PATCH LOG',
                     title: 'Patch Log',
                     description: 'Browse released work, research notes, and station history while the next signal takes shape.',
                     action: 'Enter the patch log',
                     href: 'projects',
                     external: false,
-                    placeholder: 'PATCH LOG',
                     logo: null,
-                    art: null
+                    logoClass: ''
                 }
             ];
             let selected = 0;
-            let shiftTimer;
-
-            const renderArt = (patch) => {
-                art.replaceChildren();
-                art.classList.toggle('is-placeholder', !patch.art);
-
-                if (patch.art) {
-                    const image = document.createElement('img');
-                    image.src = patch.art.src;
-                    image.alt = patch.art.alt;
-                    art.append(image);
-                    return;
-                }
-
-                const placeholder = document.createElement('span');
-                placeholder.className = 'patch-carousel__placeholder';
-                placeholder.textContent = patch.placeholder || 'NEXT SIGNAL';
-                art.append(placeholder);
-            };
+            let detailTimer;
 
             const renderLogo = (patch) => {
                 logo.replaceChildren();
+                logo.className = `patch-entry__logo ${patch.logoClass || ''}`.trim();
                 logo.hidden = !patch.logo;
 
                 if (!patch.logo) return;
@@ -206,11 +235,19 @@
                 image.src = patch.logo;
                 image.alt = '';
                 logo.append(image);
+
+                if (patch.logoSuffix) {
+                    const suffix = document.createElement('strong');
+                    suffix.className = 'patch-entry__logo-suffix';
+                    suffix.textContent = patch.logoSuffix;
+                    logo.append(suffix);
+                }
             };
 
             const render = (direction) => {
                 const patch = patches[selected];
                 status.textContent = patch.status;
+                signal.textContent = patch.signal;
                 title.textContent = patch.title;
                 description.textContent = patch.description;
                 action.replaceChildren(document.createTextNode(`${patch.action} `));
@@ -219,21 +256,34 @@
                 arrow.textContent = patch.external ? '↗' : '→';
                 action.append(arrow);
                 action.href = patch.href;
-                action.toggleAttribute('target', patch.external);
-                action.toggleAttribute('rel', patch.external);
-                if (patch.external) action.rel = 'noopener';
-                renderArt(patch);
+                if (patch.external) {
+                    action.target = '_blank';
+                    action.rel = 'noopener';
+                } else {
+                    action.removeAttribute('target');
+                    action.removeAttribute('rel');
+                }
                 renderLogo(patch);
                 counter.textContent = `${String(selected + 1).padStart(2, '0')} / ${String(patches.length).padStart(2, '0')}`;
                 stage.setAttribute('aria-label', `Selection ${selected + 1} of ${patches.length}: ${patch.title}. Use left and right arrow keys to change selection.`);
 
-                if (direction) {
-                    stage.classList.remove('is-shifting-left', 'is-shifting-right');
-                    void stage.offsetWidth;
-                    stage.classList.add(direction > 0 ? 'is-shifting-right' : 'is-shifting-left');
-                    window.clearTimeout(shiftTimer);
-                    shiftTimer = window.setTimeout(() => stage.classList.remove('is-shifting-left', 'is-shifting-right'), 320);
-                }
+                characters.forEach((character, index) => {
+                    const relativePosition = (index - selected + patches.length) % patches.length;
+                    const slot = ['front', 'rear-right', 'rear-left'][relativePosition];
+                    const isSelected = relativePosition === 0;
+                    character.dataset.slot = slot;
+                    character.setAttribute('aria-pressed', String(isSelected));
+                });
+
+                if (!direction) return;
+
+                details.classList.remove('is-entering-left', 'is-entering-right');
+                void details.offsetWidth;
+                details.classList.add(direction > 0 ? 'is-entering-right' : 'is-entering-left');
+                window.clearTimeout(detailTimer);
+                detailTimer = window.setTimeout(() => {
+                    details.classList.remove('is-entering-left', 'is-entering-right');
+                }, 280);
             };
 
             const move = (direction) => {
@@ -245,6 +295,30 @@
             next.disabled = false;
             previous.addEventListener('click', () => move(-1));
             next.addEventListener('click', () => move(1));
+            characters.forEach((character) => {
+                character.addEventListener('click', () => {
+                    const target = Number(character.dataset.patchIndex);
+                    if (target === selected) return;
+                    const direction = (target - selected + patches.length) % patches.length === 1 ? 1 : -1;
+                    selected = target;
+                    render(direction);
+                });
+            });
+            tuneActions.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const target = Number(button.dataset.selectPatch);
+                    if (target !== selected) {
+                        const direction = (target - selected + patches.length) % patches.length === 1 ? 1 : -1;
+                        selected = target;
+                        render(direction);
+                    }
+                    document.querySelector('#patch-select').scrollIntoView({
+                        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+                        block: 'start'
+                    });
+                    stage.focus({ preventScroll: true });
+                });
+            });
             stage.addEventListener('keydown', (event) => {
                 if (event.key === 'ArrowLeft') {
                     event.preventDefault();
@@ -255,6 +329,7 @@
                     move(1);
                 }
             });
+            render();
         })();
     </script>
 </body>
