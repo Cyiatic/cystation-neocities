@@ -3,29 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyStation</title>
-    <link rel="stylesheet" href="style.css?v=20260527-sidebarlinks">
+    <meta name="description" content="CyStation 480i patch releases and retro game preservation work by Cyiatic.">
+    <title>CyStation · 480i Patch Select</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a class="skip-link" href="#patch-select">Skip to 480i patches</a>
     <div id="container">
         <div id="headerArea">
-            <div id="header"></div>
-            <nav id="navbar">
+            <div id="header" role="img" aria-label="CyStation Rareware-inspired header art"></div>
+            <nav id="navbar" aria-label="Primary navigation">
                 <ul>
-                    <li><a href="/" target="_self">Home</a></li>
-                    <li><a href="navigation" target="_self">Navigation</a></li>
-                    <li><a href="projects" target="_self">Projects</a></li>
+                    <li><a aria-current="page" href="/">Station</a></li>
+                    <li><a href="projects">Patch Log</a></li>
+                    <li><a href="navigation">Archive</a></li>
                 </ul>
             </nav>
         </div>
         <div id="flex">
-            <main>
-                <h1>Welcome to CyStation!</h1>
-                <p>Welcome to my NeoCities page! This is my attempt at making a "real" website instead of using Blogspot or Linktree. As such, this will be the central hub to find out what I'm up to. Here you'll find a mix of game modding and retro nostalgia.</p>
+            <main id="main-content">
+                <header class="station-intro">
+                    <p class="station-label">CY STATION // VIDEO OUTPUT LAB</p>
+                    <h1>480i Patch Select</h1>
+                    <p>Choose a patch, follow the work in progress, or head deeper into the archive. CyStation is a home for game modding, preservation, and the best ways to play the games worth keeping.</p>
+                </header>
+
+                <section class="patch-select" id="patch-select" aria-labelledby="patch-select-heading">
+                    <div class="select-heading">
+                        <p class="select-prompt">SELECT A PATCH</p>
+                        <h2 id="patch-select-heading">Featured output</h2>
+                    </div>
+
+                    <article class="patch-entry is-selected">
+                        <div class="selection-cursor" aria-hidden="true">▶</div>
+                        <div class="patch-entry__body">
+                            <p class="patch-status">Released · July 2026</p>
+                            <h3>Tomorrow Never Dies 6480i Patch</h3>
+                            <p>A released 480i patch for <em>Tomorrow Never Dies</em>. Open the project page for the release and technical details.</p>
+                        </div>
+                        <a class="patch-action" href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">↗</span></a>
+                    </article>
+
+                    <div class="now-loading">
+                        <div>
+                            <p class="patch-status">Now loading</p>
+                            <h3>More 480i patches in development</h3>
+                            <p>New work is being tested and documented. The patch log is where each release joins the station.</p>
+                        </div>
+                        <a class="text-action" href="projects">View the patch log <span aria-hidden="true">→</span></a>
+                    </div>
+                </section>
+
+                <section class="station-routes" aria-labelledby="station-routes-heading">
+                    <h2 id="station-routes-heading">Choose a route</h2>
+                    <div class="route-list">
+                        <a href="projects"><strong>Patch log</strong><span>Released work, research, and station history.</span></a>
+                        <a href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><strong>Preservation archive</strong><span>Uploads and recovered game material on Internet Archive.</span></a>
+                    </div>
+                </section>
             </main>
-            <aside id="rightSidebar">
-                <h2>Links</h2>
-                <p>Use the links below!</p>
+            <aside id="rightSidebar" aria-labelledby="links-heading">
+                <h2 id="links-heading">Outposts</h2>
+                <p>Find CyStation elsewhere.</p>
                 <div class="sidebar-links">
                     <a class="icon-link" href="https://cyiatic.blogspot.com" target="_blank" rel="noopener">
                         <img src="images/scribes_feather.gif" width="32" height="32" alt="">
@@ -44,18 +83,18 @@
                         YouTube
                     </a>
                     <hr class="sidebar-divider">
-                    <a class="icon-link" href="aboutme" target="_self">
+                    <a class="icon-link" href="aboutme">
                         <img src="images/conktail.gif" width="32" height="32" alt="">
-                        About Me
+                        About CyStation
                     </a>
-                    <a class="icon-link" href="credits" target="_self">
+                    <a class="icon-link" href="credits">
                         <img src="images/goldballoon.png" width="32" height="32" alt="">
                         Credits
                     </a>
                 </div>
             </aside>
         </div>
-        <footer id="footer">CyStation 2026</footer>
+        <footer id="footer">CyStation 2026 · Signal maintained by Cyiatic</footer>
     </div>
 </body>
 </html>
