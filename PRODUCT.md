@@ -38,7 +38,7 @@ The site is a static HTML, CSS, and JavaScript project published to Neocities an
 
 ## Evidence on Hand
 
-- Existing released project assets: `images/tnd-bond-selector.png` and `images/tnd6480i-logo.png`.
+- Existing released project assets: `images/tnd-bond-selector.png` and `images/tnd-expanded-logo.png`.
 - Authentic archived Conker and Scribes artwork sourced from the user's local Rare render archive.
 - User-supplied Conker poses and official Bad Fur Day title artwork.
 - Existing project copy, routes, social destinations, and release links in `index.html`.

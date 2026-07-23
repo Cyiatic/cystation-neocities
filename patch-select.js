@@ -8,7 +8,7 @@
             action: 'Open patch on GitHub',
             href: 'https://github.com/Cyiatic/TND6480i',
             external: true,
-            logo: 'images/tnd6480i-logo.png',
+            logo: 'images/tnd-expanded-logo.png',
             logoClass: 'is-wide'
         },
         {

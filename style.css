@@ -830,9 +830,9 @@ img {
 .character-art--bond > img.character-art__project-logo {
     position: absolute;
     z-index: 0;
-    top: 43%;
-    left: 58%;
-    width: 150%;
+    top: -18%;
+    left: 50%;
+    width: 115%;
     max-width: none;
     height: auto;
     object-fit: contain;
