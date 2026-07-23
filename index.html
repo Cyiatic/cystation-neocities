@@ -34,23 +34,30 @@
                         <h2 id="patch-select-heading">Featured output</h2>
                     </div>
 
-                    <article class="patch-entry is-selected">
-                        <div class="selection-cursor" aria-hidden="true">▶</div>
-                        <div class="patch-entry__body">
-                            <p class="patch-status">Released · July 2026</p>
-                            <h3>Tomorrow Never Dies 6480i Patch</h3>
-                            <p>A released 480i patch for <em>Tomorrow Never Dies</em>. Open the project page for the release and technical details.</p>
-                        </div>
-                        <a class="patch-action" href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">↗</span></a>
-                    </article>
+                    <div class="patch-carousel" data-patch-carousel>
+                        <div class="patch-carousel__stage" data-carousel-stage tabindex="0" aria-label="Patch 1 of 2: Tomorrow Never Dies 6480i Patch. Use left and right arrow keys to change selection.">
+                            <div class="patch-carousel__art-frame">
+                                <button class="patch-control" type="button" data-carousel-previous disabled aria-label="Previous patch">
+                                    <span aria-hidden="true">←</span>
+                                </button>
+                                <div class="patch-carousel__art" data-carousel-art>
+                                    <img src="images/tnd-bond-selector.png" alt="James Bond character art pointing a pistol from Tomorrow Never Dies">
+                                </div>
+                                <button class="patch-control" type="button" data-carousel-next disabled aria-label="Next patch">
+                                    <span aria-hidden="true">→</span>
+                                </button>
+                            </div>
 
-                    <div class="now-loading">
-                        <div>
-                            <p class="patch-status">Now loading</p>
-                            <h3>More 480i patches in development</h3>
-                            <p>New work is being tested and documented. The patch log is where each release joins the station.</p>
+                            <article class="patch-entry">
+                                <div class="patch-entry__body">
+                                    <p class="patch-status" data-carousel-status>Released · July 2026</p>
+                                    <h3 data-carousel-title>Tomorrow Never Dies 6480i Patch</h3>
+                                    <p data-carousel-description>A released 480i patch for <em>Tomorrow Never Dies</em>. Open the project page for the release and technical details.</p>
+                                </div>
+                                <a class="patch-action" data-carousel-action href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">↗</span></a>
+                            </article>
                         </div>
-                        <a class="text-action" href="projects">View the patch log <span aria-hidden="true">→</span></a>
+                        <p class="patch-carousel__counter" data-carousel-counter aria-live="polite">01 / 02</p>
                     </div>
                 </section>
 
@@ -96,5 +103,111 @@
         </div>
         <footer id="footer">CyStation 2026 · Signal maintained by Cyiatic</footer>
     </div>
+    <script>
+        (() => {
+            const carousel = document.querySelector('[data-patch-carousel]');
+            if (!carousel) return;
+
+            const stage = carousel.querySelector('[data-carousel-stage]');
+            const art = carousel.querySelector('[data-carousel-art]');
+            const previous = carousel.querySelector('[data-carousel-previous]');
+            const next = carousel.querySelector('[data-carousel-next]');
+            const status = carousel.querySelector('[data-carousel-status]');
+            const title = carousel.querySelector('[data-carousel-title]');
+            const description = carousel.querySelector('[data-carousel-description]');
+            const action = carousel.querySelector('[data-carousel-action]');
+            const counter = carousel.querySelector('[data-carousel-counter]');
+            const patches = [
+                {
+                    status: 'Released · July 2026',
+                    title: 'Tomorrow Never Dies 6480i Patch',
+                    description: 'A released 480i patch for Tomorrow Never Dies. Open the project page for the release and technical details.',
+                    action: 'Open patch on GitHub',
+                    href: 'https://github.com/Cyiatic/TND6480i',
+                    external: true,
+                    art: {
+                        src: 'images/tnd-bond-selector.png',
+                        alt: 'James Bond character art pointing a pistol from Tomorrow Never Dies'
+                    }
+                },
+                {
+                    status: 'Now loading',
+                    title: 'Next 480i Patch',
+                    description: 'More 480i patch work is in development. Follow the Patch Log for release notes as it becomes available.',
+                    action: 'View the patch log',
+                    href: 'projects',
+                    external: false,
+                    art: null
+                }
+            ];
+            let selected = 0;
+            let shiftTimer;
+
+            const renderArt = (patch) => {
+                art.replaceChildren();
+                art.classList.toggle('is-placeholder', !patch.art);
+
+                if (patch.art) {
+                    const image = document.createElement('img');
+                    image.src = patch.art.src;
+                    image.alt = patch.art.alt;
+                    art.append(image);
+                    return;
+                }
+
+                const placeholder = document.createElement('span');
+                placeholder.className = 'patch-carousel__placeholder';
+                placeholder.textContent = 'NEXT SIGNAL';
+                art.append(placeholder);
+            };
+
+            const render = (direction) => {
+                const patch = patches[selected];
+                status.textContent = patch.status;
+                title.textContent = patch.title;
+                description.textContent = patch.description;
+                action.replaceChildren(document.createTextNode(`${patch.action} `));
+                const arrow = document.createElement('span');
+                arrow.setAttribute('aria-hidden', 'true');
+                arrow.textContent = patch.external ? '↗' : '→';
+                action.append(arrow);
+                action.href = patch.href;
+                action.toggleAttribute('target', patch.external);
+                action.toggleAttribute('rel', patch.external);
+                if (patch.external) action.rel = 'noopener';
+                renderArt(patch);
+                counter.textContent = `${String(selected + 1).padStart(2, '0')} / ${String(patches.length).padStart(2, '0')}`;
+                stage.setAttribute('aria-label', `Patch ${selected + 1} of ${patches.length}: ${patch.title}. Use left and right arrow keys to change selection.`);
+
+                if (direction) {
+                    stage.classList.remove('is-shifting-left', 'is-shifting-right');
+                    void stage.offsetWidth;
+                    stage.classList.add(direction > 0 ? 'is-shifting-right' : 'is-shifting-left');
+                    window.clearTimeout(shiftTimer);
+                    shiftTimer = window.setTimeout(() => stage.classList.remove('is-shifting-left', 'is-shifting-right'), 320);
+                }
+            };
+
+            const move = (direction) => {
+                selected = (selected + direction + patches.length) % patches.length;
+                render(direction);
+            };
+
+            previous.disabled = false;
+            next.disabled = false;
+            previous.addEventListener('click', () => move(-1));
+            next.addEventListener('click', () => move(1));
+            stage.addEventListener('keydown', (event) => {
+                if (event.key === 'ArrowLeft') {
+                    event.preventDefault();
+                    move(-1);
+                }
+                if (event.key === 'ArrowRight') {
+                    event.preventDefault();
+                    move(1);
+                }
+            });
+        })();
+    </script>
 </body>
 </html>
