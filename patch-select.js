@@ -19,7 +19,7 @@
             action: 'View project status',
             href: 'patches#cbfd480i',
             external: false,
-            logo: 'images/cbfd480i-logo-final.png',
+            logo: 'images/cbfd480i-logo-authentic.png',
             logoClass: 'is-cbfd'
         },
         {
@@ -60,35 +60,71 @@
                 ? 1
                 : 0;
         let detailTimer;
-        const motionTimers = new WeakMap();
+        let rotationTimer;
+        let rotationEndCharacter;
+        let rotationEndHandler;
+        let isRotating = false;
+        let queuedIntent = null;
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const motionDuration = 580;
 
-        const animateSlotChanges = (slotChanges, direction) => {
+        const detachRotationEnd = () => {
+            if (rotationEndCharacter && rotationEndHandler) {
+                rotationEndCharacter.removeEventListener('animationend', rotationEndHandler);
+            }
+
+            rotationEndCharacter = undefined;
+            rotationEndHandler = undefined;
+        };
+
+        const runQueuedIntent = () => {
+            const intent = queuedIntent;
+            queuedIntent = null;
+
+            if (!intent) return;
+
+            window.requestAnimationFrame(() => {
+                if (intent.type === 'select') {
+                    requestSelection(intent.target);
+                } else {
+                    requestMove(intent.direction);
+                }
+            });
+        };
+
+        const finishRotation = () => {
+            if (!isRotating) return;
+
+            window.clearTimeout(rotationTimer);
+            detachRotationEnd();
+            characters.forEach((character) => character.removeAttribute('data-motion'));
+            isRotating = false;
+            runQueuedIntent();
+        };
+
+        const animateSlotChanges = (slotChanges) => {
             if (reduceMotion.matches) return;
 
-            slotChanges.forEach(({ character }) => {
-                character.removeAttribute('data-motion');
-                window.clearTimeout(motionTimers.get(character));
+            const movingCharacters = slotChanges.filter(({ from, to }) => from !== to);
+            if (!movingCharacters.length) return;
+
+            isRotating = true;
+            movingCharacters.forEach(({ character, from, to }) => {
+                character.dataset.motion = `${from}-to-${to}`;
             });
 
-            void stage.offsetWidth;
-
-            slotChanges.forEach(({ character, from, to }) => {
-                const motion = to === 'front'
-                    ? 'arriving'
-                    : from === 'front'
-                        ? 'receding'
-                        : direction > 0
-                            ? 'circling-right'
-                            : 'circling-left';
-
-                character.dataset.motion = motion;
-                motionTimers.set(character, window.setTimeout(() => {
-                    if (character.dataset.motion === motion) {
-                        character.removeAttribute('data-motion');
+            const incoming = movingCharacters.find(({ to }) => to === 'front');
+            if (incoming) {
+                rotationEndCharacter = incoming.character;
+                rotationEndHandler = (event) => {
+                    if (event.target === rotationEndCharacter && event.animationName.startsWith('spindle-')) {
+                        finishRotation();
                     }
-                }, 680));
-            });
+                };
+                rotationEndCharacter.addEventListener('animationend', rotationEndHandler);
+            }
+
+            rotationTimer = window.setTimeout(finishRotation, motionDuration + 140);
         };
 
         const renderLogo = (patch) => {
@@ -141,7 +177,7 @@
 
             if (!direction) return;
 
-            animateSlotChanges(slotChanges, direction);
+            animateSlotChanges(slotChanges);
             details.classList.remove('is-entering-left', 'is-entering-right');
             void details.offsetWidth;
             details.classList.add(direction > 0 ? 'is-entering-right' : 'is-entering-left');
@@ -151,35 +187,49 @@
             }, 280);
         };
 
-        const move = (direction) => {
+        const startMove = (direction) => {
             selected = (selected + direction + patches.length) % patches.length;
+            render(direction);
+        };
+
+        const requestMove = (direction) => {
+            if (isRotating) {
+                queuedIntent = { type: 'move', direction };
+                return;
+            }
+
+            startMove(direction);
+        };
+
+        const requestSelection = (target) => {
+            if (!Number.isInteger(target) || target < 0 || target >= patches.length) return;
+
+            if (isRotating) {
+                queuedIntent = target === selected ? null : { type: 'select', target };
+                return;
+            }
+
+            if (target === selected) return;
+
+            const direction = (target - selected + patches.length) % patches.length === 1 ? 1 : -1;
+            selected = target;
             render(direction);
         };
 
         previous.disabled = false;
         next.disabled = false;
-        previous.addEventListener('click', () => move(-1));
-        next.addEventListener('click', () => move(1));
+        previous.addEventListener('click', () => requestMove(-1));
+        next.addEventListener('click', () => requestMove(1));
 
         characters.forEach((character) => {
             character.addEventListener('click', () => {
-                const target = Number(character.dataset.patchIndex);
-                if (target === selected) return;
-
-                const direction = (target - selected + patches.length) % patches.length === 1 ? 1 : -1;
-                selected = target;
-                render(direction);
+                requestSelection(Number(character.dataset.patchIndex));
             });
         });
 
         document.querySelectorAll(`[data-carousel-target="${carousel.id}"]`).forEach((button) => {
             button.addEventListener('click', () => {
-                const target = Number(button.dataset.selectPatch);
-                if (target !== selected) {
-                    const direction = (target - selected + patches.length) % patches.length === 1 ? 1 : -1;
-                    selected = target;
-                    render(direction);
-                }
+                requestSelection(Number(button.dataset.selectPatch));
 
                 stage.scrollIntoView({
                     behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
@@ -192,13 +242,23 @@
         stage.addEventListener('keydown', (event) => {
             if (event.key === 'ArrowLeft') {
                 event.preventDefault();
-                move(-1);
+                if (!event.repeat || !isRotating) requestMove(-1);
             }
             if (event.key === 'ArrowRight') {
                 event.preventDefault();
-                move(1);
+                if (!event.repeat || !isRotating) requestMove(1);
             }
         });
+
+        const handleMotionPreference = (event) => {
+            if (event.matches) finishRotation();
+        };
+
+        if (typeof reduceMotion.addEventListener === 'function') {
+            reduceMotion.addEventListener('change', handleMotionPreference);
+        } else if (typeof reduceMotion.addListener === 'function') {
+            reduceMotion.addListener(handleMotionPreference);
+        }
 
         render();
     });
