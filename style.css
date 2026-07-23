@@ -910,9 +910,23 @@ img {
     transform: translateX(-50%);
 }
 
-.character-art--mystery > img {
+.character-art--mystery > .character-art__mystery-silhouette {
     width: 100%;
     height: 100%;
+}
+
+.character-art--mystery > .character-art__mystery-logo {
+    position: absolute;
+    z-index: 2;
+    top: -26%;
+    left: 50%;
+    width: 80%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 0.5rem 0.45rem rgb(0 0 0 / 48%));
+    transform: translateX(-50%);
 }
 
 .selector-character--mystery[data-slot="front"] {
@@ -1304,7 +1318,7 @@ img {
         width: clamp(210px, 60vw, 260px);
     }
     .selector-character--mystery {
-        width: clamp(340px, 118vw, 470px);
+        width: min(calc(100% + 2.8rem), 430px);
         height: 64%;
     }
     .selector-character[data-slot="rear-left"] {
@@ -1359,7 +1373,7 @@ img {
         width: clamp(195px, 58vw, 235px);
     }
     .patch-select--compact .selector-character--mystery {
-        width: clamp(310px, 104vw, 400px);
+        width: min(calc(100% + 2.8rem), 390px);
         height: 62%;
     }
     .patch-select--compact .selector-character[data-slot="rear-left"] {

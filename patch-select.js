@@ -8,7 +8,7 @@
             action: 'Open patch on GitHub',
             href: 'https://github.com/Cyiatic/TND6480i',
             external: true,
-            logo: 'images/tnd6480i-logo.png',
+            logo: 'images/tnd6480i-logo-gold.png',
             logoClass: 'is-wide'
         },
         {
@@ -19,15 +19,15 @@
             action: 'View project status',
             href: 'patches#cbfd480i',
             external: false,
-            logo: 'images/cbfd480i-logo.png',
+            logo: 'images/cbfd480i-logo-final.png',
             logoClass: 'is-cbfd'
         },
         {
-            status: 'Station archive',
-            signal: 'ARCHIVE LINE \u00b7 PROJECT TIMELINE',
-            title: 'Project Timeline',
-            description: 'Browse released work, research notes, and station history while the next signal takes shape.',
-            action: 'Open the project timeline',
+            status: 'Classified \u00b7 Signal locked',
+            signal: 'ENCRYPTED SIGNAL \u00b7 COMING SOON',
+            title: 'Classified 480i Project',
+            description: 'A third signal is forming behind the static. Its identity and release details remain classified.',
+            action: 'Review the project timeline',
             href: 'projects',
             external: false,
             logo: null,
