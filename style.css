@@ -909,7 +909,7 @@ img {
 }
 
 .selector-character--conker {
-    width: clamp(410px, 68vw, 610px);
+    width: clamp(450px, 72vw, 660px);
 }
 
 .character-art--conker {
@@ -917,7 +917,7 @@ img {
     left: 50%;
     width: 100%;
     height: auto;
-    aspect-ratio: 828 / 549;
+    aspect-ratio: 850 / 550;
     transform: translateX(-50%);
 }
 
@@ -1081,7 +1081,7 @@ img {
 }
 
 .patch-select--compact .selector-character--conker {
-    width: clamp(300px, 50vw, 430px);
+    width: clamp(330px, 54vw, 470px);
 }
 
 .patch-select--compact .selector-character--mystery {
@@ -1408,7 +1408,7 @@ img {
         height: 78%;
     }
     .selector-character--conker {
-        width: clamp(305px, 88vw, 380px);
+        width: clamp(320px, 92vw, 400px);
     }
     .selector-character--mystery {
         width: min(calc(100% + 2.8rem), 430px);
@@ -1463,7 +1463,7 @@ img {
         height: 76%;
     }
     .patch-select--compact .selector-character--conker {
-        width: clamp(294px, 80vw, 345px);
+        width: clamp(310px, 85vw, 365px);
     }
     .patch-select--compact .selector-character--mystery {
         width: min(calc(100% + 2.8rem), 390px);
