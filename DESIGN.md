@@ -19,7 +19,7 @@ Use a narrow, heavy sans-serif stack for display labels and project headings, wi
 
 ## Composition
 
-The homepage follows a “station front desk, then project switchboard” reading order: CyStation identity, latest release, compact character selector, and directory. The authentic Rareware collage appears once in the shared header, with enough vertical range to preserve both the earlier Bond crop and the lower TJ Combo/Banjo crop. The dedicated `/patches` route gives the selector its full unboxed stage. Three persistent figures occupy front, rear-left, and rear-right slots, with project marks traveling as part of each character identity. The active figure is dominant and full color; rear figures remain legible as cool-blue shadows.
+The homepage follows a “station front desk, then project switchboard” reading order: CyStation identity, latest release, compact character selector, and directory. The authentic Rareware collage appears once in the shared header, with enough vertical range to preserve both the earlier Bond crop and the lower TJ Combo/Banjo crop. The dedicated `/patches` route gives the selector its full unboxed stage. Three persistent figures occupy front, rear-left, and rear-right slots, with project marks traveling as part of each character identity. The active known figures are dominant and full color; rear figures remain legible as cool-blue shadows, while unrevealed signals use a baked black silhouette.
 
 ## Controls and States
 
