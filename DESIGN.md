@@ -27,7 +27,7 @@ Arrow controls are circular signal discs with a minimum 44-pixel target. Hover a
 
 ## Motion
 
-Figures rotate through persistent DOM slots using transform, opacity, and a bounded color filter over roughly 560 milliseconds. The front figure moves into a rear position while its neighbor advances, preserving the sense of a spindle rather than swapping images. Reduced-motion users receive an immediate state change with a short opacity transition only.
+Figures rotate through persistent DOM slots over roughly 640 milliseconds. The incoming figure arcs forward and sharpens, the outgoing figure lifts before receding, and the third figure dips across the rear plane with bounded transform, opacity, and blur. This preserves the sense of a physical spindle rather than swapping images. Reduced-motion users receive an immediate state change without the authored arc.
 
 ## Responsive Behavior
 

@@ -60,6 +60,36 @@
                 ? 1
                 : 0;
         let detailTimer;
+        const motionTimers = new WeakMap();
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        const animateSlotChanges = (slotChanges, direction) => {
+            if (reduceMotion.matches) return;
+
+            slotChanges.forEach(({ character }) => {
+                character.removeAttribute('data-motion');
+                window.clearTimeout(motionTimers.get(character));
+            });
+
+            void stage.offsetWidth;
+
+            slotChanges.forEach(({ character, from, to }) => {
+                const motion = to === 'front'
+                    ? 'arriving'
+                    : from === 'front'
+                        ? 'receding'
+                        : direction > 0
+                            ? 'circling-right'
+                            : 'circling-left';
+
+                character.dataset.motion = motion;
+                motionTimers.set(character, window.setTimeout(() => {
+                    if (character.dataset.motion === motion) {
+                        character.removeAttribute('data-motion');
+                    }
+                }, 680));
+            });
+        };
 
         const renderLogo = (patch) => {
             logo.replaceChildren();
@@ -100,15 +130,18 @@
             counter.textContent = `${String(selected + 1).padStart(2, '0')} / ${String(patches.length).padStart(2, '0')}`;
             stage.setAttribute('aria-label', `Selection ${selected + 1} of ${patches.length}: ${patch.title}. Use left and right arrow keys to change selection.`);
 
-            characters.forEach((character, index) => {
+            const slotChanges = characters.map((character, index) => {
                 const relativePosition = (index - selected + patches.length) % patches.length;
                 const slot = ['front', 'rear-right', 'rear-left'][relativePosition];
+                const from = character.dataset.slot;
                 character.dataset.slot = slot;
                 character.setAttribute('aria-pressed', String(relativePosition === 0));
+                return { character, from, to: slot };
             });
 
             if (!direction) return;
 
+            animateSlotChanges(slotChanges, direction);
             details.classList.remove('is-entering-left', 'is-entering-right');
             void details.offsetWidth;
             details.classList.add(direction > 0 ? 'is-entering-right' : 'is-entering-left');
