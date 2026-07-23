@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="patch-carousel" data-patch-carousel>
-                        <div class="patch-carousel__stage" data-carousel-stage tabindex="0" aria-label="Patch 1 of 2: Tomorrow Never Dies 6480i Patch. Use left and right arrow keys to change selection.">
+                        <div class="patch-carousel__stage" data-carousel-stage tabindex="0" aria-label="Selection 1 of 2: Tomorrow Never Dies 6480i Patch. Use left and right arrow keys to change selection.">
                             <div class="patch-carousel__art-frame">
                                 <button class="patch-control" type="button" data-carousel-previous disabled aria-label="Previous patch">
                                     <span aria-hidden="true">←</span>
@@ -61,6 +61,34 @@
                             </article>
                         </div>
                         <p class="patch-carousel__counter" data-carousel-counter aria-live="polite">01 / 02</p>
+                    </div>
+                </section>
+
+                <section class="coming-soon" aria-labelledby="coming-soon-heading">
+                    <header class="coming-soon__header">
+                        <div>
+                            <p class="select-prompt">NEXT IN QUEUE</p>
+                            <h2 id="coming-soon-heading">Coming soon</h2>
+                        </div>
+                        <p class="coming-soon__count" aria-label="1 project queued">01 PROJECT QUEUED</p>
+                    </header>
+
+                    <div class="coming-soon__list">
+                        <article class="coming-soon__entry">
+                            <span class="coming-soon__index" aria-hidden="true">01</span>
+                            <div class="coming-soon__art" aria-hidden="true">
+                                <img src="images/conktail.gif" width="100" height="250" loading="lazy" alt="">
+                            </div>
+                            <div class="coming-soon__body">
+                                <p class="patch-status">Coming soon</p>
+                                <h3>CBFD480i</h3>
+                                <p>Public project details, releases, and downloads are not available yet.</p>
+                            </div>
+                            <p class="coming-soon__availability">
+                                <strong>No public build</strong>
+                                <span>Watch this station</span>
+                            </p>
+                        </article>
                     </div>
                 </section>
 
@@ -136,12 +164,13 @@
                     }
                 },
                 {
-                    status: 'Now loading',
-                    title: 'Next 480i Patch',
-                    description: 'More 480i patch work is in development. Follow the Patch Log for release notes as it becomes available.',
-                    action: 'View the patch log',
+                    status: 'Station archive',
+                    title: 'Patch Log',
+                    description: 'Browse released work, research notes, and station history while the next signal takes shape.',
+                    action: 'Enter the patch log',
                     href: 'projects',
                     external: false,
+                    placeholder: 'PATCH LOG',
                     logo: null,
                     art: null
                 }
@@ -163,7 +192,7 @@
 
                 const placeholder = document.createElement('span');
                 placeholder.className = 'patch-carousel__placeholder';
-                placeholder.textContent = 'NEXT SIGNAL';
+                placeholder.textContent = patch.placeholder || 'NEXT SIGNAL';
                 art.append(placeholder);
             };
 
@@ -196,7 +225,7 @@
                 renderArt(patch);
                 renderLogo(patch);
                 counter.textContent = `${String(selected + 1).padStart(2, '0')} / ${String(patches.length).padStart(2, '0')}`;
-                stage.setAttribute('aria-label', `Patch ${selected + 1} of ${patches.length}: ${patch.title}. Use left and right arrow keys to change selection.`);
+                stage.setAttribute('aria-label', `Selection ${selected + 1} of ${patches.length}: ${patch.title}. Use left and right arrow keys to change selection.`);
 
                 if (direction) {
                     stage.classList.remove('is-shifting-left', 'is-shifting-right');
