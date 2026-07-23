@@ -327,6 +327,28 @@ img {
     margin-bottom: 0;
 }
 
+.patch-entry__logo {
+    position: relative;
+    width: min(100%, 20rem);
+    aspect-ratio: 5 / 1;
+    margin: 0 0 0.75rem;
+    overflow: hidden;
+}
+
+.patch-entry__logo[hidden] {
+    display: none;
+}
+
+.patch-entry__logo img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    transform: translateY(-50%);
+}
+
 .patch-status {
     margin-bottom: 0.3rem;
     color: var(--signal);

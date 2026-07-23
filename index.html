@@ -50,6 +50,9 @@
 
                             <article class="patch-entry">
                                 <div class="patch-entry__body">
+                                    <div class="patch-entry__logo" data-carousel-logo aria-hidden="true">
+                                        <img src="images/tnd6480i-logo.png" alt="">
+                                    </div>
                                     <p class="patch-status" data-carousel-status>Released · July 2026</p>
                                     <h3 data-carousel-title>Tomorrow Never Dies 6480i Patch</h3>
                                     <p data-carousel-description>A released 480i patch for <em>Tomorrow Never Dies</em>. Open the project page for the release and technical details.</p>
@@ -110,6 +113,7 @@
 
             const stage = carousel.querySelector('[data-carousel-stage]');
             const art = carousel.querySelector('[data-carousel-art]');
+            const logo = carousel.querySelector('[data-carousel-logo]');
             const previous = carousel.querySelector('[data-carousel-previous]');
             const next = carousel.querySelector('[data-carousel-next]');
             const status = carousel.querySelector('[data-carousel-status]');
@@ -125,6 +129,7 @@
                     action: 'Open patch on GitHub',
                     href: 'https://github.com/Cyiatic/TND6480i',
                     external: true,
+                    logo: 'images/tnd6480i-logo.png',
                     art: {
                         src: 'images/tnd-bond-selector.png',
                         alt: 'James Bond character art pointing a pistol from Tomorrow Never Dies'
@@ -137,6 +142,7 @@
                     action: 'View the patch log',
                     href: 'projects',
                     external: false,
+                    logo: null,
                     art: null
                 }
             ];
@@ -161,6 +167,18 @@
                 art.append(placeholder);
             };
 
+            const renderLogo = (patch) => {
+                logo.replaceChildren();
+                logo.hidden = !patch.logo;
+
+                if (!patch.logo) return;
+
+                const image = document.createElement('img');
+                image.src = patch.logo;
+                image.alt = '';
+                logo.append(image);
+            };
+
             const render = (direction) => {
                 const patch = patches[selected];
                 status.textContent = patch.status;
@@ -176,6 +194,7 @@
                 action.toggleAttribute('rel', patch.external);
                 if (patch.external) action.rel = 'noopener';
                 renderArt(patch);
+                renderLogo(patch);
                 counter.textContent = `${String(selected + 1).padStart(2, '0')} / ${String(patches.length).padStart(2, '0')}`;
                 stage.setAttribute('aria-label', `Patch ${selected + 1} of ${patches.length}: ${patch.title}. Use left and right arrow keys to change selection.`);
 
