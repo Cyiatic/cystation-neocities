@@ -24,8 +24,9 @@ The site is a static HTML, CSS, and JavaScript project published to Neocities an
 
 ## Capabilities and Constraints
 
-- The primary selector covers TND6480i, CBFD480i, and the Patch Log.
+- The compact home selector and dedicated `/patches` selector cover TND6480i, CBFD480i, and the Patch Log.
 - TND6480i is released; CBFD480i has no public build or repository yet.
+- The homepage introduces CyStation and announces the latest release before presenting the selector.
 - The experience must remain functional with keyboard navigation, responsive layouts, and reduced-motion preferences.
 - The page must stay lightweight enough for static Neocities hosting and use no framework dependency.
 
@@ -33,7 +34,7 @@ The site is a static HTML, CSS, and JavaScript project published to Neocities an
 
 - Keep the CyStation name and its blend of modern web usability with the pre-Microsoft blue Rareware website.
 - Use authentic supplied or archived Rare renders for characters; do not generate replacement character art.
-- Favor deep blue, gold, cream, playful editorial language, image-led project identities, and a prominent character selector.
+- Favor deep blue, gold, cream, playful editorial language, image-led project identities, and authentic Rareware collage art.
 
 ## Evidence on Hand
 
@@ -44,7 +45,8 @@ The site is a static HTML, CSS, and JavaScript project published to Neocities an
 
 ## Product Principles
 
-- Put the patch and its release state before site ornament.
+- Make the homepage identify CyStation before asking visitors to operate the selector.
+- Put each patch and its release state before decorative project detail.
 - Let authentic characters carry navigation and personality.
 - Make unfinished work explicit without presenting dead download links.
 - Preserve old-web warmth while using current interaction and accessibility standards.

@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CyStation is Cyiatic's home for 480i patches, Rareware preservation work, project releases, and recovered game material.">
-    <title>CyStation &middot; Rareware Patches &amp; Preservation</title>
+    <meta name="description" content="Browse CyStation's released and in-development 480i projects through the interactive character selector.">
+    <title>CyStation &middot; 480i Projects</title>
     <link rel="stylesheet" href="style.css?v=20260723-station-home">
     <link rel="icon" href="images/goldballoon.png" type="image/png">
 </head>
-<body class="home-page">
-    <!--
-    THESIS: CyStation is a Rarewhere station front desk first and a project switchboard second.
-    OWN-WORLD: Deep blue space, authentic character cutouts, gold orbit rails, cream copy, and illuminated circular controls.
-    STORY: Visitors meet CyStation, see the newest release, tune a compact project selector, and choose a deeper route.
-    FIRST VIEWPORT: CyStation's identity and the latest TND6480i transmission lead; the selector follows as a featured section.
-    FORM: Editorial station home with one authored character-switchboard moment and an authentic Rareware closing mural.
-    -->
+<body class="patches-page">
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="container">
         <div id="headerArea">
             <div id="header" role="img" aria-label="CyStation Rareware-inspired header art"></div>
             <nav id="navbar" aria-label="Primary navigation">
                 <ul>
-                    <li><a aria-current="page" href="/">Station</a></li>
+                    <li><a href="/">Station</a></li>
                     <li><a href="projects">Patch Log</a></li>
                     <li><a href="navigation">Archive</a></li>
                 </ul>
@@ -31,40 +24,21 @@
 
         <div id="flex">
             <main id="main-content">
-                <div class="home-intro">
-                    <header class="home-intro__copy">
-                        <p class="station-label">CY STATION // SIGNAL ONLINE</p>
-                        <h1>CyStation</h1>
-                        <p class="home-intro__lede">480i patches, preservation work, and the best ways to play the games worth keeping.</p>
-                        <nav class="home-intro__actions" aria-label="Station shortcuts">
-                            <a class="patch-action" href="#patch-select">Tune the projects <span aria-hidden="true">&darr;</span></a>
-                            <a class="text-action" href="navigation">Browse the archive <span aria-hidden="true">&rarr;</span></a>
-                        </nav>
-                    </header>
+                <header class="station-intro">
+                    <p class="station-label">CY STATION // PROJECT SWITCHBOARD</p>
+                    <h1>480i Projects</h1>
+                    <p>Rotate through released patches, work still on the bench, and the station log that records the journey.</p>
+                </header>
 
-                    <article class="latest-release" aria-labelledby="latest-release-heading">
-                        <div class="latest-release__art" aria-hidden="true">
-                            <img src="images/tnd6480i-logo.png" alt="">
-                        </div>
-                        <div class="latest-release__body">
-                            <p class="patch-status">New release &middot; July 2026</p>
-                            <h2 id="latest-release-heading">Latest transmission</h2>
-                            <p>Tomorrow Never Dies 6480i is live, with the release and technical details ready on GitHub.</p>
-                            <a class="patch-action" href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open TND6480i <span aria-hidden="true">&nearr;</span></a>
-                        </div>
-                    </article>
-                </div>
-
-                <section class="patch-select patch-select--compact" id="patch-select" aria-labelledby="patch-select-heading">
+                <section class="patch-select" id="patch-select" aria-labelledby="patch-select-heading">
                     <span class="station-watermark" aria-hidden="true"></span>
                     <header class="select-heading">
-                        <p class="select-prompt">FEATURED SWITCHBOARD</p>
+                        <p class="select-prompt">CHOOSE YOUR SIGNAL</p>
                         <h2 id="patch-select-heading">Project select</h2>
-                        <p>Three signals are standing by. Tune one here, or open the dedicated project page for the full-size view.</p>
-                        <a class="text-action" href="patches">Open 480i Projects <span aria-hidden="true">&rarr;</span></a>
+                        <p>Use the arrows, your keyboard, or choose a figure directly.</p>
                     </header>
 
-                    <div class="patch-carousel" id="home-project-selector" data-patch-carousel>
+                    <div class="patch-carousel" id="project-selector" data-patch-carousel>
                         <div class="patch-carousel__stage" data-carousel-stage tabindex="0" aria-label="Selection 1 of 3: Tomorrow Never Dies 6480i Patch. Use left and right arrow keys to change selection.">
                             <button class="patch-control patch-control--previous" type="button" data-carousel-previous disabled aria-label="Previous project">
                                 <span aria-hidden="true">&larr;</span>
@@ -118,21 +92,37 @@
                     </div>
                 </section>
 
-                <section class="station-routes" aria-labelledby="station-routes-heading">
-                    <h2 id="station-routes-heading">Choose a route</h2>
-                    <div class="route-list">
-                        <a href="patches"><strong>480i Projects</strong><span>The full character selector, release states, and the next signal.</span></a>
-                        <a href="projects"><strong>Patch log</strong><span>Released work, research, and station history.</span></a>
-                        <a href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><strong>Preservation archive</strong><span>Uploads and recovered game material on Internet Archive.</span></a>
-                    </div>
+                <section class="coming-soon" id="cbfd480i" aria-labelledby="coming-soon-heading">
+                    <header class="coming-soon__header">
+                        <div>
+                            <p class="select-prompt">NEXT IN QUEUE</p>
+                            <h2 id="coming-soon-heading">Coming soon</h2>
+                        </div>
+                        <p class="coming-soon__count">01 PROJECT QUEUED</p>
+                    </header>
+
+                    <article class="coming-soon__entry">
+                        <span class="coming-soon__index" aria-hidden="true">01</span>
+                        <div class="coming-soon__body">
+                            <p class="patch-status">In development</p>
+                            <h3>CBFD480i</h3>
+                            <p>Conker has taken his place in the selector. Public project details, releases, and downloads are not available yet.</p>
+                        </div>
+                        <p class="coming-soon__availability">
+                            <strong>No public build</strong>
+                            <span>Watch this station</span>
+                        </p>
+                        <button class="tune-action" type="button" data-carousel-target="project-selector" data-select-patch="1">Bring into focus <span aria-hidden="true">&uarr;</span></button>
+                    </article>
                 </section>
 
-                <figure class="rareware-mural">
-                    <div class="rareware-mural__viewport">
-                        <img src="images/rwbc3.jpg" width="2797" height="1463" loading="lazy" decoding="async" alt="Rareware character collage featuring TJ Combo and Banjo-Kazooie.">
+                <section class="station-routes" aria-labelledby="project-routes-heading">
+                    <h2 id="project-routes-heading">Continue through the station</h2>
+                    <div class="route-list">
+                        <a href="projects"><strong>Patch log</strong><span>Released work, research, and station history.</span></a>
+                        <a href="/"><strong>Station home</strong><span>Return to the latest transmission and site directory.</span></a>
                     </div>
-                    <figcaption>Rare company, station frequency &middot; the lower broadcast mural</figcaption>
-                </figure>
+                </section>
             </main>
 
             <aside id="rightSidebar" aria-labelledby="links-heading">
