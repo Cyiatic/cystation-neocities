@@ -75,11 +75,12 @@ body {
 
 #header {
     width: 100%;
-    height: clamp(96px, 13vw, 132px);
+    height: clamp(190px, 32.6vw, 333px);
     background-color: var(--link);
     background-image: var(--header-image);
+    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center 68%;
+    background-position: center 36%;
 }
 
 /* Navbar */
@@ -136,6 +137,7 @@ body {
 .home-page #flex,
 .patches-page #flex {
     display: block;
+    background-color: var(--content);
 }
 
 /* Sidebars */
@@ -350,7 +352,7 @@ img {
     margin: 0;
     color: var(--signal);
     font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
-    font-size: clamp(3.75rem, 10vw, 6rem);
+    font-size: clamp(3.75rem, 7vw, 5.5rem);
     letter-spacing: -0.04em;
     line-height: 0.86;
     text-transform: uppercase;
@@ -828,15 +830,20 @@ img {
 .character-art--bond > img.character-art__project-logo {
     position: absolute;
     z-index: 0;
-    top: 31%;
-    left: 62%;
-    width: 118%;
+    top: 43%;
+    left: 58%;
+    width: 150%;
     max-width: none;
     height: auto;
     object-fit: contain;
     object-position: center;
     filter: drop-shadow(0 0.75rem 0.65rem rgb(0 0 0 / 35%));
     transform: translateX(-50%);
+}
+
+.home-page footer,
+.patches-page footer {
+    margin-top: 0;
 }
 
 .selector-character--conker {
