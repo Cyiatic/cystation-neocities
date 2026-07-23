@@ -24,7 +24,7 @@ The site is a static HTML, CSS, and JavaScript project published to Neocities an
 
 ## Capabilities and Constraints
 
-- The compact home selector and dedicated `/patches` selector cover TND6480i, CBFD480i, and the Patch Log.
+- The compact home selector and dedicated `/patches` selector cover TND6480i, CBFD480i, and the Project Timeline.
 - TND6480i is released; CBFD480i has no public build or repository yet.
 - The homepage introduces CyStation and announces the latest release before presenting the selector.
 - The experience must remain functional with keyboard navigation, responsive layouts, and reduced-motion preferences.

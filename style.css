@@ -79,7 +79,7 @@ body {
     background-color: var(--link);
     background-image: var(--header-image);
     background-size: cover;
-    background-position: center 18%;
+    background-position: center 68%;
 }
 
 /* Navbar */
@@ -372,23 +372,15 @@ img {
 }
 
 .latest-release {
-    display: grid;
-    grid-template-columns: minmax(7rem, 0.78fr) minmax(0, 1.22fr);
-    gap: clamp(1rem, 3vw, 1.75rem);
-    align-items: center;
+    display: block;
     padding: 1.35rem 0;
     border-top: 1px solid rgb(153 204 255 / 55%);
     border-bottom: 1px solid rgb(153 204 255 / 55%);
 }
 
-.latest-release__art img {
-    display: block;
-    width: 100%;
-    filter: drop-shadow(0 0.7rem 0.65rem rgb(0 0 0 / 28%));
-}
-
 .latest-release__body {
     min-width: 0;
+    max-width: 34rem;
 }
 
 .latest-release__body h2 {
@@ -730,36 +722,6 @@ img {
     font-weight: 400;
 }
 
-.rareware-mural {
-    margin: clamp(4rem, 10vw, 7rem) calc(clamp(1.25rem, 3vw, 2rem) * -1) 0;
-}
-
-.rareware-mural__viewport {
-    height: clamp(150px, 28vw, 300px);
-    overflow: hidden;
-    border-top: 1px solid rgb(153 204 255 / 55%);
-    border-bottom: 1px solid rgb(153 204 255 / 55%);
-    background: var(--deep);
-}
-
-.rareware-mural img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 68%;
-}
-
-.rareware-mural figcaption {
-    padding: 0.65rem clamp(1.25rem, 3vw, 2rem) 0;
-    color: var(--link);
-    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
 .patch-carousel {
     position: relative;
 }
@@ -775,48 +737,14 @@ img {
     outline: none;
 }
 
-.patch-carousel__stage:focus-visible .orbit-arc--front {
-    border-bottom-color: var(--signal);
-    filter: drop-shadow(0 0 0.35rem rgb(255 228 92 / 60%));
+.patch-carousel__stage:focus-visible .selector-character[data-slot="front"] .character-art {
+    filter: drop-shadow(0 0 0.65rem rgb(255 228 92 / 70%));
 }
 
 .character-orbit {
     position: absolute;
     inset: 0 clamp(3rem, 8vw, 5rem) 0;
     isolation: isolate;
-}
-
-.orbit-arc {
-    position: absolute;
-    left: 7%;
-    width: 86%;
-    height: 20%;
-    bottom: 7%;
-    border-radius: 50%;
-    pointer-events: none;
-}
-
-.orbit-arc--back {
-    z-index: 0;
-    border-top: 2px solid rgb(255 204 0 / 45%);
-}
-
-.orbit-arc--front {
-    z-index: 5;
-    border-bottom: 2px solid var(--amber);
-    transition: border-color 160ms ease-out, filter 160ms ease-out;
-}
-
-.orbit-arc--front::after {
-    position: absolute;
-    right: 10%;
-    bottom: -4px;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--live);
-    box-shadow: 0 0 0.65rem rgb(51 255 51 / 75%);
-    content: "";
 }
 
 .selector-character {
@@ -890,6 +818,25 @@ img {
     object-fit: contain;
     object-position: center bottom;
     filter: drop-shadow(0 1.1rem 0.8rem rgb(0 0 0 / 30%));
+}
+
+.character-art--bond > img:first-child {
+    position: relative;
+    z-index: 1;
+}
+
+.character-art--bond > img.character-art__project-logo {
+    position: absolute;
+    z-index: 0;
+    top: 31%;
+    left: 62%;
+    width: 118%;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 0.75rem 0.65rem rgb(0 0 0 / 35%));
+    transform: translateX(-50%);
 }
 
 .selector-character--conker {
@@ -1110,8 +1057,7 @@ img {
     }
 
     .selector-character,
-    .patch-control,
-    .orbit-arc--front {
+    .patch-control {
         transition-duration: 1ms;
     }
 
@@ -1154,9 +1100,6 @@ img {
     }
     .home-intro__copy {
         max-width: 42rem;
-    }
-    .latest-release {
-        grid-template-columns: minmax(10rem, 0.7fr) minmax(0, 1.3fr);
     }
     .coming-soon__entry {
         grid-template-columns: 2.5rem minmax(0, 1fr) minmax(8.5rem, auto);
@@ -1206,10 +1149,6 @@ img {
     }
     .home-intro__copy h1 {
         font-size: clamp(3.2rem, 15vw, 4.2rem);
-    }
-    .latest-release {
-        grid-template-columns: minmax(6.5rem, 0.7fr) minmax(0, 1.3fr);
-        gap: 0.9rem;
     }
     .latest-release__body > p:not(.patch-status) {
         font-size: 0.88rem;
@@ -1316,12 +1255,6 @@ img {
     .patch-select--compact .patch-entry__logo,
     .patch-select--compact [data-carousel-description] {
         display: none;
-    }
-    .rareware-mural {
-        margin-top: 3.75rem;
-    }
-    .rareware-mural__viewport {
-        height: clamp(145px, 43vw, 175px);
     }
     .coming-soon__header {
         align-items: start;

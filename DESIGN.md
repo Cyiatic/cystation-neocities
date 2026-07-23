@@ -8,7 +8,7 @@ CyStation uses a modernized “Rarewhere signal stage”: a drenched deep-blue f
 
 - Deep field `#001B49`: page depth, controls, and shadowed layers.
 - Rare blue `#003466`: primary surface.
-- Signal gold `#FFCC00`: active project, orbit rail, and major actions.
+- Signal gold `#FFCC00`: active project identity and major actions.
 - Cream `#FFFFDD`: readable body copy.
 - Pale blue `#99CCFF`: links and secondary headings.
 - Acid green `#33FF33`: live/on-air confirmation and small active sparks.
@@ -19,7 +19,7 @@ Use a narrow, heavy sans-serif stack for display labels and project headings, wi
 
 ## Composition
 
-The homepage follows a “station front desk, then project switchboard” reading order: CyStation identity, latest release, compact character selector, directory, and the authentic TJ Combo/Banjo mural. The dedicated `/patches` route gives the selector its full unboxed stage. Three persistent figures occupy front, rear-left, and rear-right slots around a broken elliptical rail. The active figure is dominant and full color; rear figures remain legible as cool-blue shadows.
+The homepage follows a “station front desk, then project switchboard” reading order: CyStation identity, latest release, compact character selector, and directory. The authentic TJ Combo/Banjo collage appears once in the shared compact header. The dedicated `/patches` route gives the selector its full unboxed stage. Three persistent figures occupy front, rear-left, and rear-right slots, with project marks traveling as part of each character identity. The active figure is dominant and full color; rear figures remain legible as cool-blue shadows.
 
 ## Controls and States
 
@@ -31,4 +31,4 @@ Figures rotate through persistent DOM slots using transform, opacity, and a boun
 
 ## Responsive Behavior
 
-Desktop pairs the homepage identity with its release notice, then gives the compact selector a shorter stage; the dedicated project page retains the large foreground render. Mobile stacks the intro and release, may crop rear figures at the selector edges, keeps the active character unobscured, moves project details below, and retains both arrow controls and keyboard behavior. The closing mural uses a controlled lower crop so TJ Combo and Banjo-Kazooie remain visible at both sizes.
+Desktop pairs the homepage identity with its release notice, then gives the compact selector a shorter stage; the dedicated project page retains the large foreground render. Mobile stacks the intro and release, may crop rear figures at the selector edges, keeps the active character unobscured, moves project details below, and retains both arrow controls and keyboard behavior. The shared compact header uses a controlled lower crop so TJ Combo and Banjo-Kazooie remain visible at both sizes.

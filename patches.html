@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Browse CyStation's released and in-development 480i projects through the interactive character selector.">
     <title>CyStation &middot; 480i Projects</title>
-    <link rel="stylesheet" href="style.css?v=20260723-station-home">
+    <link rel="stylesheet" href="style.css?v=20260723-selector-polish">
     <link rel="icon" href="images/goldballoon.png" type="image/png">
 </head>
 <body class="patches-page">
@@ -16,7 +16,7 @@
             <nav id="navbar" aria-label="Primary navigation">
                 <ul>
                     <li><a href="/">Station</a></li>
-                    <li><a href="projects">Patch Log</a></li>
+                    <li><a href="projects">Timeline</a></li>
                     <li><a href="navigation">Archive</a></li>
                 </ul>
             </nav>
@@ -45,11 +45,10 @@
                             </button>
 
                             <div class="character-orbit" data-character-orbit role="group" aria-label="Available projects">
-                                <span class="orbit-arc orbit-arc--back" aria-hidden="true"></span>
-
                                 <button class="selector-character selector-character--bond" type="button" data-patch-index="0" data-slot="front" aria-pressed="true" aria-label="Select Tomorrow Never Dies 6480i">
-                                    <span class="character-art">
+                                    <span class="character-art character-art--bond">
                                         <img src="images/tnd-bond-selector.png" alt="">
+                                        <img class="character-art__project-logo" src="images/tnd64-selector-logo.png" alt="">
                                     </span>
                                 </button>
 
@@ -59,13 +58,11 @@
                                     </span>
                                 </button>
 
-                                <button class="selector-character selector-character--scribes" type="button" data-patch-index="2" data-slot="rear-left" aria-pressed="false" aria-label="Select the Patch Log">
+                                <button class="selector-character selector-character--scribes" type="button" data-patch-index="2" data-slot="rear-left" aria-pressed="false" aria-label="Select the Project Timeline">
                                     <span class="character-art">
                                         <img src="images/scribes-selector.png" alt="">
                                     </span>
                                 </button>
-
-                                <span class="orbit-arc orbit-arc--front" aria-hidden="true"></span>
                             </div>
 
                             <button class="patch-control patch-control--next" type="button" data-carousel-next disabled aria-label="Next project">
@@ -119,7 +116,7 @@
                 <section class="station-routes" aria-labelledby="project-routes-heading">
                     <h2 id="project-routes-heading">Continue through the station</h2>
                     <div class="route-list">
-                        <a href="projects"><strong>Patch log</strong><span>Released work, research, and station history.</span></a>
+                        <a href="projects"><strong>Project Timeline</strong><span>Released work, research, and station history.</span></a>
                         <a href="/"><strong>Station home</strong><span>Return to the latest transmission and site directory.</span></a>
                     </div>
                 </section>
@@ -160,6 +157,6 @@
 
         <footer id="footer">CyStation 2026 &middot; Signal maintained by Cyiatic</footer>
     </div>
-    <script src="patch-select.js?v=20260723-station-home"></script>
+    <script src="patch-select.js?v=20260723-selector-polish"></script>
 </body>
 </html>

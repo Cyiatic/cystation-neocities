@@ -24,10 +24,10 @@
         },
         {
             status: 'Station archive',
-            signal: 'ARCHIVE LINE \u00b7 PATCH LOG',
-            title: 'Patch Log',
+            signal: 'ARCHIVE LINE \u00b7 PROJECT TIMELINE',
+            title: 'Project Timeline',
             description: 'Browse released work, research notes, and station history while the next signal takes shape.',
-            action: 'Enter the patch log',
+            action: 'Open the project timeline',
             href: 'projects',
             external: false,
             logo: null,
