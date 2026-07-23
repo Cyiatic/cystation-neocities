@@ -75,15 +75,10 @@ body {
 
 #header {
     width: 100%;
-    height: clamp(170px, 28vw, 250px);
+    height: clamp(96px, 13vw, 132px);
     background-color: var(--link);
     background-image: var(--header-image);
     background-size: cover;
-    background-position: center 22%;
-}
-
-.home-page #header {
-    height: clamp(96px, 13vw, 132px);
     background-position: center 18%;
 }
 
@@ -458,20 +453,8 @@ img {
 }
 
 .patch-entry__logo.is-cbfd img {
-    max-height: 8.5rem;
+    max-height: 10rem;
     filter: drop-shadow(0 0.35rem 0.35rem rgb(0 0 0 / 35%));
-}
-
-.patch-entry__logo-suffix {
-    color: var(--amber);
-    font-family: Impact, "Arial Narrow", sans-serif;
-    font-size: clamp(2rem, 6vw, 3.6rem);
-    font-style: italic;
-    letter-spacing: -0.06em;
-    line-height: 1;
-    -webkit-text-stroke: 1px #7b210d;
-    text-shadow: 2px 3px 0 var(--deep);
-    transform: rotate(-5deg);
 }
 
 .patch-status {
@@ -773,7 +756,7 @@ img {
 }
 
 .selector-character--conker {
-    width: clamp(250px, 44vw, 370px);
+    width: clamp(280px, 48vw, 420px);
 }
 
 .character-art--conker {
@@ -781,53 +764,13 @@ img {
     left: 50%;
     width: 100%;
     height: auto;
-    aspect-ratio: 353 / 415;
+    aspect-ratio: 560 / 541;
     transform: translateX(-50%);
 }
 
 .character-art--conker > img {
     width: 100%;
     height: 100%;
-}
-
-.character-patch-lockup {
-    position: absolute;
-    top: 4%;
-    left: 7%;
-    display: flex;
-    width: 47%;
-    height: 72%;
-    padding: 0.8rem 0.45rem 0.65rem;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background: rgb(0 27 73 / 96%);
-    clip-path: polygon(16% 0, 100% 8%, 82% 100%, 0 88%);
-    opacity: 1;
-    transform: rotate(8deg) skewY(-3deg);
-    transition: opacity 180ms ease-out;
-}
-
-.character-patch-lockup img {
-    display: block;
-    width: 68%;
-    max-height: none;
-    filter: drop-shadow(0 0.15rem 0.1rem rgb(0 0 0 / 35%));
-}
-
-.character-patch-lockup strong {
-    color: var(--amber);
-    font-family: Impact, "Arial Narrow", sans-serif;
-    font-size: clamp(1.15rem, 3.4vw, 1.85rem);
-    font-style: italic;
-    letter-spacing: -0.04em;
-    line-height: 0.85;
-    -webkit-text-stroke: 0.5px #7b210d;
-    text-shadow: 1px 1px 0 var(--deep);
-}
-
-.selector-character[data-slot^="rear"] .character-patch-lockup {
-    opacity: 0;
 }
 
 .selector-character--scribes[data-slot="front"] {
@@ -944,7 +887,6 @@ img {
     }
 
     .selector-character,
-    .character-patch-lockup,
     .patch-control,
     .orbit-arc--front {
         transition-duration: 1ms;
@@ -992,20 +934,13 @@ img {
 }
 
 @media only screen and (max-width: 520px) {
-    #header {
-        height: 150px;
-        background-position: center;
-    }
-    #navbar li {
-        min-width: 100%;
-    }
-    .home-page #navbar ul {
+    #navbar ul {
         flex-wrap: nowrap;
     }
-    .home-page #navbar li {
+    #navbar li {
         min-width: 0;
     }
-    .home-page #navbar li a {
+    #navbar li a {
         padding-right: 0.35rem;
         padding-left: 0.35rem;
         font-size: 0.78rem;

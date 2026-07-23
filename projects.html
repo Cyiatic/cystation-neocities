@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyStation</title>
-    <link rel="stylesheet" href="style.css?v=20260527-sidebarlinks">
+    <meta name="description" content="Browse CyStation patch releases, preservation work, and project history by year.">
+    <title>CyStation &middot; Patch Log</title>
+    <link rel="stylesheet" href="style.css?v=20260723-shell">
+    <link rel="icon" href="images/goldballoon.png" type="image/png">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="container">
         <div id="headerArea">
-            <div id="header"></div>
-            <nav id="navbar">
+            <div id="header" role="img" aria-label="CyStation Rareware-inspired header art"></div>
+            <nav id="navbar" aria-label="Primary navigation">
                 <ul>
-                    <li><a href="/" target="_self">Home</a></li>
-                    <li><a href="navigation" target="_self">Navigation</a></li>
-                    <li><a href="projects" target="_self">Projects</a></li>
+                    <li><a href="/">Station</a></li>
+                    <li><a aria-current="page" href="projects">Patch Log</a></li>
+                    <li><a href="navigation">Archive</a></li>
                 </ul>
             </nav>
         </div>
         <div id="flex">
-            <main>
-                <h1>Projects</h1>
-                <p>This is my "projects" page where you can see what I&rsquo;ve been working on.</p>
+            <main id="main-content">
+                <h1>Patch Log</h1>
+                <p>This is the patch log, where you can see what I&rsquo;ve been working on.</p>
 
                 <section class="project-year">
                     <h2 class="year-heading"><img class="year-sprite" src="images/2026_sprite.png?v=20260526-yearfix" width="115" height="31" alt="2026"></h2>
@@ -170,9 +173,9 @@
 
                 <img class="feature-image" src="images/cyfound.png" style="display: block; margin: 24px auto 0; max-width: 500px; width: 100%; height: auto;" alt="">
             </main>
-            <aside id="rightSidebar">
-                <h2>Links</h2>
-                <p>Use the links below!</p>
+            <aside id="rightSidebar" aria-labelledby="links-heading">
+                <h2 id="links-heading">Outposts</h2>
+                <p>Find CyStation elsewhere.</p>
                 <div class="sidebar-links">
                     <a class="icon-link" href="https://cyiatic.blogspot.com" target="_blank" rel="noopener">
                         <img src="images/scribes_feather.gif" width="32" height="32" alt="">
@@ -191,18 +194,18 @@
                         YouTube
                     </a>
                     <hr class="sidebar-divider">
-                    <a class="icon-link" href="aboutme" target="_self">
+                    <a class="icon-link" href="aboutme">
                         <img src="images/conktail.gif" width="32" height="32" alt="">
-                        About Me
+                        About CyStation
                     </a>
-                    <a class="icon-link" href="credits" target="_self">
+                    <a class="icon-link" href="credits">
                         <img src="images/goldballoon.png" width="32" height="32" alt="">
                         Credits
                     </a>
                 </div>
             </aside>
         </div>
-        <footer id="footer">CyStation 2026</footer>
+        <footer id="footer">CyStation 2026 &middot; Signal maintained by Cyiatic</footer>
     </div>
 </body>
 </html>

@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CyStation</title>
-    <link rel="stylesheet" href="style.css?v=20260527-sidebarlinks">
+    <meta name="description" content="Credits and acknowledgements for the tools and resources used to build CyStation.">
+    <title>CyStation &middot; Credits</title>
+    <link rel="stylesheet" href="style.css?v=20260723-shell">
+    <link rel="icon" href="images/goldballoon.png" type="image/png">
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="container">
         <div id="headerArea">
-            <div id="header"></div>
-            <nav id="navbar">
+            <div id="header" role="img" aria-label="CyStation Rareware-inspired header art"></div>
+            <nav id="navbar" aria-label="Primary navigation">
                 <ul>
-                    <li><a href="/" target="_self">Home</a></li>
-                    <li><a href="navigation" target="_self">Navigation</a></li>
-                    <li><a href="projects" target="_self">Projects</a></li>
+                    <li><a href="/">Station</a></li>
+                    <li><a href="projects">Patch Log</a></li>
+                    <li><a href="navigation">Archive</a></li>
                 </ul>
             </nav>
         </div>
         <div id="flex">
-            <main>
+            <main id="main-content">
                 <h1>Credits</h1>
                 <p>Credit to Sadgrl's layout builder for providing the template this site uses: <a href="https://codepen.io/sadness97/full/XJbLxNj" target="_blank" rel="noopener">Sadgrl Layout Builder</a>.</p>
             </main>
-            <aside id="rightSidebar">
-                <h2>Links</h2>
-                <p>Use the links below!</p>
+            <aside id="rightSidebar" aria-labelledby="links-heading">
+                <h2 id="links-heading">Outposts</h2>
+                <p>Find CyStation elsewhere.</p>
                 <div class="sidebar-links">
                     <a class="icon-link" href="https://cyiatic.blogspot.com" target="_blank" rel="noopener">
                         <img src="images/scribes_feather.gif" width="32" height="32" alt="">
@@ -44,18 +47,18 @@
                         YouTube
                     </a>
                     <hr class="sidebar-divider">
-                    <a class="icon-link" href="aboutme" target="_self">
+                    <a class="icon-link" href="aboutme">
                         <img src="images/conktail.gif" width="32" height="32" alt="">
-                        About Me
+                        About CyStation
                     </a>
-                    <a class="icon-link" href="credits" target="_self">
+                    <a class="icon-link" aria-current="page" href="credits">
                         <img src="images/goldballoon.png" width="32" height="32" alt="">
                         Credits
                     </a>
                 </div>
             </aside>
         </div>
-        <footer id="footer">CyStation 2026</footer>
+        <footer id="footer">CyStation 2026 &middot; Signal maintained by Cyiatic</footer>
     </div>
 </body>
 </html>

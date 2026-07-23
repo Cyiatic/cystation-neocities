@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CyStation 480i patch releases and retro game preservation work by Cyiatic.">
     <title>CyStation &middot; 480i Patch Select</title>
-    <link rel="stylesheet" href="style.css?v=20260723-spindle">
+    <link rel="stylesheet" href="style.css?v=20260723-shell">
+    <link rel="icon" href="images/goldballoon.png" type="image/png">
 </head>
 <body class="home-page">
     <!--
@@ -15,7 +16,7 @@
     FIRST VIEWPORT: Bond leads a three-figure spindle; Conker and Scribes recede behind him while project identity and action remain directly below.
     FORM: A user-specified character selector extending the established Rareware-inspired world; no concept seed was needed for this precise interaction.
     -->
-    <a class="skip-link" href="#patch-select">Skip to 480i patches</a>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
     <div id="container">
         <div id="headerArea">
             <div id="header" role="img" aria-label="CyStation Rareware-inspired header art"></div>
@@ -60,11 +61,7 @@
 
                                 <button class="selector-character selector-character--conker" type="button" data-patch-index="1" data-slot="rear-right" aria-pressed="false" aria-label="Select CBFD480i">
                                     <span class="character-art character-art--conker">
-                                        <img src="images/cbfd-conker-rare.png" alt="">
-                                        <span class="character-patch-lockup" aria-hidden="true">
-                                            <img src="images/cbfd-logo.png" alt="">
-                                            <strong>480i</strong>
-                                        </span>
+                                        <img src="images/cbfd480i-conker.png" alt="">
                                     </span>
                                 </button>
 
@@ -205,8 +202,7 @@
                     action: 'View coming-soon status',
                     href: '#coming-soon',
                     external: false,
-                    logo: 'images/cbfd-logo.png',
-                    logoSuffix: '480i',
+                    logo: 'images/cbfd480i-logo.png',
                     logoClass: 'is-cbfd'
                 },
                 {
@@ -236,12 +232,6 @@
                 image.alt = '';
                 logo.append(image);
 
-                if (patch.logoSuffix) {
-                    const suffix = document.createElement('strong');
-                    suffix.className = 'patch-entry__logo-suffix';
-                    suffix.textContent = patch.logoSuffix;
-                    logo.append(suffix);
-                }
             };
 
             const render = (direction) => {
