@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 200 1600 340" role="img" aria-labelledby="title desc">
+  <title id="title">A 480i patch, progressive output, and horizontal upscaling signal path</title>
+  <desc id="desc">A four-stage diagram: a 480i-patched Nintendo 64 ROM produces alternating fields; Analogue3D Progressive Output can produce the full original framebuffer every frame; Horizontal Upscaling doubles 3D detail across the image; the final image is sent to a display. The second and third stages are optional Analogue3D features.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="14" stdDeviation="12" flood-color="#000000" flood-opacity=".45"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#99ccff"/>
+    </marker>
+    <pattern id="fieldOdd" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#001b49"/>
+      <rect width="10" height="3" fill="#ffcc00"/>
+    </pattern>
+    <pattern id="fieldEven" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#001b49"/>
+      <rect y="5" width="10" height="3" fill="#99ccff"/>
+    </pattern>
+    <linearGradient id="displayGlow" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#33ff33" stop-opacity=".95"/>
+      <stop offset=".48" stop-color="#99ccff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#ffcc00" stop-opacity=".95"/>
+    </linearGradient>
+  </defs>
+
+  <path d="M272 441 H520 M732 441 H915 M1123 441 H1327" fill="none" stroke="#99ccff" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow)" opacity=".82"/>
+  <path d="M80 599 H1514" fill="none" stroke="#99ccff" stroke-opacity=".28" stroke-width="2"/>
+
+  <g filter="url(#shadow)">
+    <path d="M74 272 L121 224 H302 L344 272 V498 H74 Z" fill="#001b49" stroke="#ffcc00" stroke-width="8"/>
+    <path d="M121 224 H302 L326 252 H96 Z" fill="#ffcc00"/>
+    <rect x="101" y="310" width="215" height="154" fill="#003466" stroke="#99ccff" stroke-width="3"/>
+    <rect x="125" y="334" width="73" height="104" fill="url(#fieldOdd)"/>
+    <rect x="218" y="334" width="73" height="104" fill="url(#fieldEven)"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <circle cx="626" cy="365" r="145" fill="#003466" stroke="#ffcc00" stroke-width="8"/>
+    <circle cx="626" cy="365" r="111" fill="#001b49" stroke="#99ccff" stroke-width="3"/>
+    <path d="M563 323 H689 M563 362 H689 M563 401 H689" fill="none" stroke="#ffffdd" stroke-width="9" stroke-linecap="round"/>
+    <path d="M626 278 V450" fill="none" stroke="#33ff33" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <path d="M912 263 H1103 L1144 304 V464 H912 Z" fill="#001b49" stroke="#99ccff" stroke-width="8"/>
+    <path d="M945 303 H1082 V424 H945 Z" fill="#003466"/>
+    <path d="M967 319 H1060 M967 344 H1060 M967 369 H1060 M967 394 H1060" stroke="#ffcc00" stroke-width="8" stroke-linecap="round"/>
+    <path d="M990 307 V420 M1014 307 V420 M1038 307 V420" stroke="#33ff33" stroke-width="4" opacity=".9"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="1326" y="236" width="194" height="256" rx="4" fill="#001b49" stroke="#ffcc00" stroke-width="8"/>
+    <rect x="1350" y="260" width="146" height="176" fill="url(#displayGlow)"/>
+    <path d="M1395 492 V525 M1361 525 H1486" fill="none" stroke="#99ccff" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

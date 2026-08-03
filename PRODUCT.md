@@ -24,9 +24,9 @@ The site is a static HTML, CSS, and JavaScript project published to Neocities an
 
 ## Capabilities and Constraints
 
-- The compact home selector and dedicated `/patches` selector cover TND6480i, CBFD480i, and the Project Timeline.
-- TND6480i is released; CBFD480i has no public build or repository yet.
-- The homepage introduces CyStation and announces the latest release before presenting the selector.
+- The compact home gallery and dedicated `/patches` gallery cover TND6480i, CBFD480i, DKR480i, and a classified future signal.
+- TND6480i is released; CBFD480i and DKR480i have no public build or repository yet.
+- The homepage introduces CyStation and announces the latest release before presenting the project gallery.
 - The experience must remain functional with keyboard navigation, responsive layouts, and reduced-motion preferences.
 - The page must stay lightweight enough for static Neocities hosting and use no framework dependency.
 
@@ -45,12 +45,12 @@ The site is a static HTML, CSS, and JavaScript project published to Neocities an
 
 ## Product Principles
 
-- Make the homepage identify CyStation before asking visitors to operate the selector.
+- Make the homepage identify CyStation before asking visitors to browse the project gallery.
 - Put each patch and its release state before decorative project detail.
-- Let authentic characters carry navigation and personality.
+- Let authentic characters and project artwork carry navigation and personality.
 - Make unfinished work explicit without presenting dead download links.
 - Preserve old-web warmth while using current interaction and accessibility standards.
 
 ## Accessibility & Inclusion
 
-The primary selector supports clear focus states, Left and Right Arrow keys, direct character selection, readable status text, and reduced-motion behavior.
+The primary gallery supports clear focus states, Left and Right Arrow keys, direct thumbnail selection, readable status text, and reduced-motion behavior.

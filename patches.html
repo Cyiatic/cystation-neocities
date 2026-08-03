@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse CyStation's released and in-development 480i projects through the interactive character selector.">
+    <meta name="description" content="Browse CyStation's released and in-development 480i projects through an interactive project gallery.">
     <title>CyStation &middot; 480i Projects</title>
-    <link rel="stylesheet" href="style.css?v=20260723-outposts-band">
+    <link rel="stylesheet" href="style.css?v=20260802-mural">
     <link rel="icon" href="images/goldballoon.png" type="image/png">
 </head>
 <body class="patches-page">
@@ -16,6 +16,7 @@
             <nav id="navbar" aria-label="Primary navigation">
                 <ul>
                     <li><a href="/">Station</a></li>
+                    <li><a href="why-480i">Why 480i?</a></li>
                     <li><a href="projects">Timeline</a></li>
                     <li><a href="navigation">Archive</a></li>
                 </ul>
@@ -35,64 +36,49 @@
                     <header class="select-heading">
                         <p class="select-prompt">CHOOSE YOUR SIGNAL</p>
                         <h2 id="patch-select-heading">Project select</h2>
-                        <p>Use the arrows, your keyboard, or choose a figure directly.</p>
+                        <p>Choose a project card below, or use the arrows and keyboard to tune the feature display.</p>
                     </header>
 
-                    <div class="patch-carousel" id="project-selector" data-patch-carousel>
-                        <div class="patch-carousel__stage" data-carousel-stage tabindex="0" aria-label="Selection 1 of 3: Tomorrow Never Dies 6480i Patch. Use left and right arrow keys to change selection.">
-                            <button class="patch-control patch-control--previous" type="button" data-carousel-previous disabled aria-label="Previous project">
-                                <span aria-hidden="true">&larr;</span>
-                            </button>
-
-                            <div class="character-orbit" data-character-orbit role="group" aria-label="Available projects">
-                                <button class="selector-character selector-character--bond" type="button" data-patch-index="0" data-slot="front" aria-pressed="true" aria-label="Select Tomorrow Never Dies 6480i">
-                                    <span class="selector-motion-frame">
-                                        <span class="character-art character-art--bond">
-                                            <img src="images/tnd-bond-selector-full.png" alt="">
-                                            <img class="character-art__project-logo" src="images/tnd6480i-logo.png?v=20260723-cover" alt="">
-                                        </span>
-                                    </span>
-                                </button>
-
-                                <button class="selector-character selector-character--conker" type="button" data-patch-index="1" data-slot="rear-right" aria-pressed="false" aria-label="Select CBFD480i">
-                                    <span class="selector-motion-frame">
-                                        <span class="character-art character-art--conker">
-                                            <img src="images/cbfd480i-full-cigar.png" alt="">
-                                        </span>
-                                    </span>
-                                </button>
-
-                                <button class="selector-character selector-character--mystery" type="button" data-patch-index="2" data-slot="rear-left" aria-pressed="false" aria-label="Select the classified 480i project">
-                                    <span class="selector-motion-frame">
-                                        <span class="character-art character-art--mystery">
-                                            <img class="character-art__mystery-silhouette" src="images/mystery-selector.png" alt="">
-                                            <img class="character-art__mystery-logo" src="images/perfect-dark-coming-soon.png" alt="">
-                                        </span>
-                                    </span>
-                                </button>
+                    <div class="project-gallery" id="project-selector" data-project-gallery>
+                        <article class="project-gallery__frame" id="project-selector-panel" data-gallery-panel tabindex="0" role="tabpanel" aria-label="Selected project: Tomorrow Never Dies 6480i Patch. Use left and right arrow keys to change selection.">
+                            <div class="project-gallery__art is-tnd" data-gallery-art aria-hidden="true">
+                                <img src="images/tnd-bond-selector-full.png" alt="">
+                                <img class="project-gallery__art-logo" src="images/tnd6480i-logo.png?v=20260723-cover" alt="">
                             </div>
-
-                            <button class="patch-control patch-control--next" type="button" data-carousel-next disabled aria-label="Next project">
-                                <span aria-hidden="true">&rarr;</span>
-                            </button>
-                        </div>
-
-                        <div class="patch-carousel__readout">
-                            <p class="patch-carousel__counter" data-carousel-counter>01 / 03</p>
-                            <p class="patch-carousel__signal" data-carousel-signal aria-live="polite">ON AIR &middot; TND6480i</p>
-                        </div>
-
-                        <article class="patch-entry" data-carousel-details>
-                            <div class="patch-entry__logo is-wide" data-carousel-logo aria-hidden="true">
-                                <img src="images/tnd6480i-logo.png?v=20260723-cover" alt="">
+                            <div class="project-gallery__copy">
+                                <div class="project-gallery__readout">
+                                    <p class="project-gallery__counter" data-gallery-counter>01 / 04</p>
+                                    <p class="project-gallery__signal" data-gallery-signal aria-live="polite">ON AIR &middot; TND6480i</p>
+                                </div>
+                                <p class="patch-status" data-gallery-status>Released &middot; July 2026</p>
+                                <h3 data-gallery-title>Tomorrow Never Dies 6480i Patch</h3>
+                                <p data-gallery-description>A released 480i patch for Tomorrow Never Dies. Open the project page for the release and technical details.</p>
+                                <a class="patch-action" data-gallery-action href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">&nearr;</span></a>
                             </div>
-                            <div class="patch-entry__body">
-                                <p class="patch-status" data-carousel-status>Released &middot; July 2026</p>
-                                <h3 data-carousel-title>Tomorrow Never Dies 6480i Patch</h3>
-                                <p data-carousel-description>A released 480i patch for Tomorrow Never Dies. Open the project page for the release and technical details.</p>
-                                <a class="patch-action" data-carousel-action href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">&nearr;</span></a>
+                            <div class="project-gallery__controls" aria-label="Project gallery controls">
+                                <button class="project-gallery__control" type="button" data-gallery-previous aria-label="Previous project"><span aria-hidden="true">&larr;</span></button>
+                                <button class="project-gallery__control" type="button" data-gallery-next aria-label="Next project"><span aria-hidden="true">&rarr;</span></button>
                             </div>
                         </article>
+
+                        <div class="project-gallery__thumbs" role="tablist" aria-label="Available projects">
+                            <button class="project-thumb project-thumb--cover project-thumb--tnd is-selected" id="project-selector-tab-0" type="button" role="tab" data-patch-index="0" aria-selected="true" aria-controls="project-selector-panel">
+                                <span class="project-thumb__art" aria-hidden="true"><img src="images/tnd6480i-selector-cover.png?v=20260726-selector-art-v4" alt=""></span>
+                                <span class="project-thumb__label">TND6480i</span><span class="project-thumb__indicator" aria-hidden="true">ON AIR</span>
+                            </button>
+                            <button class="project-thumb project-thumb--cover project-thumb--cbfd" id="project-selector-tab-1" type="button" role="tab" data-patch-index="1" aria-selected="false" aria-controls="project-selector-panel" tabindex="-1">
+                                <span class="project-thumb__art" aria-hidden="true"><img src="images/cbfd480i-selector-cover.png?v=20260726-selector-art-v4" alt=""></span>
+                                <span class="project-thumb__label">CBFD480i</span><span class="project-thumb__indicator" aria-hidden="true">STANDBY</span>
+                            </button>
+                            <button class="project-thumb project-thumb--cover project-thumb--dkr project-thumb--locked" id="project-selector-tab-2" type="button" role="tab" data-patch-index="2" aria-selected="false" aria-controls="project-selector-panel" tabindex="-1" aria-label="Classified Diddy Kong Racing project">
+                                <span class="project-thumb__art" aria-hidden="true"><img src="images/dkr480i-selector-classified.png?v=20260729-coming-soon-spine" alt=""></span>
+                                <span class="project-thumb__label">Classified</span><span class="project-thumb__indicator" aria-hidden="true">LOCKED</span>
+                            </button>
+                            <button class="project-thumb project-thumb--cover project-thumb--classified project-thumb--locked" id="project-selector-tab-3" type="button" role="tab" data-patch-index="3" aria-selected="false" aria-controls="project-selector-panel" tabindex="-1" aria-label="Classified Perfect Dark project">
+                                <span class="project-thumb__art" aria-hidden="true"><img src="images/perfect-dark-selector-classified.png?v=20260729-coming-soon-spine" alt=""></span>
+                                <span class="project-thumb__label">Classified</span><span class="project-thumb__indicator" aria-hidden="true">LOCKED</span>
+                            </button>
+                        </div>
                     </div>
                 </section>
 
@@ -102,7 +88,7 @@
                             <p class="select-prompt">NEXT IN QUEUE</p>
                             <h2 id="coming-soon-heading">Coming soon</h2>
                         </div>
-                        <p class="coming-soon__count">01 PROJECT QUEUED</p>
+                        <p class="coming-soon__count">03 PROJECTS QUEUED</p>
                     </header>
 
                     <article class="coming-soon__entry">
@@ -110,13 +96,41 @@
                         <div class="coming-soon__body">
                             <p class="patch-status">In development</p>
                             <h3>CBFD480i</h3>
-                            <p>Conker has taken his place in the selector. Public project details, releases, and downloads are not available yet.</p>
+                            <p>Conker has taken his place in the project gallery. Public project details, releases, and downloads are not available yet.</p>
                         </div>
                         <p class="coming-soon__availability">
                             <strong>No public build</strong>
                             <span>Watch this station</span>
                         </p>
-                        <button class="tune-action" type="button" data-carousel-target="project-selector" data-select-patch="1">Bring into focus <span aria-hidden="true">&uarr;</span></button>
+                        <button class="tune-action" type="button" data-gallery-target="project-selector" data-select-patch="1">Bring into focus <span aria-hidden="true">&uarr;</span></button>
+                    </article>
+
+                    <article class="coming-soon__entry" id="dkr480i">
+                        <span class="coming-soon__index" aria-hidden="true">02</span>
+                        <div class="coming-soon__body">
+                            <p class="patch-status">Classified &middot; Signal locked</p>
+                            <h3>DKR480i</h3>
+                            <p>Diddy Kong Racing 480i is under wraps. Public project details, releases, and downloads will transmit when the signal clears.</p>
+                        </div>
+                        <p class="coming-soon__availability">
+                            <strong>Classified</strong>
+                            <span>Watch this station</span>
+                        </p>
+                        <button class="tune-action" type="button" data-gallery-target="project-selector" data-select-patch="2">Bring into focus <span aria-hidden="true">&uarr;</span></button>
+                    </article>
+
+                    <article class="coming-soon__entry" id="perfect-dark">
+                        <span class="coming-soon__index" aria-hidden="true">03</span>
+                        <div class="coming-soon__body">
+                            <p class="patch-status">Classified &middot; Signal locked</p>
+                            <h3>Perfect Dark: 480i + Performance Patch</h3>
+                            <p>A combined 480i and performance patch remains under wraps. Release details and downloads will transmit when the signal clears.</p>
+                        </div>
+                        <p class="coming-soon__availability">
+                            <strong>Classified</strong>
+                            <span>Watch this station</span>
+                        </p>
+                        <button class="tune-action" type="button" data-gallery-target="project-selector" data-select-patch="3">Bring into focus <span aria-hidden="true">&uarr;</span></button>
                     </article>
                 </section>
 
@@ -164,6 +178,6 @@
 
         <footer id="footer">CyStation 2026 &middot; Signal maintained by Cyiatic</footer>
     </div>
-    <script src="patch-select.js?v=20260723-authentic-tnd"></script>
+    <script src="patch-select.js?v=20260726-classified-gallery"></script>
 </body>
 </html>
