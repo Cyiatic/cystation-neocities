@@ -9,9 +9,9 @@
             action: 'Open patch on GitHub',
             href: 'https://github.com/Cyiatic/TND6480i',
             external: true,
-            heroImage: 'images/tnd-bond-selector-full.png',
+            heroImage: 'images/tnd-bond-selector-full.webp',
             heroAlt: 'James Bond holding a silenced pistol for Tomorrow Never Dies 6480i',
-            heroLogo: 'images/tnd6480i-logo.png?v=20260723-cover',
+            heroLogo: 'images/tnd6480i-logo.webp?v=20260723-cover',
             heroClass: 'is-tnd'
         },
         {
@@ -24,14 +24,14 @@
             href: 'patches#cbfd480i',
             external: false,
             hash: '#cbfd480i',
-            heroImage: 'images/cbfd480i-full-cigar.png',
+            heroImage: 'images/cbfd480i-full-cigar.webp',
             heroAlt: "Conker's Bad Fur Day 480i project artwork",
             heroLogo: null,
             heroClass: 'is-cbfd'
         },
         {
             key: 'dkr',
-            status: 'Classified \u00b7 Signal locked',
+            status: 'In development \u00b7 Signal locked',
             signal: 'ENCRYPTED SIGNAL \u00b7 DKR480i',
             title: 'Diddy Kong Racing 480i Patch',
             description: 'Diddy Kong Racing 480i remains under wraps. Public project details, releases, and downloads will transmit when the signal clears.',
@@ -39,23 +39,23 @@
             href: 'patches#dkr480i',
             external: false,
             hash: '#dkr480i',
-            heroImage: 'images/dkr-diddy-plane.png',
-            heroAlt: 'Classified Diddy Kong Racing project render',
-            heroLogo: 'images/dkr-coming-soon.png',
+            heroImage: 'images/dkr-diddy-plane.webp',
+            heroAlt: 'Diddy Kong Racing 480i project, signal locked render',
+            heroLogo: 'images/dkr-coming-soon.webp',
             heroClass: 'is-dkr'
         },
         {
             key: 'classified',
-            status: 'Classified \u00b7 Signal locked',
+            status: 'In development \u00b7 Signal locked',
             signal: 'ENCRYPTED SIGNAL \u00b7 PERFECT DARK',
             title: 'Perfect Dark: 480i + Performance Patch',
             description: 'A combined 480i and performance patch remains under wraps. Release details and downloads will transmit when the signal clears.',
             action: 'Review the project timeline',
             href: 'patches#perfect-dark',
             external: false,
-            heroImage: 'images/mystery-selector.png',
-            heroAlt: 'Classified project silhouette',
-            heroLogo: 'images/perfect-dark-coming-soon.png',
+            heroImage: 'images/mystery-selector.webp',
+            heroAlt: 'Perfect Dark 480i and performance project silhouette',
+            heroLogo: 'images/perfect-dark-coming-soon.webp',
             heroClass: 'is-classified'
         }
     ];
@@ -114,6 +114,7 @@
             const image = document.createElement('img');
             image.src = patch.heroImage;
             image.alt = '';
+            image.decoding = 'async';
             art.append(image);
 
             if (!patch.heroLogo) return;
@@ -122,6 +123,7 @@
             logo.className = 'project-gallery__art-logo';
             logo.src = patch.heroLogo;
             logo.alt = '';
+            logo.decoding = 'async';
             art.append(logo);
         };
 
@@ -148,9 +150,11 @@
             if (patch.external) {
                 action.target = '_blank';
                 action.rel = 'noopener';
+                action.setAttribute('aria-label', `${patch.action}. Opens GitHub in a new tab`);
             } else {
                 action.removeAttribute('target');
                 action.removeAttribute('rel');
+                action.removeAttribute('aria-label');
             }
 
             renderArt(patch);

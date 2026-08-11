@@ -1891,6 +1891,11 @@ img {
 }
 
 @media only screen and (max-width: 520px) {
+    #header {
+        height: clamp(8rem, 38vw, 11.5rem);
+        background-position: center 42%;
+    }
+
     #navbar ul {
         flex-wrap: nowrap;
     }
