@@ -14,6 +14,7 @@
 
 html {
     min-height: 100%;
+    color-scheme: dark;
 }
 
 body {
@@ -46,6 +47,8 @@ body {
 #container a {
     color: var(--link);
     font-weight: 800;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgb(255 228 92 / 28%);
 }
 
 #container a:focus-visible {
@@ -1854,7 +1857,7 @@ img {
         flex-wrap: wrap;
     }
     #navbar li {
-        min-width: 25%;
+        min-width: 20%;
     }
     .project-log {
         grid-template-columns: 1fr;
@@ -1882,15 +1885,20 @@ img {
     }
 
     #navbar ul {
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
     #navbar li {
         min-width: 0;
     }
     #navbar li a {
+        min-width: 0;
         padding-right: 0.35rem;
         padding-left: 0.35rem;
-        font-size: 0.78rem;
+        font-size: clamp(0.68rem, 2.1vw, 0.78rem);
+        letter-spacing: 0.03em;
+        line-height: 1.15;
+        overflow-wrap: break-word;
+        text-align: center;
     }
     #rightSidebar {
         grid-template-columns: 1fr;
@@ -1908,6 +1916,7 @@ img {
         grid-template-columns: 1fr;
         gap: 2.25rem;
         padding-top: 1.25rem;
+        overflow: hidden;
     }
     .home-intro::before {
         top: 0.5rem;
@@ -1928,13 +1937,10 @@ img {
         margin-left: 0;
         padding-right: 0;
         padding-left: 0;
+        overflow: hidden;
     }
     .station-watermark {
-        right: -7rem;
-        top: 10rem;
-        width: 23rem;
-        height: 23rem;
-        border-width: 3rem;
+        display: none;
     }
     .coming-soon__header {
         align-items: start;
@@ -2598,5 +2604,781 @@ img {
         padding-right: 0;
         padding-left: 0;
         border-left: 0;
+    }
+}
+
+/* Render Restore: latest-first filings with an external-image handoff */
+.render-restore-page #main-content {
+    padding-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.restore-index-hero,
+.restore-entry-hero {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.78fr);
+    gap: clamp(2rem, 6vw, 4.5rem);
+    align-items: end;
+    min-height: clamp(25rem, 43vw, 34rem);
+    padding: clamp(1.5rem, 4vw, 3rem) 0 clamp(3.25rem, 8vw, 5rem);
+    overflow: clip;
+}
+
+.restore-index-hero::before,
+.restore-entry-hero::before {
+    position: absolute;
+    z-index: 0;
+    top: -1.2rem;
+    left: -1.5rem;
+    color: rgb(153 204 255 / 5%);
+    content: "R";
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: clamp(12rem, 31vw, 20rem);
+    font-weight: 900;
+    letter-spacing: -0.08em;
+    line-height: 0.78;
+    pointer-events: none;
+}
+
+.restore-index-hero__copy,
+.restore-instrument,
+.restore-entry-hero__copy,
+.restore-entry-meta {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-width: 0;
+}
+
+.restore-index-hero__copy,
+.restore-entry-hero__copy {
+    width: 100%;
+    min-width: 0;
+    max-width: 40rem;
+}
+
+.restore-index-hero h1,
+.restore-entry-hero h1 {
+    max-width: 8ch;
+    margin: 0;
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: clamp(3.5rem, 7.6vw, 6.1rem);
+    letter-spacing: -0.055em;
+    line-height: 0.82;
+    text-transform: uppercase;
+}
+
+.restore-hero__lede {
+    max-width: 43ch;
+    margin: 1.3rem 0 0;
+    color: var(--cream);
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    line-height: 1.58;
+}
+
+.restore-hero__rule {
+    display: grid;
+    gap: 0.38rem;
+    max-width: 40rem;
+    margin-top: clamp(1.45rem, 3vw, 2rem);
+    padding: 0.8rem 0 0.9rem;
+    border-top: 1px solid rgb(153 204 255 / 55%);
+    border-bottom: 1px solid rgb(153 204 255 / 38%);
+}
+
+.restore-hero__rule span,
+.restore-instrument__top,
+.restore-instrument__bottom,
+.restore-instrument__label,
+.restore-register__heading,
+.restore-archive__code,
+.restore-entry-meta dt,
+.restore-entry-record__grid dt,
+.restore-contract__grid dt {
+    color: var(--link);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.restore-hero__rule strong {
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.restore-hero__actions,
+.restore-entry-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem clamp(1.25rem, 3vw, 2rem);
+    align-items: center;
+    margin-top: 0.7rem;
+}
+
+.restore-instrument {
+    width: min(100%, 31rem);
+    justify-self: end;
+    background: rgb(0 27 73 / 80%);
+    border-top: 1px solid rgb(255 228 92 / 80%);
+    border-bottom: 1px solid rgb(153 204 255 / 55%);
+    box-shadow: 0.75rem 0.85rem 0.85rem rgb(0 0 0 / 42%);
+    transform: rotate(-1deg);
+}
+
+.restore-instrument__top,
+.restore-instrument__bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    font-variant-numeric: tabular-nums;
+}
+
+.restore-instrument__top {
+    color: var(--signal);
+    border-bottom: 1px solid rgb(153 204 255 / 32%);
+}
+
+.restore-instrument__top strong {
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 1.45rem;
+    line-height: 0.8;
+}
+
+.restore-instrument__body {
+    padding: clamp(1.3rem, 4vw, 2.4rem) clamp(1rem, 3vw, 1.8rem) clamp(1.5rem, 4vw, 2.5rem);
+    background: rgb(0 52 102 / 78%);
+}
+
+.restore-instrument__label {
+    color: var(--live);
+}
+
+.restore-instrument__body h2 {
+    max-width: 8ch;
+    margin: 0.75rem 0 0;
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: clamp(2.25rem, 5vw, 4.2rem);
+    letter-spacing: -0.045em;
+    line-height: 0.86;
+    text-transform: uppercase;
+}
+
+.restore-instrument__body p {
+    margin: 1rem 0 0;
+    color: var(--cream);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.restore-instrument__meter {
+    display: flex;
+    gap: 0.35rem;
+    margin-top: 1.4rem;
+}
+
+.restore-instrument__meter span {
+    display: block;
+    flex: 1 1 0;
+    height: 0.55rem;
+    background: var(--link);
+}
+
+.restore-instrument__meter span:first-child {
+    background: var(--live);
+}
+
+.restore-instrument__meter span:nth-child(2),
+.restore-instrument__meter span:nth-child(3),
+.restore-instrument__meter span:nth-child(4) {
+    background: var(--signal);
+}
+
+.restore-instrument__bottom {
+    color: var(--link);
+}
+
+.restore-section-heading {
+    max-width: 52rem;
+}
+
+.restore-section-heading h2 {
+    max-width: 14ch;
+}
+
+.restore-section-heading > p:last-child {
+    max-width: 60ch;
+}
+
+.restore-latest,
+.restore-archive,
+.restore-contract,
+.restore-set,
+.restore-entry-record {
+    margin-top: clamp(3.75rem, 9vw, 7rem);
+    scroll-margin-top: 1rem;
+}
+
+.restore-filing {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(19rem, 1.1fr);
+    gap: clamp(1.5rem, 5vw, 4rem);
+    margin-top: clamp(1.6rem, 4vw, 2.75rem);
+    padding: clamp(1.25rem, 3vw, 2rem) 0;
+    border-top: 1px solid rgb(153 204 255 / 55%);
+    border-bottom: 1px solid rgb(153 204 255 / 38%);
+}
+
+.restore-filing__copy,
+.restore-filing__register {
+    min-width: 0;
+}
+
+.restore-filing__copy {
+    align-self: center;
+}
+
+.restore-filing__copy h3 {
+    max-width: 13ch;
+    margin: 0;
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    letter-spacing: -0.035em;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+.restore-filing__copy > p:not(.patch-status) {
+    max-width: 57ch;
+    margin: 0.85rem 0 0;
+    color: var(--cream);
+    line-height: 1.55;
+}
+
+.restore-filing__copy .patch-status {
+    margin-bottom: 0.4rem;
+    color: var(--amber);
+}
+
+.restore-filing__copy .restore-entry-links {
+    margin-top: 1.4rem;
+}
+
+.restore-filing__register {
+    padding: 0 0 0.2rem;
+    background: rgb(0 27 73 / 48%);
+}
+
+.restore-register__heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 0.8rem 0.75rem;
+    color: var(--signal);
+    border-bottom: 1px solid rgb(153 204 255 / 32%);
+}
+
+.restore-register {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgb(153 204 255 / 32%);
+}
+
+.restore-register li {
+    display: grid;
+    grid-template-columns: 2.4rem minmax(0, 1fr) auto;
+    gap: 0.8rem;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid rgb(153 204 255 / 22%);
+}
+
+.restore-register__number,
+.restore-panorama-register__number,
+.restore-archive__code {
+    color: var(--amber);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-weight: 900;
+}
+
+.restore-register li strong,
+.restore-panorama-register__copy strong {
+    display: block;
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.restore-register li small,
+.restore-panorama-register__copy small {
+    display: block;
+    margin-top: 0.18rem;
+    color: var(--cream);
+    font-size: 0.76rem;
+    line-height: 1.25;
+}
+
+.restore-register__state,
+.restore-panorama-register__state,
+.restore-archive__state {
+    color: var(--link);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 0.63rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.restore-filing__note {
+    margin: 0.9rem 0.8rem 0;
+    padding-top: 0.75rem;
+    color: var(--link);
+    border-top: 1px solid rgb(153 204 255 / 32%);
+    font-size: 0.8rem;
+    line-height: 1.45;
+}
+
+.restore-filing__note strong {
+    color: var(--signal);
+}
+
+.restore-archive__list {
+    margin-top: clamp(1.6rem, 4vw, 2.75rem);
+    border-top: 1px solid rgb(153 204 255 / 55%);
+}
+
+.restore-archive__row {
+    display: grid;
+    grid-template-columns: minmax(5.5rem, 0.32fr) minmax(0, 1fr) minmax(7rem, 0.4fr) minmax(8.5rem, 0.48fr);
+    gap: clamp(0.7rem, 2vw, 1.5rem);
+    align-items: center;
+    padding: 1rem 0;
+    color: var(--cream);
+    border-bottom: 1px solid rgb(153 204 255 / 38%);
+    text-decoration: none;
+}
+
+.restore-archive__row:hover {
+    background: rgb(0 52 102 / 36%);
+}
+
+.restore-archive__row:focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 0.25rem;
+}
+
+.restore-archive__main {
+    min-width: 0;
+}
+
+.restore-archive__main strong {
+    display: block;
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.restore-archive__main span,
+.restore-archive__row time,
+.restore-archive__row > span:not(.restore-archive__code):not(.restore-archive__main):not(.restore-archive__state) {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--link);
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+.restore-archive__row time {
+    margin-top: 0;
+    color: var(--cream);
+    font-variant-numeric: tabular-nums;
+}
+
+.restore-archive__state--filed {
+    color: var(--live);
+}
+
+.restore-related-record {
+    display: grid;
+    grid-template-columns: minmax(10rem, 0.32fr) minmax(0, 1fr);
+    gap: clamp(0.7rem, 2vw, 1.5rem);
+    align-items: center;
+    max-width: 46rem;
+    margin-top: 1.35rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(153 204 255 / 38%);
+}
+
+.restore-related-record__label {
+    color: var(--link);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.restore-related-record a {
+    text-decoration: none;
+}
+
+.restore-related-record strong {
+    display: block;
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.restore-related-record a span {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--link);
+    font-size: 0.78rem;
+    line-height: 1.35;
+}
+
+.restore-contract__grid,
+.restore-entry-record__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 76rem;
+    margin: clamp(1.6rem, 4vw, 2.75rem) 0 0;
+    padding: 0;
+    border-top: 1px solid rgb(153 204 255 / 55%);
+}
+
+.restore-contract__grid > div,
+.restore-entry-record__grid > div {
+    min-width: 0;
+    padding: 1.15rem clamp(0.8rem, 2.5vw, 1.5rem) 1.25rem 0;
+    border-bottom: 1px solid rgb(153 204 255 / 38%);
+}
+
+.restore-contract__grid dd,
+.restore-entry-record__grid dd {
+    margin: 0.55rem 0 0;
+    color: var(--cream);
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.restore-breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 1rem;
+    color: var(--link);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.restore-breadcrumbs [aria-current="page"] {
+    color: var(--signal);
+}
+
+.restore-entry-hero {
+    min-height: clamp(22rem, 37vw, 30rem);
+    padding-top: clamp(1.5rem, 4vw, 3rem);
+}
+
+.restore-entry-hero h1 {
+    max-width: none;
+    font-size: clamp(3.25rem, 5.2vw, 4.6rem);
+    letter-spacing: -0.065em;
+}
+
+.restore-entry-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgb(153 204 255 / 55%);
+    border-bottom: 1px solid rgb(153 204 255 / 38%);
+    background: rgb(0 27 73 / 55%);
+    box-shadow: 0.65rem 0.7rem 0.65rem rgb(0 0 0 / 35%);
+    transform: rotate(1deg);
+}
+
+.restore-entry-meta > div {
+    min-width: 0;
+    padding: 0.95rem 1rem 1rem;
+    border-bottom: 1px solid rgb(153 204 255 / 22%);
+}
+
+.restore-entry-meta dd {
+    margin: 0.45rem 0 0;
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 900;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+
+.restore-action {
+    display: inline-block;
+    padding: 0.55rem 0.7rem;
+    color: var(--link);
+    border: 1px solid rgb(153 204 255 / 38%);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.restore-action--pending {
+    color: var(--signal);
+    border-color: rgb(255 228 92 / 60%);
+}
+
+.restore-panorama-register {
+    max-width: 76rem;
+    margin: clamp(1.6rem, 4vw, 2.75rem) 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgb(153 204 255 / 55%);
+}
+
+.restore-panorama-register li {
+    display: grid;
+    grid-template-columns: 0.35rem 2.8rem minmax(0, 1fr) auto;
+    gap: clamp(0.7rem, 2vw, 1.2rem);
+    align-items: center;
+    min-height: 4.25rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgb(153 204 255 / 38%);
+}
+
+.restore-panorama-register__signal {
+    display: block;
+    align-self: stretch;
+    min-height: 2.8rem;
+    background: var(--register-color);
+    box-shadow: 0.25rem 0.25rem 0.35rem rgb(0 0 0 / 35%);
+}
+
+.restore-panorama-register__number {
+    font-size: 1.25rem;
+}
+
+.restore-panorama-register__state {
+    color: var(--link);
+}
+
+.restore-panorama-frame {
+    margin: 1.6rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(153 204 255 / 38%);
+}
+
+.restore-panorama-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1280 / 217;
+    object-fit: cover;
+    filter: saturate(0.95) contrast(1.04) drop-shadow(0 0.65rem 0.55rem rgb(0 0 0 / 35%));
+}
+
+.restore-panorama-frame figcaption {
+    margin-top: 0.55rem;
+    color: var(--link);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.restore-pending {
+    max-width: 60rem;
+    margin-top: 1.5rem;
+    padding: 1.1rem 1rem 1.25rem;
+    background: rgb(0 27 73 / 76%);
+    border-top: 1px solid rgb(255 228 92 / 80%);
+    border-bottom: 1px solid rgb(153 204 255 / 45%);
+    box-shadow: 0.65rem 0.7rem 0.65rem rgb(0 0 0 / 35%);
+}
+
+.restore-pending strong {
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 1.2rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.restore-pending p {
+    max-width: 65ch;
+    margin: 0.6rem 0 0;
+    color: var(--cream);
+    line-height: 1.5;
+}
+
+.restore-pending .text-action {
+    display: inline-block;
+    margin-top: 0.7rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .restore-index-hero,
+    .restore-entry-hero {
+        grid-template-columns: 1fr;
+        min-height: 0;
+    }
+
+    .restore-instrument,
+    .restore-entry-meta {
+        width: min(100%, 38rem);
+        justify-self: start;
+    }
+
+    .restore-filing {
+        grid-template-columns: 1fr;
+    }
+
+    .restore-filing__copy {
+        max-width: 44rem;
+    }
+
+    .restore-archive__row {
+        grid-template-columns: 6rem minmax(0, 1fr) auto;
+    }
+
+    .restore-archive__row .restore-archive__state {
+        grid-column: 2 / -1;
+        justify-self: start;
+        text-align: left;
+    }
+
+    .restore-related-record {
+        grid-template-columns: 1fr;
+        gap: 0.45rem;
+    }
+
+    .restore-contract__grid,
+    .restore-entry-record__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .restore-index-hero,
+    .restore-entry-hero {
+        padding-top: 1rem;
+    }
+
+    .restore-index-hero::before,
+    .restore-entry-hero::before {
+        top: -0.8rem;
+        left: -0.55rem;
+    }
+
+    .restore-index-hero h1,
+    .restore-entry-hero h1 {
+        font-size: clamp(2.5rem, 12.5vw, 4.5rem);
+    }
+
+    .restore-entry-hero h1 {
+        max-width: none;
+        letter-spacing: -0.065em;
+    }
+
+    .restore-hero__actions,
+    .restore-entry-hero__actions {
+        display: grid;
+        justify-items: start;
+        gap: 0;
+    }
+
+    .restore-instrument__body h2 {
+        font-size: clamp(2.1rem, 12vw, 3.2rem);
+    }
+
+    .restore-register li {
+        grid-template-columns: 2.2rem minmax(0, 1fr);
+        gap: 0.65rem;
+    }
+
+    .restore-register__state {
+        grid-column: 2;
+        justify-self: start;
+        text-align: left;
+    }
+
+    .restore-archive__row {
+        grid-template-columns: 5rem minmax(0, 1fr);
+        gap: 0.4rem 0.75rem;
+        align-items: start;
+    }
+
+    .restore-archive__row time,
+    .restore-archive__row .restore-archive__state,
+    .restore-archive__row > span:not(.restore-archive__code):not(.restore-archive__main):not(.restore-archive__state) {
+        grid-column: 2;
+        justify-self: start;
+        text-align: left;
+    }
+
+    .restore-related-record {
+        grid-template-columns: 1fr;
+    }
+
+    .restore-entry-meta,
+    .restore-contract__grid,
+    .restore-entry-record__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restore-entry-meta > div {
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+    }
+
+    .restore-panorama-register li {
+        grid-template-columns: 0.35rem 2.25rem minmax(0, 1fr);
+        gap: 0.65rem;
+    }
+
+    .restore-panorama-register__state {
+        grid-column: 3;
+        justify-self: start;
+        text-align: left;
+    }
+
+    .restore-contract__grid > div,
+    .restore-entry-record__grid > div {
+        padding-right: 0;
     }
 }
