@@ -45,18 +45,18 @@
             heroClass: 'is-dkr'
         },
         {
-            key: 'classified',
-            status: 'In development \u00b7 Signal locked',
-            signal: 'ENCRYPTED SIGNAL \u00b7 PERFECT DARK',
+            key: 'pd',
+            status: 'Released \u00b7 September 2026',
+            signal: 'ON AIR \u00b7 PD6480iPerf',
             title: 'Perfect Dark: 480i + Performance Patch',
-            description: 'A combined 480i and performance patch remains under wraps. Release details and downloads will transmit when the signal clears.',
-            action: 'Review the project timeline',
-            href: 'patches#perfect-dark',
-            external: false,
-            heroImage: 'images/mystery-selector.webp',
-            heroAlt: 'Perfect Dark 480i and performance project silhouette',
-            heroLogo: 'images/perfect-dark-coming-soon.webp',
-            heroClass: 'is-classified'
+            description: 'A public 480i and performance patch for Perfect Dark. Open the project page for the release and technical details.',
+            action: 'Open patch on GitHub',
+            href: 'https://github.com/Cyiatic/PD6480iperf',
+            external: true,
+            heroImage: 'images/perfect-dark-selector-cover.webp?v=20260915-pd-release',
+            heroAlt: 'Perfect Dark Nintendo 64 cover artwork',
+            heroLogo: null,
+            heroClass: 'is-pd'
         }
     ];
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Browse CyStation's released and in-development 480i projects through an interactive project gallery.">
     <title>CyStation &middot; 480i Projects</title>
-    <link rel="stylesheet" href="style.css?v=20260802-mural">
+    <link rel="stylesheet" href="style.css?v=20260915-pd-release">
     <link rel="icon" href="images/goldballoon.webp" type="image/webp">
 </head>
 <body class="patches-page">
@@ -39,21 +39,20 @@
                         <p>Choose a project card below, or use the arrows and keyboard to tune the feature display.</p>
                     </header>
 
-                    <div class="project-gallery" id="project-selector" data-project-gallery>
-                        <article class="project-gallery__frame" id="project-selector-panel" data-gallery-panel tabindex="0" role="tabpanel" aria-label="Selected project: Tomorrow Never Dies 6480i Patch. Use left and right arrow keys to change selection.">
-                            <div class="project-gallery__art is-tnd" data-gallery-art aria-hidden="true">
-                                <img src="images/tnd-bond-selector-full.webp" width="720" height="420" decoding="async" alt="">
-                                <img class="project-gallery__art-logo" src="images/tnd6480i-logo.webp?v=20260723-cover" width="420" height="120" decoding="async" alt="">
+                    <div class="project-gallery" id="project-selector" data-project-gallery data-initial-index="3">
+                        <article class="project-gallery__frame" id="project-selector-panel" data-gallery-panel tabindex="0" role="tabpanel" aria-label="Selected project: Perfect Dark: 480i + Performance Patch. Use left and right arrow keys to change selection.">
+                            <div class="project-gallery__art is-pd" data-gallery-art aria-hidden="true">
+                                <img src="images/perfect-dark-selector-cover.webp?v=20260915-pd-release" width="959" height="667" decoding="async" alt="">
                             </div>
                             <div class="project-gallery__copy">
                                 <div class="project-gallery__readout">
-                                    <p class="project-gallery__counter" data-gallery-counter>01 / 04</p>
-                                    <p class="project-gallery__signal" data-gallery-signal aria-live="polite">ON AIR &middot; TND6480i</p>
+                                    <p class="project-gallery__counter" data-gallery-counter>04 / 04</p>
+                                    <p class="project-gallery__signal" data-gallery-signal aria-live="polite">ON AIR &middot; PD6480iPerf</p>
                                 </div>
-                                <p class="patch-status" data-gallery-status>Released &middot; July 2026</p>
-                                <h3 data-gallery-title>Tomorrow Never Dies 6480i Patch</h3>
-                                <p data-gallery-description>A released 480i patch for Tomorrow Never Dies. Open the project page for the release and technical details.</p>
-                                <a class="patch-action" data-gallery-action href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">&nearr;</span></a>
+                                <p class="patch-status" data-gallery-status>Released &middot; September 2026</p>
+                                <h3 data-gallery-title>Perfect Dark: 480i + Performance Patch</h3>
+                                <p data-gallery-description>A public 480i and performance patch for Perfect Dark. Open the project page for the release and technical details.</p>
+                                <a class="patch-action" data-gallery-action href="https://github.com/Cyiatic/PD6480iperf" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">&nearr;</span></a>
                             </div>
                             <div class="project-gallery__controls" aria-label="Project gallery controls">
                                 <button class="project-gallery__control" type="button" data-gallery-previous aria-label="Previous project"><span aria-hidden="true">&larr;</span></button>
@@ -62,9 +61,9 @@
                         </article>
 
                         <div class="project-gallery__thumbs" role="tablist" aria-label="Available projects">
-                            <button class="project-thumb project-thumb--cover project-thumb--tnd is-selected" id="project-selector-tab-0" type="button" role="tab" data-patch-index="0" aria-selected="true" aria-controls="project-selector-panel">
+                            <button class="project-thumb project-thumb--cover project-thumb--tnd" id="project-selector-tab-0" type="button" role="tab" data-patch-index="0" aria-selected="false" aria-controls="project-selector-panel" tabindex="-1">
                                 <span class="project-thumb__art" aria-hidden="true"><img src="images/tnd6480i-selector-cover.webp?v=20260726-selector-art-v4" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">TND6480i</span><span class="project-thumb__indicator" aria-hidden="true">ON AIR</span>
+                                <span class="project-thumb__label">TND6480i</span><span class="project-thumb__indicator" aria-hidden="true">RELEASED</span>
                             </button>
                             <button class="project-thumb project-thumb--cover project-thumb--cbfd" id="project-selector-tab-1" type="button" role="tab" data-patch-index="1" aria-selected="false" aria-controls="project-selector-panel" tabindex="-1">
                                 <span class="project-thumb__art" aria-hidden="true"><img src="images/cbfd480i-selector-cover.webp?v=20260726-selector-art-v4" loading="lazy" decoding="async" alt=""></span>
@@ -74,9 +73,9 @@
                                 <span class="project-thumb__art" aria-hidden="true"><img src="images/dkr480i-selector-classified.webp?v=20260729-coming-soon-spine" loading="lazy" decoding="async" alt=""></span>
                                 <span class="project-thumb__label">DKR480i</span><span class="project-thumb__indicator" aria-hidden="true">LOCKED</span>
                             </button>
-                            <button class="project-thumb project-thumb--cover project-thumb--classified project-thumb--locked" id="project-selector-tab-3" type="button" role="tab" data-patch-index="3" aria-selected="false" aria-controls="project-selector-panel" tabindex="-1" aria-label="Perfect Dark 480i and performance project, signal locked">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/perfect-dark-selector-classified.webp?v=20260729-coming-soon-spine" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">Perfect Dark</span><span class="project-thumb__indicator" aria-hidden="true">LOCKED</span>
+                            <button class="project-thumb project-thumb--cover project-thumb--pd is-selected" id="project-selector-tab-3" type="button" role="tab" data-patch-index="3" aria-selected="true" aria-controls="project-selector-panel" tabindex="0" aria-label="Perfect Dark 480i and performance patch, public release">
+                                <span class="project-thumb__art" aria-hidden="true"><img src="images/perfect-dark-selector-cover.webp?v=20260915-pd-release" loading="lazy" decoding="async" alt=""></span>
+                                <span class="project-thumb__label">PD6480iPerf</span><span class="project-thumb__indicator" aria-hidden="true">ON AIR</span>
                             </button>
                         </div>
                     </div>
@@ -88,7 +87,7 @@
                             <p class="select-prompt">NEXT IN QUEUE</p>
                             <h2 id="coming-soon-heading">Coming soon</h2>
                         </div>
-                        <p class="coming-soon__count">03 PROJECTS QUEUED</p>
+                        <p class="coming-soon__count">02 PROJECTS QUEUED</p>
                     </header>
 
                     <article class="coming-soon__entry">
@@ -119,19 +118,6 @@
                         <button class="tune-action" type="button" data-gallery-target="project-selector" data-select-patch="2">Bring into focus <span aria-hidden="true">&uarr;</span></button>
                     </article>
 
-                    <article class="coming-soon__entry" id="perfect-dark">
-                        <span class="coming-soon__index" aria-hidden="true">03</span>
-                        <div class="coming-soon__body">
-                            <p class="patch-status">In development &middot; Signal locked</p>
-                            <h3>Perfect Dark: 480i + Performance Patch</h3>
-                            <p>A combined 480i and performance patch remains under wraps. Release details and downloads will transmit when the signal clears.</p>
-                        </div>
-                        <p class="coming-soon__availability">
-                            <strong>Signal locked</strong>
-                            <span>No release files yet</span>
-                        </p>
-                        <button class="tune-action" type="button" data-gallery-target="project-selector" data-select-patch="3">Bring into focus <span aria-hidden="true">&uarr;</span></button>
-                    </article>
                 </section>
 
                 <section class="station-routes" aria-labelledby="project-routes-heading">
@@ -178,6 +164,6 @@
 
         <footer id="footer">CyStation 2026 &middot; Signal maintained by Cyiatic</footer>
     </div>
-    <script src="patch-select.js?v=20260726-classified-gallery"></script>
+    <script src="patch-select.js?v=20260915-pd-release"></script>
 </body>
 </html>

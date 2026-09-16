@@ -24,8 +24,8 @@ The site is a static HTML, CSS, and JavaScript project published to Neocities an
 
 ## Capabilities and Constraints
 
-- The compact home gallery and dedicated `/patches` gallery cover TND6480i, CBFD480i, DKR480i, and a classified future signal.
-- TND6480i is released; CBFD480i and DKR480i have no public build or repository yet.
+- The compact home gallery and dedicated `/patches` gallery cover TND6480i, CBFD480i, DKR480i, and PD6480iPerf.
+- TND6480i and PD6480iPerf are released; CBFD480i and DKR480i have no public build or repository yet.
 - The homepage introduces CyStation and announces the latest release before presenting the project gallery.
 - The experience must remain functional with keyboard navigation, responsive layouts, and reduced-motion preferences.
 - The page must stay lightweight enough for static Neocities hosting and use no framework dependency.

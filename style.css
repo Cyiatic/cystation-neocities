@@ -1495,24 +1495,20 @@ img {
     transform: translateY(1%);
 }
 
-.project-gallery__art.is-dkr > img:first-child,
-.project-gallery__art.is-classified > img:first-child {
+.project-gallery__art.is-dkr > img:first-child {
     width: min(110%, 31rem);
     filter: brightness(0) drop-shadow(0 1.3rem 0.95rem rgb(0 0 0 / 42%));
+}
+
+.project-gallery__art.is-pd > img:first-child {
+    width: min(100%, 31rem);
+    filter: saturate(0.88) drop-shadow(0 1.3rem 0.95rem rgb(0 0 0 / 34%));
 }
 
 .project-gallery__art.is-dkr .project-gallery__art-logo {
     z-index: 2;
     top: 1%;
     width: min(76%, 19rem);
-}
-
-.project-gallery__art.is-classified .project-gallery__art-logo {
-    z-index: 2;
-    top: 6%;
-    width: min(92%, 24rem);
-    max-height: none;
-    transform: translateX(-50%) scaleY(1.55);
 }
 
 .project-gallery__copy {
@@ -1631,7 +1627,7 @@ img {
 .project-thumb--tnd { --project-signal: var(--amber); }
 .project-thumb--cbfd { --project-signal: #ff9a50; }
 .project-thumb--dkr { --project-signal: #bea7ff; }
-.project-thumb--classified { --project-signal: #bea7ff; }
+.project-thumb--pd { --project-signal: #8fc7ff; }
 
 .project-thumb__art {
     position: relative;
@@ -1680,23 +1676,13 @@ img {
     height: 100%;
 }
 
-.project-thumb--dkr .project-thumb__art > img:first-child,
-.project-thumb--classified .project-thumb__art > img:first-child {
+.project-thumb--dkr .project-thumb__art > img:first-child {
     width: 108%;
     filter: brightness(0) saturate(0.6) drop-shadow(0 0.55rem 0.42rem rgb(0 0 0 / 36%));
 }
 
-.project-thumb--dkr .project-thumb__logo,
-.project-thumb--classified .project-thumb__logo {
+.project-thumb--dkr .project-thumb__logo {
     width: 76%;
-}
-
-.project-thumb--classified .project-thumb__logo {
-    z-index: 1;
-    top: 0.7rem;
-    width: 94%;
-    max-height: none;
-    transform: translateX(-50%) scaleY(1.45);
 }
 
 .project-thumb--cover .project-thumb__art > img:first-child {
@@ -1765,8 +1751,7 @@ img {
     filter: saturate(1) brightness(1) drop-shadow(0 0.65rem 0.5rem rgb(0 0 0 / 36%));
 }
 
-.project-thumb--dkr.is-selected:not(.project-thumb--cover) .project-thumb__art > img:first-child,
-.project-thumb--classified.is-selected:not(.project-thumb--cover) .project-thumb__art > img:first-child {
+.project-thumb--dkr.is-selected:not(.project-thumb--cover) .project-thumb__art > img:first-child {
     filter: brightness(0) saturate(0.6) drop-shadow(0 0.65rem 0.5rem rgb(0 0 0 / 42%));
 }
 

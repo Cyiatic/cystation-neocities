@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CyStation is Cyiatic's home for 480i patches, Rareware preservation work, project releases, and recovered game material.">
     <title>CyStation &middot; Rareware Patches &amp; Preservation</title>
-    <link rel="stylesheet" href="style.css?v=20260802-mural">
+    <link rel="stylesheet" href="style.css?v=20260915-pd-release">
     <link rel="icon" href="images/goldballoon.webp" type="image/webp">
 </head>
 <body class="home-page">
@@ -13,7 +13,7 @@
     THESIS: CyStation is a Rarewhere station front desk first and a project switchboard second.
     OWN-WORLD: Deep blue space, authentic character cutouts, gold project marks, cream copy, and illuminated circular controls.
     STORY: Visitors meet CyStation, see the newest release, browse a compact project gallery, and choose a deeper route.
-    FIRST VIEWPORT: CyStation's identity and the latest TND6480i transmission lead; the gallery follows as a featured section.
+    FIRST VIEWPORT: CyStation's identity and the latest PD6480iPerf transmission lead; the gallery follows as a featured section.
     FORM: Editorial station home with one horizontal project shelf: a broadcast viewport above a signal-marked thumbnail rail.
     -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -46,10 +46,10 @@
 
                     <article class="latest-release" aria-labelledby="latest-release-heading">
                         <div class="latest-release__body">
-                            <p class="patch-status">New release &middot; July 2026</p>
+                            <p class="patch-status">New release &middot; September 2026</p>
                             <h2 id="latest-release-heading">Latest transmission</h2>
-                            <p>Tomorrow Never Dies 6480i is live, with the release and technical details ready on GitHub.</p>
-                            <a class="patch-action" href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open TND6480i <span aria-hidden="true">&nearr;</span></a>
+                            <p>PD6480iPerf is live, bringing a public 480i and performance patch to Perfect Dark with the release and technical details ready on GitHub.</p>
+                            <a class="patch-action" href="https://github.com/Cyiatic/PD6480iperf" target="_blank" rel="noopener">Open PD6480iPerf <span aria-hidden="true">&nearr;</span></a>
                         </div>
                     </article>
                 </div>
@@ -63,21 +63,20 @@
                         <a class="text-action" href="patches">Open 480i Projects <span aria-hidden="true">&rarr;</span></a>
                     </header>
 
-                    <div class="project-gallery project-gallery--compact" id="home-project-selector" data-project-gallery>
-                        <article class="project-gallery__frame" id="home-project-panel" data-gallery-panel tabindex="0" role="tabpanel" aria-label="Selected project: Tomorrow Never Dies 6480i Patch. Use left and right arrow keys to change selection.">
-                            <div class="project-gallery__art is-tnd" data-gallery-art aria-hidden="true">
-                                <img src="images/tnd-bond-selector-full.webp" width="720" height="420" decoding="async" alt="">
-                                <img class="project-gallery__art-logo" src="images/tnd6480i-logo.webp?v=20260723-cover" width="420" height="120" decoding="async" alt="">
+                    <div class="project-gallery project-gallery--compact" id="home-project-selector" data-project-gallery data-initial-index="3">
+                        <article class="project-gallery__frame" id="home-project-panel" data-gallery-panel tabindex="0" role="tabpanel" aria-label="Selected project: Perfect Dark: 480i + Performance Patch. Use left and right arrow keys to change selection.">
+                            <div class="project-gallery__art is-pd" data-gallery-art aria-hidden="true">
+                                <img src="images/perfect-dark-selector-cover.webp?v=20260915-pd-release" width="959" height="667" decoding="async" alt="">
                             </div>
                             <div class="project-gallery__copy">
                                 <div class="project-gallery__readout">
-                                    <p class="project-gallery__counter" data-gallery-counter>01 / 04</p>
-                                    <p class="project-gallery__signal" data-gallery-signal aria-live="polite">ON AIR &middot; TND6480i</p>
+                                    <p class="project-gallery__counter" data-gallery-counter>04 / 04</p>
+                                    <p class="project-gallery__signal" data-gallery-signal aria-live="polite">ON AIR &middot; PD6480iPerf</p>
                                 </div>
-                                <p class="patch-status" data-gallery-status>Released &middot; July 2026</p>
-                                <h3 data-gallery-title>Tomorrow Never Dies 6480i Patch</h3>
-                                <p data-gallery-description>A released 480i patch for Tomorrow Never Dies. Open the project page for the release and technical details.</p>
-                                <a class="patch-action" data-gallery-action href="https://github.com/Cyiatic/TND6480i" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">&nearr;</span></a>
+                                <p class="patch-status" data-gallery-status>Released &middot; September 2026</p>
+                                <h3 data-gallery-title>Perfect Dark: 480i + Performance Patch</h3>
+                                <p data-gallery-description>A public 480i and performance patch for Perfect Dark. Open the project page for the release and technical details.</p>
+                                <a class="patch-action" data-gallery-action href="https://github.com/Cyiatic/PD6480iperf" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">&nearr;</span></a>
                             </div>
                             <div class="project-gallery__controls" aria-label="Project gallery controls">
                                 <button class="project-gallery__control" type="button" data-gallery-previous aria-label="Previous project"><span aria-hidden="true">&larr;</span></button>
@@ -86,9 +85,9 @@
                         </article>
 
                         <div class="project-gallery__thumbs" role="tablist" aria-label="Available projects">
-                            <button class="project-thumb project-thumb--cover project-thumb--tnd is-selected" id="home-project-tab-0" type="button" role="tab" data-patch-index="0" aria-selected="true" aria-controls="home-project-panel">
+                            <button class="project-thumb project-thumb--cover project-thumb--tnd" id="home-project-tab-0" type="button" role="tab" data-patch-index="0" aria-selected="false" aria-controls="home-project-panel" tabindex="-1">
                                 <span class="project-thumb__art" aria-hidden="true"><img src="images/tnd6480i-selector-cover.webp?v=20260726-selector-art-v4" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">TND6480i</span><span class="project-thumb__indicator" aria-hidden="true">ON AIR</span>
+                                <span class="project-thumb__label">TND6480i</span><span class="project-thumb__indicator" aria-hidden="true">RELEASED</span>
                             </button>
                             <button class="project-thumb project-thumb--cover project-thumb--cbfd" id="home-project-tab-1" type="button" role="tab" data-patch-index="1" aria-selected="false" aria-controls="home-project-panel" tabindex="-1">
                                 <span class="project-thumb__art" aria-hidden="true"><img src="images/cbfd480i-selector-cover.webp?v=20260726-selector-art-v4" loading="lazy" decoding="async" alt=""></span>
@@ -98,9 +97,9 @@
                                 <span class="project-thumb__art" aria-hidden="true"><img src="images/dkr480i-selector-classified.webp?v=20260729-coming-soon-spine" loading="lazy" decoding="async" alt=""></span>
                                 <span class="project-thumb__label">DKR480i</span><span class="project-thumb__indicator" aria-hidden="true">LOCKED</span>
                             </button>
-                            <button class="project-thumb project-thumb--cover project-thumb--classified project-thumb--locked" id="home-project-tab-3" type="button" role="tab" data-patch-index="3" aria-selected="false" aria-controls="home-project-panel" tabindex="-1" aria-label="Perfect Dark 480i and performance project, signal locked">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/perfect-dark-selector-classified.webp?v=20260729-coming-soon-spine" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">Perfect Dark</span><span class="project-thumb__indicator" aria-hidden="true">LOCKED</span>
+                            <button class="project-thumb project-thumb--cover project-thumb--pd is-selected" id="home-project-tab-3" type="button" role="tab" data-patch-index="3" aria-selected="true" aria-controls="home-project-panel" tabindex="0" aria-label="Perfect Dark 480i and performance patch, public release">
+                                <span class="project-thumb__art" aria-hidden="true"><img src="images/perfect-dark-selector-cover.webp?v=20260915-pd-release" loading="lazy" decoding="async" alt=""></span>
+                                <span class="project-thumb__label">PD6480iPerf</span><span class="project-thumb__indicator" aria-hidden="true">ON AIR</span>
                             </button>
                         </div>
                     </div>
@@ -152,6 +151,6 @@
 
         <footer id="footer">CyStation 2026 &middot; Signal maintained by Cyiatic</footer>
     </div>
-    <script src="patch-select.js?v=20260726-classified-gallery"></script>
+    <script src="patch-select.js?v=20260915-pd-release"></script>
 </body>
 </html>
