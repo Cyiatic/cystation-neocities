@@ -251,6 +251,17 @@ h2 img.year-sprite {
     margin: 0 0 14px;
 }
 
+.year-label {
+    display: inline-block;
+    color: var(--amber);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-shadow: 2px 2px 0 var(--content), 3px 3px 0 rgb(0 0 0 / 45%);
+}
+
 .project-log {
     display: grid;
     grid-template-columns: 8.5rem minmax(0, 1fr);
@@ -3011,8 +3022,25 @@ img {
 
 .restore-archive__row time {
     margin-top: 0;
-    color: var(--cream);
+    color: var(--link);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
     font-variant-numeric: tabular-nums;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.restore-archive__row time span {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--cream);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.35;
+    text-transform: none;
 }
 
 .restore-archive__state--filed {
@@ -3161,6 +3189,11 @@ img {
     border-color: rgb(255 228 92 / 60%);
 }
 
+.restore-action--filed {
+    color: var(--live);
+    border-color: rgb(51 255 51 / 60%);
+}
+
 .restore-panorama-register {
     max-width: 76rem;
     margin: clamp(1.6rem, 4vw, 2.75rem) 0 0;
@@ -3219,6 +3252,165 @@ img {
     letter-spacing: 0.1em;
     line-height: 1.2;
     text-transform: uppercase;
+}
+
+.restore-composite {
+    margin-top: clamp(3.75rem, 9vw, 7rem);
+    scroll-margin-top: 1rem;
+}
+
+.restore-composite-frame {
+    max-width: 58rem;
+    margin: clamp(1.6rem, 4vw, 2.75rem) 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgb(153 204 255 / 38%);
+}
+
+.restore-composite-frame a {
+    display: block;
+}
+
+.restore-composite-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: saturate(0.98) contrast(1.03) drop-shadow(0 0.75rem 0.65rem rgb(0 0 0 / 42%));
+}
+
+.restore-composite-frame figcaption {
+    margin-top: 0.55rem;
+    color: var(--link);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.restore-entry-record__lede {
+    max-width: 68ch;
+    margin: clamp(1.6rem, 4vw, 2.75rem) 0 0;
+    color: var(--cream);
+    line-height: 1.55;
+}
+
+.restore-entry-record__grid dd a {
+    color: var(--signal);
+}
+
+.restore-research {
+    margin-top: clamp(3.75rem, 9vw, 7rem);
+    scroll-margin-top: 1rem;
+}
+
+.restore-research__table-wrap {
+    max-width: 76rem;
+    margin-top: clamp(1.6rem, 4vw, 2.75rem);
+    overflow-x: auto;
+    border-top: 1px solid rgb(153 204 255 / 55%);
+    border-bottom: 1px solid rgb(153 204 255 / 38%);
+    background: rgb(0 27 73 / 42%);
+    box-shadow: 0.65rem 0.7rem 0.65rem rgb(0 0 0 / 28%);
+    -webkit-overflow-scrolling: touch;
+}
+
+.restore-research__table-wrap:focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 0.25rem;
+}
+
+.restore-research__table {
+    width: 100%;
+    min-width: 58rem;
+    border-collapse: collapse;
+    color: var(--cream);
+    font-size: 0.84rem;
+    line-height: 1.45;
+    text-align: left;
+}
+
+.restore-research__table caption {
+    padding: 0.8rem 0.9rem;
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.restore-research__table th,
+.restore-research__table td {
+    padding: 0.85rem 0.9rem;
+    vertical-align: top;
+    border-top: 1px solid rgb(153 204 255 / 25%);
+}
+
+.restore-research__table thead th {
+    color: var(--link);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.restore-research__table thead th:first-child {
+    width: 19%;
+}
+
+.restore-research__table thead th:nth-child(2) {
+    width: 22%;
+}
+
+.restore-research__table tbody th {
+    color: var(--signal);
+    font-family: "Arial Narrow", "Helvetica Neue Condensed", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.restore-research__table tbody th code,
+.restore-research__table td code,
+.restore-research__source-note code {
+    color: var(--signal);
+    font-family: "Cascadia Mono", Consolas, monospace;
+    font-size: 0.86em;
+}
+
+.restore-research__table tbody th small {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--link);
+    font-family: "Cascadia Mono", Consolas, monospace;
+    font-size: 0.66rem;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.restore-research__table tbody tr:nth-child(even) {
+    background: rgb(0 52 102 / 24%);
+}
+
+.restore-research__table tbody td {
+    color: var(--cream);
+}
+
+.restore-research__source-note {
+    max-width: 74ch;
+    margin: 1rem 0 0;
+    color: var(--link);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.restore-research__source-note a {
+    color: var(--signal);
 }
 
 .restore-pending {
