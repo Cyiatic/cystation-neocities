@@ -3228,10 +3228,21 @@ img {
     color: var(--link);
 }
 
+.restore-panorama-gallery {
+    display: grid;
+    gap: 1.6rem;
+    max-width: 76rem;
+    margin-top: 1.5rem;
+}
+
 .restore-panorama-frame {
     margin: 1.6rem 0 0;
     padding-top: 1rem;
     border-top: 1px solid rgb(153 204 255 / 38%);
+}
+
+.restore-panorama-gallery .restore-panorama-frame {
+    margin-top: 0;
 }
 
 .restore-panorama-frame img {
@@ -3429,6 +3440,14 @@ img {
     font-size: 1.2rem;
     line-height: 1;
     text-transform: uppercase;
+}
+
+.restore-pending--filed {
+    border-top-color: rgb(51 255 51 / 80%);
+}
+
+.restore-pending--filed strong {
+    color: var(--live);
 }
 
 .restore-pending p {
