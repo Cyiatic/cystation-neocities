@@ -57,6 +57,21 @@
             heroAlt: 'Perfect Dark Nintendo 64 cover artwork',
             heroLogo: null,
             heroClass: 'is-pd'
+        },
+        {
+            key: 'ys',
+            status: 'In development \u00b7 No public build',
+            signal: 'NEXT SIGNAL \u00b7 YS6480i',
+            title: "Yoshi's Story 6480i Patch",
+            description: "Yoshi's Story 6480i is on the bench. Public project details, releases, and downloads are not available yet.",
+            action: 'View project status',
+            href: 'patches#ys6480i',
+            external: false,
+            hash: '#ys6480i',
+            heroImage: 'images/ys6480i-logo.webp?v=20260929-ys-motifs',
+            heroAlt: "Yoshi's Story 6480i project logo",
+            heroLogo: null,
+            heroClass: 'is-ys'
         }
     ];
 

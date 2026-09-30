@@ -1519,6 +1519,17 @@ img {
     filter: saturate(0.88) drop-shadow(0 1.3rem 0.95rem rgb(0 0 0 / 34%));
 }
 
+.project-gallery__art.is-ys {
+    align-items: center;
+    background: radial-gradient(circle at 38% 40%, rgb(51 255 51 / 12%), transparent 56%), #001b49;
+}
+
+.project-gallery__art.is-ys > img:first-child {
+    width: min(100%, 33rem);
+    max-height: 88%;
+    object-position: center;
+}
+
 .project-gallery__art.is-dkr .project-gallery__art-logo {
     z-index: 2;
     top: 1%;
@@ -1619,7 +1630,7 @@ img {
 
 .project-gallery__thumbs {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: clamp(0.45rem, 1.3vw, 0.8rem);
 }
 
@@ -1642,6 +1653,7 @@ img {
 .project-thumb--cbfd { --project-signal: #ff9a50; }
 .project-thumb--dkr { --project-signal: #bea7ff; }
 .project-thumb--pd { --project-signal: #8fc7ff; }
+.project-thumb--ys { --project-signal: #9be66c; }
 
 .project-thumb__art {
     position: relative;
@@ -1697,6 +1709,16 @@ img {
 
 .project-thumb--dkr .project-thumb__logo {
     width: 76%;
+}
+
+.project-thumb--ys .project-thumb__art {
+    align-items: center;
+}
+
+.project-thumb--ys .project-thumb__art > img:first-child {
+    width: 100%;
+    height: auto;
+    max-height: 76%;
 }
 
 .project-thumb--cover .project-thumb__art > img:first-child {
@@ -2465,6 +2487,11 @@ img {
 
 .why-project--pd > img {
     width: min(100%, 14rem);
+    max-height: none;
+}
+
+.why-project--ys > img {
+    width: min(100%, 15rem);
     max-height: none;
 }
 
