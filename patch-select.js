@@ -68,7 +68,7 @@
             href: 'patches#ys6480i',
             external: false,
             hash: '#ys6480i',
-            heroImage: 'images/ys6480i-logo.webp?v=20260929-ys-motifs',
+            heroImage: 'images/ys6480i-logo.webp?v=20260929-ys-logo2',
             heroAlt: "Yoshi's Story 6480i project logo",
             heroLogo: null,
             heroClass: 'is-ys'

@@ -1711,16 +1711,6 @@ img {
     width: 76%;
 }
 
-.project-thumb--ys .project-thumb__art {
-    align-items: center;
-}
-
-.project-thumb--ys .project-thumb__art > img:first-child {
-    width: 100%;
-    height: auto;
-    max-height: 76%;
-}
-
 .project-thumb--cover .project-thumb__art > img:first-child {
     width: 100%;
     height: 100%;
