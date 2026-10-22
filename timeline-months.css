@@ -1,0 +1,24 @@
+/* Banjo dialogue lettering with baked N64-style 3-point bilinear filtering. */
+.project-log {
+    grid-template-columns: 10.5rem minmax(0, 1fr);
+}
+
+.project-log .month-heading {
+    display: flex;
+    align-items: center;
+    min-height: 1.65rem;
+}
+
+.month-sprite {
+    display: block;
+    width: auto;
+    /* Transparent padding retains the filtered edge at the original text size. */
+    height: 1.375rem;
+    margin: -0.125rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .project-log {
+        grid-template-columns: 1fr;
+    }
+}
