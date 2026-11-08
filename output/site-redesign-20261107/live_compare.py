@@ -3,6 +3,7 @@ Classifies each package file as new / changed / unchanged, and lists live files 
 Run from the repo root:  python output/site-redesign-20261107/live_compare.py"""
 import hashlib, json, re
 from concurrent.futures import ThreadPoolExecutor
+from datetime import date
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit, unquote
@@ -48,7 +49,8 @@ def main():
 
     # Game folders that are not live at all are new wholesale.
     live_dirs = {d: fetch(f'{LIVE}/{d}/', 'HEAD')[0] for d in GAME_DIRS}
-    absent = {d for d, s in live_dirs.items() if s == 404}
+    # Only a folder with its own index page can be judged absent from one request (patch-menu/ has none).
+    absent = {d for d, s in live_dirs.items() if s == 404 and f'{d}/index.html' in files}
 
     def classify(rel):
         top = rel.split('/')[0]
@@ -101,7 +103,7 @@ def main():
     summary = {}
     for _, state, _ in results:
         summary[state] = summary.get(state, 0) + 1
-    report = {'checked': '2026-11-07', 'liveGameFolders': live_dirs, 'summary': summary,
+    report = {'checked': date.today().isoformat(), 'liveGameFolders': live_dirs, 'summary': summary,
               'files': [{'path': p, 'state': s, 'status': st} for p, s, st in results],
               'liveFilesNoLongerUsed': stale, 'livePagesNotInNewSitemap': old_only_pages}
     (PKG / 'live-compare.json').write_text(json.dumps(report, indent=2), encoding='utf-8')

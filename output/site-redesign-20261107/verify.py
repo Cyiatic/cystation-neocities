@@ -1,12 +1,14 @@
 """Rendered checks for the CyStation redesign (dev tool, not published).
-Run from the repo root with the preview on :8766:  python output/site-redesign-20261107/verify.py"""
-import json, sys
+Run from the repo root with the preview on :8766:  python output/site-redesign-20261107/verify.py
+Set CYSTATION_BASE=https://cystation.neocities.org to run the same checks against the live site."""
+import json, os, sys
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
-BASE = 'http://127.0.0.1:8766'
+BASE = os.environ.get('CYSTATION_BASE', 'http://127.0.0.1:8766').rstrip('/')
+LIVE = not BASE.startswith('http://127.0.0.1')
 OUT = Path(__file__).parent
-SHOTS = OUT / 'shots'
+SHOTS = OUT / ('shots-live' if LIVE else 'shots')
 SHOTS.mkdir(exist_ok=True)
 PAGES = ['/', '/patches', '/why-480i', '/render-restore.html', '/render-restore/conker-skyboxes.html',
          '/render-restore/tools-of-the-trade.html', '/projects', '/navigation', '/aboutme', '/credits',
@@ -26,7 +28,8 @@ PAGE_CHECKS = r'''() => {
     h1: document.querySelectorAll('h1').length,
     duplicateIds: dup,
     overflowX: document.documentElement.scrollWidth - innerWidth,
-    brokenImages: imgs.filter(i => !i.complete || i.naturalWidth === 0).map(i => i.getAttribute('src')),
+    // Lazy images inside a closed <details> only load once it opens.
+    brokenImages: imgs.filter(i => !i.closest('details:not([open])') && (!i.complete || i.naturalWidth === 0)).map(i => i.getAttribute('src')),
     imagesWithoutAlt: imgs.filter(i => !i.hasAttribute('alt')).map(i => i.getAttribute('src')),
     bodyBg: getComputedStyle(document.body).backgroundColor,
     titleFont: document.querySelector('.gilt') ? getComputedStyle(document.querySelector('.gilt')).fontFamily : null,
@@ -58,7 +61,9 @@ def main():
             for path in PAGES:
                 page = ctx.new_page()
                 errors, failed = [], []
-                page.on('console', lambda m: errors.append(m.text) if m.type == 'error' else None)
+                # The 404 test page logs its own expected 404 status; anything else counts.
+                expect_404 = path.startswith('/no-such-page')
+                page.on('console', lambda m, e404=expect_404: errors.append(m.text) if m.type == 'error' and not (e404 and 'status of 404' in m.text) else None)
                 page.on('pageerror', lambda e: errors.append(str(e)))
                 page.on('requestfailed', lambda r: failed.append(r.url))
                 page.on('response', lambda r: failed.append(f'{r.status} {r.url}') if r.url.startswith(BASE) and r.status >= 400 and not r.url.endswith('/no-such-page/deeper') else None)
@@ -156,7 +161,7 @@ def main():
         page.close()
         browser.close()
 
-    (OUT / 'verify.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+    (OUT / ('verify-live.json' if LIVE else 'verify.json')).write_text(json.dumps(report, indent=2), encoding='utf-8')
     print(json.dumps({'problems': report['problems'], 'keyboardHome': report['keyboardHome'][:6],
                       'skipLinkTarget': report['skipLinkTarget'], 'gameReturns': report['gameReturns'],
                       'conkerViewer': report['conkerViewer']}, indent=1, ensure_ascii=False))

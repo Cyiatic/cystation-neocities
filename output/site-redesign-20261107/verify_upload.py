@@ -1,5 +1,6 @@
 """Serve output/neocities-upload-20261107/site/ on its own and drive every page (dev tool, not published).
-Fails on any missing file. Run from the repo root:  python output/site-redesign-20261107/verify_upload.py"""
+Fails on any missing file. Run from the repo root:  python output/site-redesign-20261107/verify_upload.py
+Set CYSTATION_BASE=https://cystation.neocities.org to drive the live site instead (writes live-check.json)."""
 import json, os, subprocess, sys, time
 from pathlib import Path
 from urllib.request import urlopen
@@ -9,7 +10,8 @@ HERE = Path(__file__).parent
 PKG = HERE.parents[0] / 'neocities-upload-20261107'
 SITE = PKG / 'site'
 PORT = 8767
-BASE = f'http://127.0.0.1:{PORT}'
+LIVE_BASE = os.environ.get('CYSTATION_BASE', '').rstrip('/')
+BASE = LIVE_BASE or f'http://127.0.0.1:{PORT}'
 MAIN = ['/', '/patches', '/why-480i', '/render-restore.html', '/render-restore/conker-skyboxes.html#notes',
         '/render-restore/tools-of-the-trade.html', '/projects', '/navigation', '/aboutme', '/credits', '/links',
         '/privacy', '/sitemap.xml', '/robots.txt', '/site.webmanifest', '/no-such-page/deeper']
@@ -21,12 +23,14 @@ GAMES = {'/tnd6480i/': ['', '#menu', '#overview', '#q-branch', '#options'],
 
 
 def main():
-    env = dict(os.environ, CYSTATION_ROOT=str(SITE), PORT=str(PORT))
-    server = subprocess.Popen(['node', str(HERE / 'preview.cjs')], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    server = None
+    if not LIVE_BASE:
+        env = dict(os.environ, CYSTATION_ROOT=str(SITE), PORT=str(PORT))
+        server = subprocess.Popen(['node', str(HERE / 'preview.cjs')], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     try:
         for _ in range(50):
             try:
-                urlopen(BASE + '/', timeout=1); break
+                urlopen(BASE + '/', timeout=5); break
             except Exception:
                 time.sleep(0.2)
         missing, failed, errors, requested = [], [], [], set()
@@ -46,10 +50,14 @@ def main():
                 page.on('pageerror', lambda e: errors.append(f'{label}: {e}'))
 
             for route in MAIN:
+                if route.endswith(('.xml', '.txt', '.webmanifest')):
+                    # Fetched rather than opened: Neocities serves .webmanifest as a download.
+                    resp = ctx.request.get(BASE + route)
+                    requested.add(route)
+                    if resp.status >= 400: missing.append(f'{route}: {resp.status} {route}')
+                    continue
                 page = ctx.new_page(); watch(page, route)
                 page.goto(BASE + route, wait_until='networkidle')
-                if route.endswith('.xml') or route.endswith('.txt') or route.endswith('.webmanifest'):
-                    page.close(); continue
                 h = page.evaluate('document.documentElement.scrollHeight')
                 for y in range(0, h + 800, 500):
                     page.evaluate(f'window.scrollTo(0,{y})'); page.wait_for_timeout(80)
@@ -72,17 +80,18 @@ def main():
         report = {'missingFiles': sorted(set(missing)), 'failedRequests': sorted(set(failed)),
                   'pageErrors': sorted(set(errors)), 'requestedCount': len(requested),
                   'packageFiles': len(files), 'neverRequestedInThisRun': never}
-        (PKG / 'package-check.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
+        (PKG / ('live-check.json' if LIVE_BASE else 'package-check.json')).write_text(json.dumps(report, indent=2), encoding='utf-8')
         print(json.dumps({k: (v if not isinstance(v, list) else (v[:25] if v else [])) for k, v in report.items()
                           if k != 'neverRequestedInThisRun'}, indent=1))
         print('never requested in this run:', len(never), '(e.g. sounds that need specific menu choices)')
         return 1 if (missing or failed) else 0
     finally:
-        server.terminate()
-        try:
-            server.wait(timeout=5)
-        except Exception:
-            server.kill()
+        if server:
+            server.terminate()
+            try:
+                server.wait(timeout=5)
+            except Exception:
+                server.kill()
 
 
 if __name__ == '__main__':
