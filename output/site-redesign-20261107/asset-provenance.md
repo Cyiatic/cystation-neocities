@@ -28,6 +28,8 @@ Every raster below was derived with ImageMagick 7 from an existing CyStation ass
 | `images/site/og-cystation.jpg` | `images/cbfd-conker-rare.png` | 1200x630 composite: render on #000060, CYSTATION set in Arial Black with offset shadow, Georgia Italic subtitle | `3f184d71cf466411` |
 | `images/site/og-pd6480iperf.jpg` | `images/perfect-dark-selector-cover.webp` | 1200x630 composite: box art on #04080D, Arial Black title, Georgia Italic line, CYSTATION mark | `afa27650dc9e37a9` |
 | `images/site/og-tnd6480i.jpg` | `images/tnd-bond-selector-full.webp + images/tnd6480i-logo.webp` | 1200x630 composite on #230000, Georgia Italic line, CYSTATION mark | `6c2de35031fec5c3` |
+| `images/site/fzerox-logo.webp` | `fzerox/assets/aTitleLogoTex.png (original ROM texture, F-Zero/KI job)` | 2x point-filter upscale to 320x130, lossless WebP | `4a510d8e328137b5` |
+| `images/site/kig-title-480.webp` | `killer-instinct-gold/assets/native-scene-poster.webp (title render from the recomp, F-Zero/KI job)` | cropped 800x660 at +240+30, resized to 480px wide, WebP q86 | `cc90567f3109d8c2` |
 
 Fonts: `fonts/limelight-latin.woff2` is the unmodified Latin subset of Limelight (Sorkin Type, SIL OFL 1.1) from fonts.gstatic.com; licence in `fonts/OFL-Limelight.txt`.
 Diagrams: `images/480i-signal-path*.svg` recoloured (#001b49 to #00003c, #003466 to #0b0b78); originals in `before/images/`.

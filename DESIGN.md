@@ -167,10 +167,10 @@ Gilt "Outposts", six 48px googly-eyed icons with italic caps labels (the outboun
 - **Do** keep every page on `#000060` with cream body text and gold links.
 - **Do** announce sections with gilt titles and real renders.
 - **Do** give every informative image meaningful alt text and explicit width/height.
-- **Do** keep TND and PD visually separate: link to them, never wrap them.
+- **Do** keep the native game menus (TND, PD, YS, F-Zero X, KI Gold) visually separate: link to them, never wrap them.
 
 ### Don't:
 - **Don't** use the lighter Microsoft-era blue, grunge tiles or the N64 cast banner as page chrome.
 - **Don't** add eyebrow labels above headings, fake status indicators, carousels or repeated route-card blocks.
-- **Don't** claim downloads or dates for CBFD480i, DKR480i or YS6480i.
+- **Don't** claim downloads or dates for CBFD480i, DKR480i, YS6480i, F0X6480iDD or KIG480i.
 - **Don't** promise audible autoplay on the game pages.

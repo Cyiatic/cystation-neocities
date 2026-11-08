@@ -109,7 +109,8 @@ def main():
         # Native return paths and shortcuts on the protected game pages.
         returns = {}
         for game, sel, expect in [('/tnd6480i/', 'a[data-action="station"]', '/patches#tnd6480i'),
-                                  ('/pd6480iperf/', 'a[href="/patches#pd6480iperf"]', '/patches#pd6480iperf')]:
+                                  ('/pd6480iperf/', 'a[href="/patches#pd6480iperf"]', '/patches#pd6480iperf'),
+                                  ('/ys6480i/', 'a[href="/patches#ys6480i"]', '/patches#ys6480i')]:
             errs = []
             page = ctx.new_page()
             page.on('pageerror', lambda e: errs.append(str(e)))

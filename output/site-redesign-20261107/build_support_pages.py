@@ -99,7 +99,9 @@ PAGES['navigation.html'] = dict(
           <li><a href="tnd6480i/#q-branch">TND6480i downloads &amp; install</a></li>
           <li><a href="patches#cbfd480i">Conker’s Bad Fur Day · CBFD480i</a><span>In development, no public build.</span></li>
           <li><a href="patches#dkr480i">Diddy Kong Racing · DKR480i</a><span>In development, no public build.</span></li>
-          <li><a href="patches#ys6480i">Yoshi’s Story · YS6480i</a><span>In development, no public build.</span></li>
+          <li><a href="ys6480i/">Yoshi’s Story · YS6480i</a><span>The storybook menu: project notes and build status. No public build.</span></li>
+          <li><a href="fzerox/">F-Zero X · F0X6480iDD</a><span>The F-Zero X menu and project notes. No public build.</span></li>
+          <li><a href="killer-instinct-gold/">Killer Instinct Gold · KIG480i</a><span>The Killer Instinct Gold menu and project notes. No public build.</span></li>
           <li><a href="why-480i">Why 480i?</a><span>What a 480i patch changes, in plain language.</span></li>
         </ul>
       </section>

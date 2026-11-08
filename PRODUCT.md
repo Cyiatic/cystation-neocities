@@ -24,8 +24,8 @@ The site is static HTML, CSS, and a little JavaScript, published to Neocities an
 
 ## Capabilities and Constraints
 
-- Released: TND6480i (`/tnd6480i/`, July 2026) and PD6480iPerf (`/pd6480iperf/`, September 2026). In development with no public build: CBFD480i, DKR480i, YS6480i. Never present a download for unreleased work.
-- The TND and PD game menus are the project pages. They keep their own visuals, audio, cursors and viewport-filling layout, never load the main stylesheet, and return through their native Options to `/patches#tnd6480i` and `/patches#pd6480iperf`. Shortcuts `/tnd6480i/#q-branch` and `/pd6480iperf/#editions` open downloads and installation directly. Browsers may block audible autoplay on a fresh visit; never promise otherwise.
+- Released: TND6480i (`/tnd6480i/`, July 2026) and PD6480iPerf (`/pd6480iperf/`, September 2026). In development with no public build: CBFD480i, DKR480i, YS6480i, F0X6480iDD (F-Zero X and its Expansion Kit) and KIG480i (Killer Instinct Gold). Never present a download for unreleased work.
+- Native game menus are the project pages: TND, PD, YS (`/ys6480i/`), F-Zero X (`/fzerox/`) and Killer Instinct Gold (`/killer-instinct-gold/`). They keep their own visuals, audio, cursors and viewport-filling layout and never load the main stylesheet. TND and PD return through their native Options to `/patches#tnd6480i` and `/patches#pd6480iperf`, YS to `/patches#ys6480i`, F-Zero X and KI Gold to `/patches`. Shortcuts `/tnd6480i/#q-branch` and `/pd6480iperf/#editions` open downloads and installation directly. Browsers may block audible autoplay on a fresh visit; never promise otherwise.
 - Patches and Render Restore are separate areas with cross-links (CBFD480i ↔ Conker's Skyboxes; Why 480i? ↔ the N64 New Soft Catalog mark).
 - Conker's Skyboxes opens on its pannable viewer; every source link, caption, ROM identifier and research note stays in the same page.
 - Practice routes are development copies, excluded from the sitemap and robots, and marked noindex.

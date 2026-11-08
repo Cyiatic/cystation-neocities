@@ -440,6 +440,8 @@ h3 { color: var(--white); font: 700 1.125rem/1.3 var(--serif); }
 .bench__item h3 { font-size: 1.2rem; }
 .bench__item p { margin: 0 0 .35rem; }
 .bench__item .meta { margin: .1rem 0 .4rem; }
+.bench__item .acts { margin-top: .2rem; }
+.bench__item .bench__pixel { max-width: 10rem; justify-self: center; }
 
 .guide-link {
   margin: clamp(2.5rem, 6vw, 3.25rem) 0 0;
