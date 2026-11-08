@@ -1,6 +1,6 @@
 # CyStation sitemap and flow
 
-Main bar on every main page: **CyStation (home) · 480i Patches · Render Restore · Timeline**, plus an up-arrow to the parent on sub-pages. Footer on every main page: **Outposts** (GitHub, Internet Archive, Twitter, YouTube, About, Credits), then **Directory · Links · Privacy**.
+Main bar on every main page, identical everywhere: **CyStation (home) · 480i Patches · Render Restore · Timeline**. Pages inside a section show a small `‹ Section` link above their title. Footer on every main page: **Outposts** (GitHub, Internet Archive, Twitter, YouTube, About, Credits), then **Directory · Links · Privacy**.
 
 | Area | Route | Role |
 | --- | --- | --- |
@@ -29,4 +29,4 @@ Publish `patch-menu/` together with `/fzerox/` and `/killer-instinct-gold/`; bot
 
 Machine files: `/sitemap.xml` lists the 17 canonical pages; `/robots.txt` disallows `/practice/` and `/output/`; `/site.webmanifest`, `/favicon.ico`, `/favicon-32.png`, `/apple-touch-icon.png`; Open Graph images in `/images/site/og-*.jpg`.
 
-Not for upload: `output/`, `.agent/`, `.impeccable/`, `.claude/`, `.playwright-cli/`, `practice/`, `scripts/`, `images/source/`, the `*.md` docs, `NULL`. Unreferenced after the redesign (safe to delete; backups kept): `home.css`, `timeline-months.css`, `cursor.css` (its rules now live in `style.css`), `patch-select.js`.
+Not for upload: `output/`, `.agent/`, `.impeccable/`, `.claude/`, `.playwright-cli/`, `practice/`, `scripts/`, `images/source/`, the `*.md` docs, `NULL`. Unreferenced after the redesign (safe to delete; backups kept): `home.css`, `timeline-months.css`, `cursor.css` (its rules now live in `style.css`), `patch-select.js`, and since the 8 November cleanup the Timeline's year sprites (`images/20NN_sprite.png`) and Banjo month lettering (`images/months/`).

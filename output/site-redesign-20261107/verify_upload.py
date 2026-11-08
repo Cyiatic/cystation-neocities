@@ -22,6 +22,14 @@ GAMES = {'/tnd6480i/': ['', '#menu', '#overview', '#q-branch', '#options'],
          '/killer-instinct-gold/': ['', '#options']}
 
 
+def settle(page, ms=8000):
+    """Wait for the network to go quiet, but not forever: looping video keeps streaming."""
+    try:
+        page.wait_for_load_state('networkidle', timeout=ms)
+    except Exception:
+        pass
+
+
 def main():
     server = None
     if not LIVE_BASE:
@@ -66,11 +74,11 @@ def main():
             for game, hashes in GAMES.items():
                 for h in hashes:
                     page = ctx.new_page(); watch(page, game + h)
-                    page.goto(BASE + game + h, wait_until='networkidle')
-                    page.wait_for_timeout(1200)
+                    page.goto(BASE + game + h, wait_until='load', timeout=60000)
+                    settle(page); page.wait_for_timeout(1200)
                     for key in ['ArrowDown', 'ArrowUp', 'Enter', 'Escape', 'ArrowRight']:
                         page.keyboard.press(key); page.wait_for_timeout(250)
-                    page.wait_for_load_state('networkidle'); page.wait_for_timeout(500)
+                    settle(page); page.wait_for_timeout(500)
                     page.close()
             browser.close()
         files = {'/' + p.relative_to(SITE).as_posix() for p in SITE.rglob('*') if p.is_file()}

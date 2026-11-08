@@ -45,7 +45,7 @@ def page(*, file, path, title, description, og_description, body_class, main, ba
   <link rel="apple-touch-icon" href="{b}apple-touch-icon.png">
   <link rel="manifest" href="{b}site.webmanifest">
   <link rel="preload" href="{b}fonts/limelight-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="{b}style.css?v=20261107-rw">
+  <link rel="stylesheet" href="{b}style.css?v=20261108">
   <script src="{b}analytics.js" defer></script>
 </head>
 <body class="{body_class}">
@@ -147,7 +147,6 @@ PAGES['credits.html'] = dict(
     main=f'''    <h1 class="gilt">Credits</h1>
     <div class="prose">
       <p class="lede">Original game artwork and renders by Rare Limited and Nintendo.</p>
-      <p>The timeline month lettering uses the Banjo-Kazooie and Banjo-Tooie dialogue font, ripped by Malek Masoud.</p>
       <p>Section titles are set in Limelight by Sorkin Type, used under the <a href="fonts/OFL-Limelight.txt">SIL Open Font License</a>.</p>
       <p>The look follows Rare’s own Rarewhere site as it stood in 2000. CyStation started out on <a href="https://codepen.io/sadness97/full/XJbLxNj" target="_blank" rel="noopener">Sadgrl’s layout builder{NEW_TAB}</a>.</p>
       <p>Patch credits live with each project: the <a href="pd6480iperf/">Perfect Dark</a> and <a href="tnd6480i/">Tomorrow Never Dies 64</a> pages list the decompilation, mod and music credits.</p>

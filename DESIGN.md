@@ -134,7 +134,7 @@ One saturated field does almost all the work; gold is the voice; cream carries r
 
 ## Layout
 
-A single centred column: 47rem on most pages, 52rem on the homepage, with clamp(1rem, 4vw, 2rem) gutters. Hub pages stack zig-zag rows (`.row`, `.row--flip`) with a 10rem art column; a wide plate (`.plate`) breaks the rhythm for panoramas. Patches and supporting pages keep the same column. Under 48rem the home hero floats its render right of the copy; under 40rem rows switch to a 5.75rem art column, big rows stack, the bar becomes a three-column grid, and Outposts become a 3×2 grid. The Conker viewer runs full-bleed and fills the viewport below the bar.
+A single centred column: 47rem on most pages, 52rem on the homepage, with clamp(1rem, 4vw, 2rem) gutters. The bar and the footer sit in a fixed 53rem frame (`--frame`) on every page, the homepage included, so they never shift between pages. Hub pages stack zig-zag rows (`.row`, `.row--flip`) with a 10rem art column (`.row--tall` 9rem, `.row--sm` 7rem, `.row--big` 15rem; no inline sizes); a wide plate (`.plate`) breaks the rhythm for panoramas. Patches and supporting pages keep the same column. Under 48rem the home hero floats its render right of the copy; under 40rem rows switch to a 5.75rem art column, big rows stack, the bar puts its links on one line beneath the brand, the Timeline's year list becomes an even grid, and Outposts become a 3×2 grid. The Conker viewer's panorama runs full-bleed; its heading and controls stay on the text column.
 
 ## Elevation & Depth
 
@@ -153,10 +153,14 @@ Square and ruled. Gold 1–2px rules frame plates, frames and the bar; the bar h
 - **Text action (`.go`):** gold italic caps with underline; turns white on hover.
 
 ### Navigation
-The bar: navy gradient band, gold rules top and bottom, gold end caps. Left: gold balloon and small CYSTATION (home). Centre: `480i Patches • Render Restore • Timeline` in italic gold caps; the current page or section is white. Right on sub-pages: an up-arrow to the parent ("One Step Up"). Under 40rem the three links become an equal three-column grid; on the homepage the balloon hides there.
+The bar is identical markup on every main page: navy gradient band, gold rules top and bottom, gold end caps. Left: gold balloon and small CYSTATION, linking home (shown on the homepage too). Then `480i Patches • Render Restore • Timeline` in italic gold caps; the current page or section is white. Nothing else goes in the bar. Under 40rem the brand takes the first line and the three links share the second, spread edge to edge without wrapping (smaller caps under 25rem and 23rem).
+
+**The trail (`.crumb`):** a page inside a section (Why 480i?, Conker's Skyboxes, Tools of the Trade) carries a small `‹ Section` link in the bar's italic gold caps directly above its title. It replaces the old up-arrow.
+
+**Timeline:** years are `gilt gilt--md` text over a gold rule; months are italic gold caps labels beside (or, on phones, above) their entries. No sprite lettering.
 
 ### Zig-zag row (signature)
-Render on one side, gilt title, a meta line in sky italic, two or three lines of copy, actions. Alternate rows flip and right-align. Entries that game menus return to (`#tnd6480i`, `#pd6480iperf` and the in-development ids) take a gold `:target` outline.
+Render on one side, gilt title, a meta line in sky italic, two or three lines of copy, actions. Alternate rows put the render on the right; the text stays left-aligned in every row. In-the-works logos sit in one fixed-size box each so their titles line up. Entries that game menus return to (`#tnd6480i`, `#pd6480iperf` and the in-development ids) take a gold `:target` outline.
 
 ### Outposts footer
 Gilt "Outposts", six 48px googly-eyed icons with italic caps labels (the outbound four say "opens in a new tab" to screen readers), then Directory · Links · Privacy and a one-line fan-site notice.

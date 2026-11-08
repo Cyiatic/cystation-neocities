@@ -42,7 +42,7 @@ The site is static HTML, CSS, and a little JavaScript, published to Neocities an
 ## Evidence on Hand
 
 - Rarewhere reference (Wayback Machine, rareware.com, Oct–Nov 2000): `bgcolor=#000060 text=#ffffdd link=#ffdd00 vlink=#bbaa00`, 600px column, italic gold top bar, engraved-gold deco titles, zig-zag render rows, bottom section bar.
-- Renders and art in `images/` (Conker on the Rareware R, Bond, Diddy's plane, the Scribes quill, box art, project logos, Conker skybox strips, Banjo month and year sprites).
+- Renders and art in `images/` (Conker on the Rareware R, Bond, Diddy's plane, the Scribes quill, box art, project logos, Conker skybox strips; the Banjo month and year sprites are retired from the Timeline but kept in the repo).
 - Project facts in the TND and PD reading views and in the timeline.
 
 ## Product Principles

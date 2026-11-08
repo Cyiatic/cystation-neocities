@@ -45,6 +45,10 @@ def main():
         base_url = BASE + ('/no-such-dir/x' if route == '/not_found.html' else route)  # 404 page must work from any depth
         for ref in parser.refs:
             if ref.startswith(('mailto:', 'javascript:', 'data:')): continue
+            if ref.startswith('#'):  # same-page anchor: valid on any path the page is served from
+                if ref[1:] and ref[1:] not in parser.ids and route not in ('/tnd6480i/', '/pd6480iperf/'):  # game pages build theirs in script
+                    issues.append({'page': route, 'missing': ref})
+                continue
             url = urlsplit(urljoin(base_url, ref))
             if url.netloc and url.netloc != '127.0.0.1:8766':
                 external.add(urljoin(base_url, ref)); continue
