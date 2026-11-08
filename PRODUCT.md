@@ -12,48 +12,47 @@ Retro-game players, preservationists, and modding enthusiasts who want to find C
 
 ## Product Purpose
 
-CyStation is Cyiatic's home for 480i patches, game-modding research, preservation work, and links to the wider archive. Success means visitors can immediately distinguish released work from work in progress and reach the relevant project or archive destination.
+CyStation is Cyiatic's home for Nintendo 64 480i patches, recovered game renders, and project history. Success means visitors can immediately tell released work from work in progress and reach a patch's own page, its downloads, or the relevant archive record within a click or two.
 
 ## Positioning
 
-The site presents technical patch work through a character-driven Rareware-style station interface, pairing each project with a recognizable game render instead of treating releases as a generic download list.
+The site presents technical patch work through the character-led manner of Rare's own "Rarewhere" site of 2000: each destination is announced by engraved gold lettering and a real game render, not a generic download list.
 
 ## Operating Context
 
-The site is a static HTML, CSS, and JavaScript project published to Neocities and mirrored in the `Cyiatic/cystation-neocities` GitHub repository. Individual releases may link to separate GitHub repositories; preservation material links to Internet Archive.
+The site is static HTML, CSS, and a little JavaScript, published to Neocities and mirrored in the `Cyiatic/cystation-neocities` GitHub repository. Releases link to separate GitHub repositories; preservation uploads live on the Internet Archive. Neocities serves `not_found.html` as the custom 404 page.
 
 ## Capabilities and Constraints
 
-- The homepage features two released patches and one preservation collection. The dedicated `/patches` gallery covers TND6480i, CBFD480i, DKR480i, PD6480iPerf, and YS6480i.
-- TND6480i and PD6480iPerf are released; CBFD480i, DKR480i, and YS6480i have no public build or repository yet.
-- Patches and Render Restore remain separate areas with links between related work. Timeline and Directory serve history and comprehensive navigation.
-- TND and PD use their game menus as the actual project pages at `/tnd6480i/` and `/pd6480iperf/`. Both return to the corresponding selection in `/patches`; download shortcuts bypass the intro.
-- Conker's Skyboxes opens as a panorama viewer; source files and research remain available in the same page.
-- Practice routes are development copies, excluded from the sitemap and marked noindex. Canonical project routes are the maintained visitor destinations.
-- The experience must remain functional with keyboard navigation, responsive layouts, and reduced-motion preferences.
-- The page must stay lightweight enough for static Neocities hosting and use no framework dependency.
+- Released: TND6480i (`/tnd6480i/`, July 2026) and PD6480iPerf (`/pd6480iperf/`, September 2026). In development with no public build: CBFD480i, DKR480i, YS6480i. Never present a download for unreleased work.
+- The TND and PD game menus are the project pages. They keep their own visuals, audio, cursors and viewport-filling layout, never load the main stylesheet, and return through their native Options to `/patches#tnd6480i` and `/patches#pd6480iperf`. Shortcuts `/tnd6480i/#q-branch` and `/pd6480iperf/#editions` open downloads and installation directly. Browsers may block audible autoplay on a fresh visit; never promise otherwise.
+- Patches and Render Restore are separate areas with cross-links (CBFD480i ↔ Conker's Skyboxes; Why 480i? ↔ the N64 New Soft Catalog mark).
+- Conker's Skyboxes opens on its pannable viewer; every source link, caption, ROM identifier and research note stays in the same page.
+- Practice routes are development copies, excluded from the sitemap and robots, and marked noindex.
+- Keyboard access, visible focus, reduced motion, phone widths down to 320px, and fast loads on static hosting are requirements. No framework, no build step.
+- No accounts, forms, cookies or ads. Analytics stay off until the owner configures GoatCounter in `analytics.js` and updates the privacy page.
 
 ## Brand Commitments
 
-- Keep the CyStation name and its blend of modern web usability with the pre-Microsoft blue Rareware website.
-- Use authentic supplied or archived Rare renders for characters; do not generate replacement character art.
-- Favor deep blue, gold, cream, playful editorial language, image-led project identities, and authentic Rareware collage art.
+- Keep the CyStation name and the pre-Microsoft Rareware feel: royal navy `#000060`, cream `#FFFFDD`, gold. Not the lighter post-2002 blue.
+- The CYSTATION wordmark is the heavy uppercase lettering with its offset shadow (Arial Black), sized to fit.
+- Use authentic Rare/Nintendo renders and existing project art; never generate replacement character art.
+- Outposts lives in the footer with the six googly-eyed icons: GitHub, Internet Archive, Twitter, YouTube, About, Credits.
 
 ## Evidence on Hand
 
-- Existing released project assets: `images/tnd-bond-selector.png` and the canonical `images/tnd6480i-logo.png`.
-- Authentic archived Conker and Scribes artwork sourced from the user's local Rare render archive.
-- User-supplied Conker poses and official Bad Fur Day title artwork.
-- Existing project copy, routes, social destinations, and release links in `index.html`.
+- Rarewhere reference (Wayback Machine, rareware.com, Oct–Nov 2000): `bgcolor=#000060 text=#ffffdd link=#ffdd00 vlink=#bbaa00`, 600px column, italic gold top bar, engraved-gold deco titles, zig-zag render rows, bottom section bar.
+- Renders and art in `images/` (Conker on the Rareware R, Bond, Diddy's plane, the Scribes quill, box art, project logos, Conker skybox strips, Banjo month and year sprites).
+- Project facts in the TND and PD reading views and in the timeline.
 
 ## Product Principles
 
-- Keep the homepage short: identity, released work, preservation, and a small footer. Put the complete project list and site directory on their own pages.
-- Put each patch and its release state before decorative project detail.
-- Let authentic characters and project artwork carry navigation and personality.
-- Make unfinished work explicit without presenting dead download links.
-- Preserve old-web warmth while using current interaction and accessibility standards.
+- Keep the homepage short: identity, the two released patches with their actions in the first viewport, then one row each for Patches, Render Restore and Timeline.
+- State a patch's release state before decoration; say "no public build" plainly.
+- Let authentic characters and project art carry navigation and personality.
+- One mention per thing per page: no repeated route cards, labels above headings, fake status lights or signal/transmission language.
+- Old-web warmth, current accessibility.
 
 ## Accessibility & Inclusion
 
-The primary gallery supports clear focus states, Left and Right Arrow keys, direct thumbnail selection, readable status text, and reduced-motion behavior.
+Semantic landmarks and one h1 per page, a skip link, visible 3px focus rings, 44px targets, meaningful alt text on informative images, reduced-motion support, and layouts verified at 1440, 390 and 320px.

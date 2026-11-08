@@ -1,208 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A plain-language guide to CyStation's Nintendo 64 480i patches: what the signal changes, what it does not, and why it matters.">
-    <meta name="theme-color" content="#003466">
-    <title>Why 480i? &middot; CyStation</title>
-    <link rel="stylesheet" href="style.css?v=20261107-footer">
-    <link rel="icon" href="images/goldballoon.webp" type="image/webp">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why 480i? · CyStation</title>
+  <meta name="description" content="A plain-language guide to CyStation’s Nintendo 64 480i patches: what the interlaced picture changes, how Analogue 3D fits in, and the trade-offs.">
+  <link rel="canonical" href="https://cystation.neocities.org/why-480i">
+  <meta name="theme-color" content="#000060">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="CyStation">
+  <meta property="og:title" content="Why 480i? · CyStation">
+  <meta property="og:description" content="What a 480i patch changes on a Nintendo 64, how Analogue 3D fits in, and the trade-offs.">
+  <meta property="og:url" content="https://cystation.neocities.org/why-480i">
+  <meta property="og:image" content="https://cystation.neocities.org/images/site/og-cystation.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Conker leaning on the Rareware R beside the CyStation wordmark">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="fonts/limelight-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261107-rw">
+  <script src="analytics.js" defer></script>
 </head>
-<body class="why-480i-page">
-    <!--
-    THESIS: A field guide makes a technical video mode feel tangible without turning CyStation into a spec sheet.
-    OWN-WORLD: Deep-blue station field, cream reading copy, gold catalog mark, pale-blue signal rules, and authentic project logos.
-    STORY: Visitors follow the picture from a 480i-patched ROM through optional Analogue3D processing to the final display, then see the games being tuned on the station.
-    FIRST VIEWPORT: The plain-English answer establishes the signal chain; an original path diagram and its readable stage legend make each handoff visible at a glance.
-    FORM: A Rareware service-catalog feature, paced as a small reading route rather than a stack of UI cards.
-    -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <div id="container">
-        <div id="headerArea">
-            <div id="header" role="img" aria-label="CyStation Rareware-inspired header art"></div>
-            <nav id="navbar" aria-label="Primary navigation">
-        <ul>
-          <li><a href="/">Station</a></li>
-          <li><a href="patches">480i Patches</a></li>
-          <li><a href="render-restore.html">Render Restore</a></li>
-          <li><a href="projects">Timeline</a></li>
-          <li><a href="navigation">Directory</a></li>
-        </ul>
-      </nav>
+<body class="p-why">
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="masthead">
+    <nav class="bar" aria-label="Main">
+      <a class="bar__brand" href="./"><img src="images/goldballoon.webp" width="39" height="50" alt=""><span>CyStation</span></a>
+      <ul class="bar__nav">
+        <li><a href="patches" aria-current="true"><span>480<span class="lc">i</span> Patches</span></a></li>
+        <li><a href="render-restore.html">Render Restore</a></li>
+        <li><a href="projects">Timeline</a></li>
+      </ul>
+      <a class="bar__up" href="patches" aria-label="Up to 480i Patches" title="Up to 480i Patches"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 13.5V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <h1 class="gilt">Why 480<span class="lc">i</span>?</h1>
+    <div class="prose">
+      <p class="lede dropcap">A 480i patch is the game-side link in a better picture chain: it gives the game a denser interlaced signal. From there, Analogue 3D can optionally change how that image is delivered and scaled before it reaches your display.</p>
+
+      <h2 class="gilt gilt--sm">Start in the game, finish at the screen</h2>
+      <p><strong>First, the patch changes the game.</strong> Many N64 titles spend most of their time in 240p: one 240-line picture at a time. A 480i-patched ROM instead uses the console’s 480-line mode, sending odd and even lines as two fast fields.</p>
+      <dl class="modes" aria-label="240p compared with 480i">
+        <div>
+          <dt>240p</dt>
+          <dd>One 240-line picture in each pass.</dd>
+          <span class="modes__lines" aria-hidden="true"></span>
         </div>
-
-        <div id="flex">
-            <main id="main-content">
-                <header class="why-hero">
-                    <div class="why-hero__copy">
-                        <p class="station-label">CY STATION // SIGNAL GUIDE</p>
-                        <h1>Why 480i?</h1>
-                        <p class="why-hero__lede">A 480i patch is the game-side link in a better picture chain: it gives the game a denser interlaced signal. From there, Analogue3D can optionally change how that image is delivered and scaled before it reaches your display.</p>
-                        <nav class="why-hero__actions" aria-label="480i guide shortcuts">
-                            <a class="patch-action" href="patches">Browse 480i projects <span aria-hidden="true">&rarr;</span></a>
-                            <a class="text-action" href="#catalog">See the catalog <span aria-hidden="true">&darr;</span></a>
-                        </nav>
-                    </div>
-                </header>
-
-                <section class="why-signal" aria-labelledby="signal-heading">
-                    <header class="why-section-heading">
-                        <p class="select-prompt">ONE SIGNAL, FOUR DISTINCT STAGES</p>
-                        <h2 id="signal-heading">Start in the game. Finish at the screen.</h2>
-                    </header>
-                    <div class="why-signal__layout">
-                        <div class="why-signal__copy">
-                            <p><strong>First, the patch changes the game.</strong> Many N64 titles spend most of their time in 240p: one 240-line picture at a time. A 480i-patched ROM instead uses the console's 480-line mode, sending odd and even lines as two fast fields.</p>
-                            <p><strong>Then the display path can change the delivery.</strong> On original hardware, that 480i signal can go straight to a CRT or scaler. On Analogue3D, Progressive Output and Horizontal Upscaling are optional, separate stages&mdash;not substitutes for the patch itself.</p>
-                        </div>
-                        <dl class="signal-readout" aria-label="A simple comparison of 240p and 480i">
-                            <div class="signal-readout__mode signal-readout__mode--240p">
-                                <dt>240p</dt>
-                                <dd>One 240-line picture in each pass.</dd>
-                                <span class="signal-readout__lines" aria-hidden="true"></span>
-                            </div>
-                            <div class="signal-readout__mode signal-readout__mode--480i">
-                                <dt>480i</dt>
-                                <dd>Two alternating 240-line fields: odd lines, then even lines.</dd>
-                                <span class="signal-readout__fields" aria-hidden="true"><i></i><i></i></span>
-                            </div>
-                        </dl>
-                    </div>
-                    <figure class="signal-chain">
-                        <picture>
-                            <source media="(max-width: 520px)" srcset="images/480i-signal-path-mobile.svg?v=20260801">
-                            <img src="images/480i-signal-path.svg?v=20260801" alt="Signal path from a 480i-patched Nintendo 64 ROM through optional Analogue3D Progressive Output and Horizontal Upscaling to a display">
-                        </picture>
-                    </figure>
-                    <ol class="signal-chain__legend" aria-label="Signal path stages">
-                        <li>
-                            <p class="signal-chain__stage">Stage 01 <span>Game-side</span></p>
-                            <h3>480i-patched ROM</h3>
-                            <p>Creates the denser, interlaced picture at the source.</p>
-                        </li>
-                        <li>
-                            <p class="signal-chain__stage">Stage 02 <span>Optional &middot; Analogue3D</span></p>
-                            <h3>Progressive Output</h3>
-                            <p>Optional Beta mode: delivers the full source image every frame.</p>
-                        </li>
-                        <li>
-                            <p class="signal-chain__stage">Stage 03 <span>Optional &middot; Analogue3D</span></p>
-                            <h3>Horizontal Upscaling</h3>
-                            <p>Doubles 3D horizontal detail while 2D stays native.</p>
-                        </li>
-                        <li>
-                            <p class="signal-chain__stage">Stage 04 <span>Display-side</span></p>
-                            <h3>Your display</h3>
-                            <p>Choose the CRT, scaler, or 4K mode that suits the game.</p>
-                        </li>
-                    </ol>
-                    <p class="signal-chain__note">The patch is the game-side link. Analogue3D's options are display-side links; compare them per game instead of treating the chain as a universal multiplier. Games that use field-rendered screens may still need individual testing.</p>
-                </section>
-
-                <section class="why-benefits" aria-labelledby="benefits-heading">
-                    <header class="why-section-heading">
-                        <p class="select-prompt">WHAT CHANGES ON SCREEN</p>
-                        <h2 id="benefits-heading">The useful bits, without the jargon</h2>
-                    </header>
-                    <div class="why-benefits__list">
-                        <article>
-                            <h3>Finer vertical detail</h3>
-                            <p>A 480-line image gives a compatible game more room for details that stack upward: type, thin edges, distant scenery, and busy menus can read with more definition.</p>
-                        </article>
-                        <article>
-                            <h3>Still an N64 signal</h3>
-                            <p>This stays in the console's standard-definition world. On a CRT or a good scaler, it is a native kind of output&mdash;not a fake filter laid over the game.</p>
-                        </article>
-                        <article>
-                            <h3>Tuned per game</h3>
-                            <p>There is no magic switch that improves every N64 title. Each patch is its own bit of preservation work, built around the way that specific game draws its picture.</p>
-                        </article>
-                    </div>
-                </section>
-
-                <aside class="why-note" aria-labelledby="note-heading">
-                    <p class="patch-status">GOOD TO KNOW</p>
-                    <h2 id="note-heading">480i has a trade-off.</h2>
-                    <p>Interlaced video is made from alternating fields. A nice CRT or a quality scaler can make that look great, but a display that handles 480i poorly can show flicker or motion artifacts. These patches are about giving each game a better option&mdash;not replacing the original look or promising a performance boost.</p>
-                </aside>
-
-                <section class="why-catalog" id="catalog" aria-labelledby="catalog-heading">
-                    <header class="why-catalog__heading">
-                        <figure class="catalog-mark">
-                            <img src="images/n64-new-soft-catalog-logo-v2.webp?v=20260916-catalog-v2" width="1722" height="841" loading="lazy" decoding="async" alt="N64 New Soft Catalog logo">
-                        </figure>
-                        <div>
-                            <p class="select-prompt">N64 NEW SOFT CATALOG</p>
-                            <h2 id="catalog-heading">Signals on the bench</h2>
-                            <a class="text-action" href="render-restore.html">Open Render Restore <span aria-hidden="true">&rarr;</span></a>
-                        </div>
-                        <p>Every project carries its own art, state, and amount of work still ahead. Start with TND6480i or the new PD6480iPerf public release.</p>
-                    </header>
-                    <ul class="why-catalog__projects" aria-label="CyStation 480i projects">
-                        <li class="why-project why-project--tnd">
-                            <img src="images/tnd6480i-logo.webp?v=20260729" loading="lazy" decoding="async" alt="Tomorrow Never Dies 6480i Expanded">
-                            <div>
-                                <p class="patch-status">ON AIR</p>
-                                <h3>Tomorrow Never Dies 6480i</h3>
-                                <p>Released patch and technical details.</p>
-                            </div>
-                            <a class="text-action" href="tnd6480i/">Start with TND6480i <span aria-hidden="true">&rarr;</span></a>
-                        </li>
-                        <li class="why-project why-project--cbfd">
-                            <img src="images/cbfd480i-logo-authentic.webp?v=20260801" loading="lazy" decoding="async" alt="Conker's Bad Fur Day 480i">
-                            <div>
-                                <p class="patch-status">STANDBY</p>
-                                <h3>CBFD480i</h3>
-                                <p>Conker's picture is next on the bench.</p>
-                            </div>
-                            <a class="text-action" href="patches">See project <span aria-hidden="true">&rarr;</span></a>
-                        </li>
-                        <li class="why-project why-project--ys">
-                            <img src="images/ys6480i-logo.webp?v=20260929-ys-final" loading="lazy" decoding="async" alt="Yoshi's Story 6480i">
-                            <div>
-                                <p class="patch-status">IN DEVELOPMENT</p>
-                                <h3>YS6480i</h3>
-                                <p>Yoshi&rsquo;s Story has joined the bench.</p>
-                            </div>
-                            <a class="text-action" href="patches#ys6480i">See project <span aria-hidden="true">&rarr;</span></a>
-                        </li>
-                        <li class="why-project why-project--dkr">
-                            <img src="images/dkr-coming-soon.webp?v=20260801" loading="lazy" decoding="async" alt="Coming Soon in the Diddy Kong Racing logo style">
-                            <div>
-                                <p class="patch-status">IN DEVELOPMENT</p>
-                                <h3>DKR480i</h3>
-                                <p>Signal in development.</p>
-                            </div>
-                            <a class="text-action" href="patches">View signal <span aria-hidden="true">&rarr;</span></a>
-                        </li>
-                        <li class="why-project why-project--pd">
-                            <img src="images/perfect-dark-selector-cover.webp?v=20260915-pd-release" loading="lazy" decoding="async" alt="Perfect Dark Nintendo 64 cover artwork">
-                            <div>
-                                <p class="patch-status">ON AIR &middot; SEPTEMBER 2026</p>
-                                <h3>PD6480iPerf</h3>
-                                <p>Public Perfect Dark 480i and performance patch.</p>
-                            </div>
-                            <a class="text-action" href="pd6480iperf/">Start with PD6480iPerf <span aria-hidden="true">&rarr;</span></a>
-                        </li>
-                    </ul>
-                </section>
-            </main>
+        <div>
+          <dt>480i</dt>
+          <dd>Two alternating 240-line fields: odd lines, then even lines.</dd>
+          <span class="modes__fields" aria-hidden="true"><i></i><i></i></span>
         </div>
-        <footer id="footer" class="station-footer">
-      <section class="footer-outposts" aria-labelledby="outposts-heading">
-        <h2 id="outposts-heading">Outposts</h2>
-        <nav class="outpost-links" aria-label="Outposts">
-          <a class="icon-link" href="https://github.com/Cyiatic" target="_blank" rel="noopener"><img src="images/github-sgi.webp" width="32" height="32" loading="lazy" decoding="async" alt="">GitHub</a>
-          <a class="icon-link" href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><img src="images/iararenobg.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Internet Archive</a>
-          <a class="icon-link" href="https://x.com/Kypherion" target="_blank" rel="noopener"><img src="images/twitternobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Twitter</a>
-          <a class="icon-link" href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener"><img src="images/ytnobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">YouTube</a>
-          <a class="icon-link" href="aboutme"><img src="images/conktail.gif" width="32" height="32" loading="lazy" decoding="async" alt="">About CyStation</a>
-          <a class="icon-link" href="credits"><img src="images/goldballoon.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Credits</a>
-        </nav>
-      </section>
-      <div class="station-footer__bottom"><p>CyStation · Maintained by Cyiatic</p><a href="links">More links</a></div>
-    </footer>
+      </dl>
+      <p><strong>Then the display path can change the delivery.</strong> On original hardware, that 480i signal can go straight to a CRT or scaler. On Analogue 3D, Progressive Output and Horizontal Upscaling are optional, separate stages, not substitutes for the patch itself.</p>
     </div>
+
+    <figure class="chain">
+      <picture>
+        <source media="(max-width: 520px)" srcset="images/480i-signal-path-mobile.svg?v=20261107">
+        <img src="images/480i-signal-path.svg?v=20261107" width="1600" height="340" loading="lazy" decoding="async" alt="Signal path: a 480i-patched Nintendo 64 ROM, then optional Analogue 3D Progressive Output and Horizontal Upscaling, then your display">
+      </picture>
+    </figure>
+
+    <div class="prose">
+      <ol class="stages" aria-label="Signal path stages">
+        <li><b>480i-patched ROM</b> <span>(game side)</span>: creates the denser, interlaced picture at the source.</li>
+        <li><b>Progressive Output</b> <span>(optional, Analogue 3D)</span>: a beta mode that delivers the full source image every frame.</li>
+        <li><b>Horizontal Upscaling</b> <span>(optional, Analogue 3D)</span>: doubles 3D horizontal detail while 2D stays native.</li>
+        <li><b>Your display</b> <span>(display side)</span>: choose the CRT, scaler or 4K mode that suits the game.</li>
+      </ol>
+      <p>The patch is the game-side link; Analogue 3D’s options are display-side links. Compare them per game instead of treating the chain as a universal multiplier. Games that use field-rendered screens may still need individual testing.</p>
+
+      <h2 class="gilt gilt--sm">What changes on screen</h2>
+      <dl class="effects">
+        <dt>Finer vertical detail</dt>
+        <dd>A 480-line image gives a compatible game more room for details that stack upward: type, thin edges, distant scenery and busy menus can read with more definition.</dd>
+        <dt>Still an N64 signal</dt>
+        <dd>It stays in the console’s standard-definition world. On a CRT or a good scaler it is a native kind of output, not a filter laid over the game.</dd>
+        <dt>Tuned per game</dt>
+        <dd>No switch improves every N64 title. Each patch is its own piece of work, built around the way that game draws its picture.</dd>
+      </dl>
+
+      <aside class="note" aria-labelledby="tradeoff">
+        <h2 class="gilt gilt--sm" id="tradeoff">The trade-off</h2>
+        <p>Interlaced video is made from alternating fields. A good CRT or quality scaler can make that look great, but a display that handles 480i poorly can show flicker or motion artifacts. 480i on its own gives a game a better picture option; it doesn’t replace the original look, and it isn’t a performance boost.</p>
+      </aside>
+    </div>
+
+    <section class="catalog" id="catalog" aria-labelledby="catalog-title">
+      <img src="images/n64-new-soft-catalog-logo-v2.webp?v=20260916-catalog-v2" width="1722" height="841" loading="lazy" decoding="async" alt="N64 New Soft Catalog logo (N64新作ソフトカタログ) in gold lettering">
+      <div>
+        <h2 class="gilt gilt--sm" id="catalog-title">On the bench</h2>
+        <p>Out now: <a href="pd6480iperf/">PD6480iPerf</a> for Perfect Dark and <a href="tnd6480i/">TND6480i</a> for Tomorrow Never Dies 64. In the works: Conker’s Bad Fur Day, Diddy Kong Racing and Yoshi’s Story, with no public builds yet.</p>
+        <p><a class="go" href="patches"><span>All 480<span class="lc">i</span> patches</span> <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <h2 class="gilt gilt--sm foot__title">Outposts</h2>
+    <ul class="outposts">
+      <li><a href="https://github.com/Cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-github-sgi-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-iararenobg-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">Internet Archive<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://x.com/Kypherion" target="_blank" rel="noopener"><img src="images/site/outpost-twitternobgrare-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">Twitter<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-ytnobgrare-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">YouTube<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="aboutme"><img src="images/site/outpost-conktail-96.webp" width="19" height="48" loading="lazy" decoding="async" alt="">About</a></li>
+      <li><a href="credits"><img src="images/goldballoon.webp" width="39" height="50" loading="lazy" decoding="async" alt="">Credits</a></li>
+    </ul>
+    <p class="foot__links"><a href="navigation">Directory</a> <span aria-hidden="true">·</span> <a href="links">Links</a> <span aria-hidden="true">·</span> <a href="privacy">Privacy</a></p>
+    <p class="foot__fine">Kept by Cyiatic. Game artwork belongs to Rare Ltd. and Nintendo; CyStation is an unofficial fan site.</p>
+  </footer>
 </body>
 </html>

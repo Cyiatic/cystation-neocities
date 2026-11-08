@@ -1,34 +1,176 @@
-# Design
+---
+name: CyStation
+description: Cyiatic's Nintendo 64 corner, built like Rare's Rarewhere site of 2000.
+colors:
+  rarewhere-navy: "#000060"
+  navy-deep: "#00003C"
+  navy-bar: "#06066E"
+  navy-raise: "#0B0B78"
+  rarewhere-cream: "#FFFFDD"
+  white: "#FFFFFF"
+  link-gold: "#FFDD00"
+  visited-gold: "#CCB400"
+  rule-gold: "#C99A2E"
+  bar-gold: "#E9BE52"
+  wordmark-gold: "#FFE45C"
+  sky-copy: "#AACCFF"
+typography:
+  wordmark:
+    fontFamily: "Arial Black, Arial, Helvetica Neue, Roboto, sans-serif"
+    fontSize: "clamp(2.4rem, 7.4vw, 4.25rem)"
+    fontWeight: 900
+    lineHeight: 0.95
+    letterSpacing: "-0.035em"
+  display:
+    fontFamily: "Limelight, Georgia, serif"
+    fontSize: "clamp(2.1rem, 5.6vw, 3.25rem)"
+    fontWeight: 400
+    lineHeight: 1.12
+    letterSpacing: "0.05em"
+  headline:
+    fontFamily: "Limelight, Georgia, serif"
+    fontSize: "clamp(1.65rem, 3.8vw, 2.25rem)"
+    fontWeight: 400
+    letterSpacing: "0.05em"
+  title:
+    fontFamily: "Georgia, Times New Roman, serif"
+    fontSize: "1.3rem"
+    fontWeight: 700
+    lineHeight: 1.25
+  body:
+    fontFamily: "Georgia, Times New Roman, serif"
+    fontSize: "1.125rem"
+    fontWeight: 400
+    lineHeight: 1.62
+  label:
+    fontFamily: "Arial, Helvetica Neue, Helvetica, sans-serif"
+    fontSize: "0.8125rem"
+    fontWeight: 700
+    letterSpacing: "0.12em"
+rounded:
+  sm: "2px"
+  md: "3px"
+spacing:
+  gutter: "clamp(1rem, 4vw, 2rem)"
+  column: "47rem"
+  column-home: "52rem"
+  row-gap: "clamp(2.25rem, 6vw, 3.25rem)"
+components:
+  button-primary:
+    backgroundColor: "{colors.link-gold}"
+    textColor: "#00004C"
+    rounded: "{rounded.md}"
+    padding: "0.55rem 1.05rem"
+  link-action:
+    textColor: "{colors.link-gold}"
+    typography: "{typography.label}"
+  nav-item:
+    textColor: "{colors.bar-gold}"
+    typography: "{typography.label}"
+  nav-item-current:
+    textColor: "{colors.white}"
+---
 
-## Visual World
+# Design System: CyStation
 
-CyStation keeps its pre-Microsoft Rareware character collage, deep blue, gold and cream. Authentic game artwork carries the personality. The homepage is a small personal project index: straightforward headings, useful links, open spacing, and no dashboard framing or repeated promotional labels.
+## Overview
 
-## Color Roles
+**Creative North Star: "The Rarewhere Station"**
 
-- Deep field `#001B49`: page depth and controls.
-- Rare blue `#003466`: primary site surface.
-- Gold `#FFCC00`: identity and active navigation.
-- Cream `#FFFFDD`: body copy and primary links.
-- Pale blue `#99CCFF`: secondary links and supporting copy.
-- Green `#33FF33`: existing gallery release states only.
+CyStation is built the way Rare built Rarewhere in 2000: a narrow column on flat royal navy, an italic gold bar across the top, engraved gold titles, and destinations announced by real character renders that zig-zag down the page. It is a fan's station, not a portfolio: playful copy, authentic art, and very little chrome. Modern behaviour sits underneath (responsive layout, real text, keyboard access), but nothing on the surface looks like a 2020s template.
 
-## Type and Voice
+The old lighter-blue, Microsoft-era look, card grids, carousels, status lights and "signal" language are rejected.
 
-Use the established sans-serif stacks. The homepage wordmark keeps the original heavy uppercase, pale-gold lettering and offset shadow at a smaller responsive size. Other homepage headings stay in normal title case. Copy names the work and its release state. Avoid repeated station/signal metaphors and interface explanations where an ordinary link is enough.
+**Key Characteristics:**
+- Flat `#000060` field, no texture, no banner image on every page.
+- Engraved gold titles (Limelight with a CSS hatch) and the heavy CYSTATION wordmark with its offset shadow.
+- Zig-zag rows: render on one side, title and two or three lines on the other, alternating.
+- Gold bevel buttons only for primary actions; everything else is an italic-caps text action.
+- Outposts footer with the googly-eyed icons.
 
-## Composition and Navigation
+## Colors
 
-Primary navigation is Station, 480i Patches, Render Restore, Timeline, Directory. The homepage introduces CyStation, shows PD and TND as two image-and-text entries, then one wide Conker panorama and a short timeline link. Outposts occupies the shared footer with the six original Rareware-style icons for GitHub, Internet Archive, Twitter, YouTube, About and Credits. No carousel, sidebar or second directory on the homepage.
+One saturated field does almost all the work; gold is the voice; cream carries reading.
 
-The `/patches` gallery retains its existing game-art presentation. Hash links restore the selected project. Every released project has an immersive entry and a direct downloads/installation shortcut. Render Restore is a separate preservation archive, with related-patch links where relevant.
+### Primary
+- **Rarewhere Navy** (#000060): the page itself, every page, edge to edge. Taken from Rarewhere's `bgcolor`.
+- **Link Gold** (#FFDD00): links, text actions, button faces, drop caps. Rarewhere's link colour.
 
-## Project Experiences
+### Secondary
+- **Wordmark Gold** (#FFE45C): the CYSTATION lettering only.
+- **Bar Gold** (#E9BE52) and **Rule Gold** (#C99A2E): bar labels, rules, frames, bullets, end caps.
 
-TND and PD fill the browser viewport without the capture's outer black surround or a fixed-ratio frame. Artwork and hit areas scale together from the native 640x480 coordinate plane; this deliberately follows the window's shape. They retain their console-derived layout, sound, music and controls. Return navigation belongs inside their native Options menu. Browser audio policy may require the first user gesture; never promise unconditional audible autoplay. PD motion starts enabled as explicitly requested by the user, with a native toggle.
+### Neutral
+- **Rarewhere Cream** (#FFFFDD): body text (17.6:1 on navy).
+- **White** (#FFFFFF): titles of releases, current nav item, focus ring, bold text.
+- **Sky Copy** (#AACCFF): meta lines, dates, captions (about 11:1 on navy).
+- **Navy Deep / Bar / Raise** (#00003C, #06066E, #0B0B78): frames, the bar's gradient, controls.
 
-Conker's Skyboxes opens directly in the panorama. The viewer uses seven original strips, manual panning, a native selector and keyboard controls. The source records remain under an expandable research section, including original external links. Do not describe the strip viewer as a reconstructed 3D environment.
+### Named Rules
+**The One Field Rule.** The page is navy. Panels are deeper navy at most; nothing switches to a light surface.
+**The Gold Means Go Rule.** Gold marks things you can follow or press. Static decoration uses rule gold, not link gold.
 
-## Motion and Responsive Behavior
+## Typography
 
-The homepage has no authored animation. Gallery transitions respect reduced motion. Conker panning is user initiated. On phones the homepage entries stack, the navigation wraps to two rows, and the viewer controls wrap without horizontal page overflow. Keyboard focus remains visible and controls retain semantic roles.
+**Wordmark:** Arial Black, uppercase, `text-shadow: .03em .03em 0 #000060, .065em .065em 0 rgb(0 0 0 / 55%)`.
+**Display Font:** Limelight (self-hosted, `fonts/limelight-latin.woff2`, OFL) with Georgia fallback.
+**Body Font:** Georgia, Times New Roman.
+**Label Font:** Arial bold italic caps.
+
+**Character:** a period-correct trio: the deco titling of Rare's banners, the serif text of 1999 browsers, the italic sans of its button graphics.
+
+### Hierarchy
+- **Wordmark** (900, clamp(2.4rem, 7.4vw, 4.25rem), 0.95): homepage h1 and, small, in the bar.
+- **Display** (Limelight 400, clamp(2.1rem, 5.6vw, 3.25rem), 1.12): page titles, engraved gold.
+- **Headline** (Limelight, clamp(1.65rem, 3.8vw, 2.25rem)): row and section titles, engraved.
+- **Small gilt** (Limelight, clamp(1.3rem, 2.8vw, 1.6rem)): in-page headings; gold gradient without the hatch.
+- **Title** (Georgia 700, 1.3rem): release names.
+- **Body** (Georgia 400, 1.125rem/1.62; 1.0625rem under 640px): prose, max about 62ch.
+- **Label** (Arial 700 italic, 0.8125rem, 0.07–0.12em, uppercase): bar, buttons, text actions, Outposts.
+
+### Named Rules
+**The Lowercase i Rule.** In uppercase lettering, the "i" of 480i stays lowercase (`<span class="lc">i</span>`).
+**The Engraving Rule.** The hatch appears only at headline size and up; small gilt keeps a clean gradient.
+
+## Layout
+
+A single centred column: 47rem on most pages, 52rem on the homepage, with clamp(1rem, 4vw, 2rem) gutters. Hub pages stack zig-zag rows (`.row`, `.row--flip`) with a 10rem art column; a wide plate (`.plate`) breaks the rhythm for panoramas. Patches and supporting pages keep the same column. Under 48rem the home hero floats its render right of the copy; under 40rem rows switch to a 5.75rem art column, big rows stack, the bar becomes a three-column grid, and Outposts become a 3×2 grid. The Conker viewer runs full-bleed and fills the viewport below the bar.
+
+## Elevation & Depth
+
+Flat. Depth comes from tone (navy-deep frames, the bar's slight gradient), gold rules and the gilt drop shadow on titles. The only shadow is the soft one under gold buttons (`0 3px 8px rgb(0 0 20 / 50%)`) plus their inset bevel.
+
+## Shapes
+
+Square and ruled. Gold 1–2px rules frame plates, frames and the bar; the bar has 7px gold end caps that overshoot it by 6px, as on Rarewhere's banners. Radii stay at 2–3px.
+
+## Components
+
+### Buttons
+- **Shape:** 3px radius, 1px dark-gold border, inset bevel.
+- **Primary:** gold gradient face, navy italic caps, min-height 44px. Used only for the main action of a release or filing.
+- **Hover / Active:** slight brightening; pressed state inverts the bevel and drops 1px.
+- **Text action (`.go`):** gold italic caps with underline; turns white on hover.
+
+### Navigation
+The bar: navy gradient band, gold rules top and bottom, gold end caps. Left: gold balloon and small CYSTATION (home). Centre: `480i Patches • Render Restore • Timeline` in italic gold caps; the current page or section is white. Right on sub-pages: an up-arrow to the parent ("One Step Up"). Under 40rem the three links become an equal three-column grid; on the homepage the balloon hides there.
+
+### Zig-zag row (signature)
+Render on one side, gilt title, a meta line in sky italic, two or three lines of copy, actions. Alternate rows flip and right-align. Entries that game menus return to (`#tnd6480i`, `#pd6480iperf` and the in-development ids) take a gold `:target` outline.
+
+### Outposts footer
+Gilt "Outposts", six 48px googly-eyed icons with italic caps labels (the outbound four say "opens in a new tab" to screen readers), then Directory · Links · Privacy and a one-line fan-site notice.
+
+## Do's and Don'ts
+
+### Do:
+- **Do** keep every page on `#000060` with cream body text and gold links.
+- **Do** announce sections with gilt titles and real renders.
+- **Do** give every informative image meaningful alt text and explicit width/height.
+- **Do** keep TND and PD visually separate: link to them, never wrap them.
+
+### Don't:
+- **Don't** use the lighter Microsoft-era blue, grunge tiles or the N64 cast banner as page chrome.
+- **Don't** add eyebrow labels above headings, fake status indicators, carousels or repeated route-card blocks.
+- **Don't** claim downloads or dates for CBFD480i, DKR480i or YS6480i.
+- **Don't** promise audible autoplay on the game pages.

@@ -1,91 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#003466">
-  <meta name="description" content="Cyiatic’s home for Nintendo 64 480i patches and game preservation. Explore Perfect Dark, Tomorrow Never Dies 64, and recovered Conker skyboxes.">
-  <title>CyStation · 480i Patches &amp; Game Preservation</title>
+  <title>CyStation · N64 480i Patches &amp; Game Preservation</title>
+  <meta name="description" content="Cyiatic’s Nintendo 64 corner: 480i patches for Perfect Dark and Tomorrow Never Dies 64, recovered Conker’s Bad Fur Day skyboxes, and a project timeline.">
   <link rel="canonical" href="https://cystation.neocities.org/">
-  <link rel="stylesheet" href="style.css?v=20261107-footer">
-  <link rel="stylesheet" href="home.css?v=20261107-lettering">
-  <link rel="icon" href="images/goldballoon.webp" type="image/webp">
+  <meta name="theme-color" content="#000060">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CyStation">
+  <meta property="og:title" content="CyStation · N64 480i Patches &amp; Game Preservation">
+  <meta property="og:description" content="480i patches for Perfect Dark and Tomorrow Never Dies 64, recovered Conker skyboxes, and a project timeline.">
+  <meta property="og:url" content="https://cystation.neocities.org/">
+  <meta property="og:image" content="https://cystation.neocities.org/images/site/og-cystation.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Conker leaning on the Rareware R beside the CyStation wordmark">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="fonts/limelight-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="images/site/conker-rare.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="style.css?v=20261107-rw">
+  <script src="analytics.js" defer></script>
 </head>
-<body class="home-page home-edition">
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  <div id="container">
-    <div id="headerArea">
-      <div id="header" role="img" aria-label="Nintendo 64 character collage"></div>
-      <nav id="navbar" aria-label="Primary navigation">
-        <ul>
-          <li><a href="/" aria-current="page">Station</a></li>
-          <li><a href="patches">480i Patches</a></li>
-          <li><a href="render-restore.html">Render Restore</a></li>
-          <li><a href="projects">Timeline</a></li>
-          <li><a href="navigation">Directory</a></li>
+<body class="p-home">
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="masthead">
+    <nav class="bar" aria-label="Main">
+      <a class="bar__brand" href="./" aria-current="page"><img src="images/goldballoon.webp" width="39" height="50" alt=""><span class="visually-hidden">CyStation home</span></a>
+      <ul class="bar__nav">
+        <li><a href="patches"><span>480<span class="lc">i</span> Patches</span></a></li>
+        <li><a href="render-restore.html">Render Restore</a></li>
+        <li><a href="projects">Timeline</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <h1 class="wordmark">CyStation</h1>
+
+    <section class="hero" aria-labelledby="out-now">
+      <figure class="hero__art">
+        <img src="images/site/conker-rare.webp" width="353" height="415" alt="Conker the squirrel leaning against a giant gold Rareware “R” logo" fetchpriority="high">
+      </figure>
+      <div class="hero__copy">
+        <p class="lede">Cyiatic’s corner of the Nintendo 64: 480i patches, renders rescued from the archive, and a record of everything in between.</p>
+        <h2 class="gilt gilt--sm" id="out-now">Out now</h2>
+        <ul class="releases">
+          <li class="release">
+            <h3 class="release__name"><a href="pd6480iperf/">Perfect Dark</a></h3>
+            <p class="meta"><b>PD6480iPerf</b> · 480i on the performance base · September 2026</p>
+            <ul class="acts">
+              <li><a class="btn" href="pd6480iperf/">Enter Perfect Dark <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a class="go" href="pd6480iperf/#editions">Downloads &amp; install</a></li>
+            </ul>
+          </li>
+          <li class="release">
+            <h3 class="release__name"><a href="tnd6480i/">Tomorrow Never Dies 64</a></h3>
+            <p class="meta"><b>TND6480i</b> · 480i patch for the Expanded build · July 2026</p>
+            <ul class="acts">
+              <li><a class="btn" href="tnd6480i/">Open the dossier <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a class="go" href="tnd6480i/#q-branch">Downloads &amp; install</a></li>
+            </ul>
+          </li>
         </ul>
-      </nav>
+      </div>
+    </section>
+
+    <div class="rows">
+      <section class="row" aria-labelledby="home-patches">
+        <figure class="row__art"><img src="images/site/diddy-plane-320.webp" width="320" height="321" loading="lazy" decoding="async" alt="Diddy Kong flying his blue and red plane"></figure>
+        <div class="row__body">
+          <h2 class="gilt gilt--md" id="home-patches"><a href="patches">480<span class="lc">i</span> Patches</a></h2>
+          <p>Two patches are out. Conker’s Bad Fur Day, Diddy Kong Racing and Yoshi’s Story are in the works, with no public builds yet.</p>
+          <ul class="acts">
+            <li><a class="go" href="patches"><span>All 480<span class="lc">i</span> patches</span> <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a class="go" href="why-480i"><span>Why 480<span class="lc">i</span>?</span></a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="plate" aria-labelledby="home-restore">
+        <a href="render-restore/conker-skyboxes.html" tabindex="-1" aria-hidden="true"><img class="plate__img" src="render-restore/assets/conker-skyboxes/skybox_04.jpg" width="1280" height="217" loading="lazy" decoding="async" alt=""></a>
+        <div class="plate__body">
+          <h2 class="gilt gilt--md" id="home-restore"><a href="render-restore.html">Render Restore</a></h2>
+          <p>Game renders recovered from ROMs and magazine scans, filed with their sources. Newest: seven skyboxes from Conker’s Bad Fur Day, pulled from the retail ROM. Above is Windy by day.</p>
+          <ul class="acts">
+            <li><a class="go" href="render-restore/conker-skyboxes.html">Explore the skyboxes <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a class="go" href="render-restore.html">The whole archive</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="row row--flip" aria-labelledby="home-timeline">
+        <figure class="row__art"><img src="images/site/scribes-feather.webp" width="225" height="420" loading="lazy" decoding="async" alt="A gold quill with big cartoon eyes" style="max-width:6.5rem"></figure>
+        <div class="row__body">
+          <h2 class="gilt gilt--md" id="home-timeline"><a href="projects">Timeline</a></h2>
+          <p>Every project since 2015: Smash Bros. mods, Xbox homebrew, Internet Archive uploads, and the patches above.</p>
+          <ul class="acts">
+            <li><a class="go" href="projects">Read the timeline <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          </ul>
+        </div>
+      </section>
     </div>
-    <main id="main-content">
-      <header class="home-welcome">
-        <h1>CyStation</h1>
-        <p>Cyiatic’s home for 480i patches and game preservation.</p>
-      </header>
-      <section class="home-patches" aria-labelledby="patches-heading">
-        <div class="home-section-heading">
-          <h2 id="patches-heading">480i Patches</h2>
-          <a href="patches">All projects <span aria-hidden="true">→</span></a>
-        </div>
-        <div class="home-releases">
-          <article class="home-release">
-            <img src="images/perfect-dark-selector-cover.webp" width="959" height="667" alt="" decoding="async" fetchpriority="high">
-            <div>
-              <p class="home-release-note">Latest patch · September 2026</p>
-              <h3>PD6480iPerf</h3>
-              <p>Perfect Dark in 480i, with the newer performance base.</p>
-              <a class="home-entry" href="pd6480iperf/">Enter Perfect Dark <span aria-hidden="true">→</span></a>
-              <a class="home-secondary" href="pd6480iperf/#editions">Downloads &amp; installation</a>
-            </div>
-          </article>
-          <article class="home-release">
-            <img src="images/tnd6480i-selector-cover.webp" width="720" height="405" alt="" decoding="async">
-            <div>
-              <p class="home-release-note">Released · July 2026</p>
-              <h3>TND6480i</h3>
-              <p>Tomorrow Never Dies 64, presented in 480i.</p>
-              <a class="home-entry" href="tnd6480i/">Open the dossier <span aria-hidden="true">→</span></a>
-              <a class="home-secondary" href="tnd6480i/#q-branch">Downloads &amp; installation</a>
-            </div>
-          </article>
-        </div>
-        <p class="home-guide">New to the picture mode? <a href="why-480i">Why 480i?</a></p>
-      </section>
-      <section class="home-preservation" aria-labelledby="preservation-heading">
-        <div class="home-section-heading">
-          <h2 id="preservation-heading">Render Restore</h2>
-          <a href="render-restore.html">Browse the archive <span aria-hidden="true">→</span></a>
-        </div>
-        <a class="home-panorama" href="render-restore/conker-skyboxes.html">
-          <img src="render-restore/assets/conker-skyboxes/skybox_04.jpg" width="1280" height="217" loading="lazy" decoding="async" alt="Windy’s daytime skyline from Conker’s Bad Fur Day">
-          <span><strong>Conker’s Skyboxes</strong><span>Explore seven recovered panoramas <span aria-hidden="true">→</span></span></span>
-        </a>
-      </section>
-      <p class="home-history">Releases, experiments, and the work in between: <a href="projects">Project timeline <span aria-hidden="true">→</span></a></p>
-    </main>
-    <footer id="footer" class="station-footer">
-      <section class="footer-outposts" aria-labelledby="outposts-heading">
-        <h2 id="outposts-heading">Outposts</h2>
-        <nav class="outpost-links" aria-label="Outposts">
-          <a class="icon-link" href="https://github.com/Cyiatic" target="_blank" rel="noopener"><img src="images/github-sgi.webp" width="32" height="32" loading="lazy" decoding="async" alt="">GitHub</a>
-          <a class="icon-link" href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><img src="images/iararenobg.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Internet Archive</a>
-          <a class="icon-link" href="https://x.com/Kypherion" target="_blank" rel="noopener"><img src="images/twitternobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Twitter</a>
-          <a class="icon-link" href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener"><img src="images/ytnobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">YouTube</a>
-          <a class="icon-link" href="aboutme"><img src="images/conktail.gif" width="32" height="32" loading="lazy" decoding="async" alt="">About CyStation</a>
-          <a class="icon-link" href="credits"><img src="images/goldballoon.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Credits</a>
-        </nav>
-      </section>
-      <div class="station-footer__bottom"><p>CyStation · Maintained by Cyiatic</p><a href="links">More links</a></div>
-    </footer>
-  </div>
+  </main>
+
+  <footer class="foot">
+    <h2 class="gilt gilt--sm foot__title">Outposts</h2>
+    <ul class="outposts">
+      <li><a href="https://github.com/Cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-github-sgi-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-iararenobg-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">Internet Archive<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://x.com/Kypherion" target="_blank" rel="noopener"><img src="images/site/outpost-twitternobgrare-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">Twitter<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-ytnobgrare-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">YouTube<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="aboutme"><img src="images/site/outpost-conktail-96.webp" width="19" height="48" loading="lazy" decoding="async" alt="">About</a></li>
+      <li><a href="credits"><img src="images/goldballoon.webp" width="39" height="50" loading="lazy" decoding="async" alt="">Credits</a></li>
+    </ul>
+    <p class="foot__links"><a href="navigation">Directory</a> <span aria-hidden="true">·</span> <a href="links">Links</a> <span aria-hidden="true">·</span> <a href="privacy">Privacy</a></p>
+    <p class="foot__fine">Kept by Cyiatic. Game artwork belongs to Rare Ltd. and Nintendo; CyStation is an unofficial fan site.</p>
+  </footer>
 </body>
 </html>

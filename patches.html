@@ -1,171 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Browse CyStation's released and in-development 480i projects through an interactive project gallery.">
-    <meta name="theme-color" content="#003466">
-    <title>CyStation &middot; 480i Patches</title>
-    <link rel="stylesheet" href="style.css?v=20261107-footer">
-    <link rel="icon" href="images/goldballoon.webp" type="image/webp">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>480i Patches · CyStation</title>
+  <meta name="description" content="Cyiatic’s Nintendo 64 480i patches: Perfect Dark and Tomorrow Never Dies 64 are out; Conker’s Bad Fur Day, Diddy Kong Racing and Yoshi’s Story are in the works.">
+  <link rel="canonical" href="https://cystation.neocities.org/patches">
+  <meta name="theme-color" content="#000060">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CyStation">
+  <meta property="og:title" content="480i Patches · CyStation">
+  <meta property="og:description" content="Perfect Dark and Tomorrow Never Dies 64 in 480i, plus three N64 patches in the works.">
+  <meta property="og:url" content="https://cystation.neocities.org/patches">
+  <meta property="og:image" content="https://cystation.neocities.org/images/site/og-cystation.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Conker leaning on the Rareware R beside the CyStation wordmark">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="fonts/limelight-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261107-rw">
+  <script src="analytics.js" defer></script>
 </head>
-<body class="patches-page">
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <div id="container">
-        <div id="headerArea">
-            <div id="header" role="img" aria-label="CyStation Rareware-inspired header art"></div>
-            <nav id="navbar" aria-label="Primary navigation">
-        <ul>
-          <li><a href="/">Station</a></li>
-          <li><a href="patches" aria-current="page">480i Patches</a></li>
-          <li><a href="render-restore.html">Render Restore</a></li>
-          <li><a href="projects">Timeline</a></li>
-          <li><a href="navigation">Directory</a></li>
-        </ul>
-      </nav>
-        </div>
+<body class="p-patches">
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="masthead">
+    <nav class="bar" aria-label="Main">
+      <a class="bar__brand" href="./"><img src="images/goldballoon.webp" width="39" height="50" alt=""><span>CyStation</span></a>
+      <ul class="bar__nav">
+        <li><a href="patches" aria-current="page"><span>480<span class="lc">i</span> Patches</span></a></li>
+        <li><a href="render-restore.html">Render Restore</a></li>
+        <li><a href="projects">Timeline</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <div id="flex">
-            <main id="main-content">
-                <header class="station-intro">
+  <main id="main" class="page">
+    <h1 class="gilt">480<span class="lc">i</span> Patches</h1>
+    <p class="lede">Patches that move N64 games into the console’s sharper 480-line interlaced mode, one game at a time. New to the idea? <a href="why-480i">Why 480i?</a></p>
 
-                    <h1>480i Patches</h1>
-                    <p>Choose a released patch or see what is in development. <a href="why-480i">Why 480i?</a></p>
-                </header>
+    <section aria-labelledby="out-now">
+      <h2 class="gilt gilt--md" id="out-now">Out now</h2>
+      <div class="rows">
+        <article class="row row--big" id="pd6480iperf" aria-labelledby="pd-title">
+          <figure class="row__art frame"><img src="images/site/pd-cover-640.webp" width="640" height="445" decoding="async" alt="Perfect Dark box art: Joanna Dark behind a pistol"></figure>
+          <div class="row__body">
+            <h3 class="release__name" id="pd-title">Perfect Dark</h3>
+            <p class="meta"><b>PD6480iPerf</b> · Released September 2026</p>
+            <p>640×480 interlaced output on the newer performance base, with menu, pause-blur and CamSpy fixes. Two editions: v88 without the FPS graph, and v87 with it.</p>
+            <ul class="acts">
+              <li><a class="btn" href="pd6480iperf/">Enter Perfect Dark <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a class="go" href="pd6480iperf/#editions">Downloads &amp; install</a></li>
+            </ul>
+          </div>
+        </article>
 
-                <section class="patch-select" id="patch-select" aria-labelledby="patch-select-heading">
-                    <span class="station-watermark" aria-hidden="true"></span>
-                    <header class="select-heading">
-                        <p class="select-prompt">CHOOSE YOUR SIGNAL</p>
-                        <h2 id="patch-select-heading">Project select</h2>
-                        <p>Choose a project card below, or use the arrows and keyboard to tune the feature display.</p>
-                    </header>
+        <article class="row row--flip row--tall" id="tnd6480i" aria-labelledby="tnd-title">
+          <figure class="row__art"><img src="images/site/bond-tnd-400.webp" width="400" height="853" decoding="async" alt="James Bond in a tuxedo, raising a pistol"></figure>
+          <div class="row__body">
+            <h3 class="release__name" id="tnd-title">Tomorrow Never Dies 64</h3>
+            <p class="meta"><b>TND6480i</b> · Released July 2026</p>
+            <p>Tomorrow Never Dies 64 Expanded, the fan-made campaign by TiJay, Wreck and the TND64 team on GoldenEye 007’s engine, patched for 480i. It applies to your own GoldenEye 007 (USA) dump.</p>
+            <ul class="acts">
+              <li><a class="btn" href="tnd6480i/">Open the dossier <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+              <li><a class="go" href="tnd6480i/#q-branch">Downloads &amp; install</a></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
 
-                    <div class="project-gallery" id="project-selector" data-project-gallery data-initial-index="3">
-                        <article class="project-gallery__frame" id="project-selector-panel" data-gallery-panel tabindex="0" role="tabpanel" aria-label="Selected project: Perfect Dark: 480i + Performance Patch. Use left and right arrow keys to change selection.">
-                            <div class="project-gallery__art is-pd" data-gallery-art aria-hidden="true">
-                                <img src="images/perfect-dark-selector-cover.webp?v=20260915-pd-release" width="959" height="667" decoding="async" alt="">
-                            </div>
-                            <div class="project-gallery__copy">
-                                <div class="project-gallery__readout">
-                                    <p class="project-gallery__counter" data-gallery-counter>04 / 05</p>
-                                    <p class="project-gallery__signal" data-gallery-signal aria-live="polite">ON AIR &middot; PD6480iPerf</p>
-                                </div>
-                                <p class="patch-status" data-gallery-status>Released &middot; September 2026</p>
-                                <h3 data-gallery-title>Perfect Dark: 480i + Performance Patch</h3>
-                                <p data-gallery-description>A public 480i and performance patch for Perfect Dark. Open the project page for the release and technical details.</p>
-                                <a class="patch-action" data-gallery-action href="pd6480iperf/">Enter Perfect Dark <span aria-hidden="true">&nearr;</span></a>
-                                <a class="gallery-quick" data-gallery-quick href="pd6480iperf/#editions">Downloads &amp; installation</a>
-                            </div>
-                            <div class="project-gallery__controls" aria-label="Project gallery controls">
-                                <button class="project-gallery__control" type="button" data-gallery-previous aria-label="Previous project"><span aria-hidden="true">&larr;</span></button>
-                                <button class="project-gallery__control" type="button" data-gallery-next aria-label="Next project"><span aria-hidden="true">&rarr;</span></button>
-                            </div>
-                        </article>
+    <section aria-labelledby="in-the-works">
+      <h2 class="gilt gilt--md" id="in-the-works">In the works</h2>
+      <p class="meta">No public builds or downloads yet.</p>
+      <ul class="bench">
+        <li class="bench__item" id="cbfd480i">
+          <img src="images/cbfd480i-logo-authentic.webp" width="420" height="310" loading="lazy" decoding="async" alt="Conker’s Bad Fur Day logo with a 480i badge">
+          <div>
+            <h3>Conker’s Bad Fur Day</h3>
+            <p class="meta"><b>CBFD480i</b> · In development</p>
+            <p>Conker is next on the bench. While you wait, the game’s seven skyboxes are filed in Render Restore: <a href="render-restore/conker-skyboxes.html">explore the skyboxes</a>.</p>
+          </div>
+        </li>
+        <li class="bench__item" id="dkr480i">
+          <img src="images/site/dkr-coming-soon-600.webp" width="600" height="268" loading="lazy" decoding="async" alt="“Coming Soon” lettered in the Diddy Kong Racing logo style">
+          <div>
+            <h3>Diddy Kong Racing</h3>
+            <p class="meta"><b>DKR480i</b> · In development</p>
+            <p>Under wraps for now. Details will appear here when there is something to show.</p>
+          </div>
+        </li>
+        <li class="bench__item" id="ys6480i">
+          <img src="images/site/ys-logo-600.webp" width="600" height="134" loading="lazy" decoding="async" alt="Yoshi’s Story 6480i logo">
+          <div>
+            <h3>Yoshi’s Story</h3>
+            <p class="meta"><b>YS6480i</b> · In development</p>
+            <p>Yoshi’s Story has joined the bench.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-                        <div class="project-gallery__thumbs" role="tablist" aria-label="Available projects">
-                            <button class="project-thumb project-thumb--cover project-thumb--tnd" id="project-selector-tab-0" type="button" role="tab" data-patch-index="0" aria-selected="false" aria-controls="project-selector-panel" tabindex="-1">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/tnd6480i-selector-cover.webp?v=20260726-selector-art-v4" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">TND6480i</span><span class="project-thumb__indicator" aria-hidden="true">RELEASED</span>
-                            </button>
-                            <button class="project-thumb project-thumb--cover project-thumb--cbfd" id="project-selector-tab-1" type="button" role="tab" data-patch-index="1" aria-selected="false" aria-controls="project-selector-panel" tabindex="-1">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/cbfd480i-selector-cover.webp?v=20260726-selector-art-v4" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">CBFD480i</span><span class="project-thumb__indicator" aria-hidden="true">STANDBY</span>
-                            </button>
-                            <button class="project-thumb project-thumb--cover project-thumb--dkr project-thumb--locked" id="project-selector-tab-2" type="button" role="tab" data-patch-index="2" aria-selected="false" aria-controls="project-selector-panel" tabindex="-1" aria-label="Diddy Kong Racing 480i project, signal locked">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/dkr480i-selector-classified.webp?v=20260729-coming-soon-spine" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">DKR480i</span><span class="project-thumb__indicator" aria-hidden="true">LOCKED</span>
-                            </button>
-                            <button class="project-thumb project-thumb--cover project-thumb--pd is-selected" id="project-selector-tab-3" type="button" role="tab" data-patch-index="3" aria-selected="true" aria-controls="project-selector-panel" tabindex="0" aria-label="Perfect Dark 480i and performance patch, public release">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/perfect-dark-selector-cover.webp?v=20260915-pd-release" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">PD6480iPerf</span><span class="project-thumb__indicator" aria-hidden="true">ON AIR</span>
-                            </button>
-                            <button class="project-thumb project-thumb--ys" id="project-selector-tab-4" type="button" role="tab" data-patch-index="4" aria-selected="false" aria-controls="project-selector-panel" tabindex="-1" aria-label="Yoshi's Story 6480i project, in development, no public build">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/ys6480i-logo.webp?v=20260929-ys-final" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">YS6480i</span><span class="project-thumb__indicator" aria-hidden="true">STANDBY</span>
-                            </button>
-                        </div>
-                    </div>
-                </section>
+    <p class="guide-link">How the 480i picture works and what it changes: <a href="why-480i">Why 480i?</a> Every release in order: <a href="projects">the timeline</a>.</p>
+  </main>
 
-                <section class="coming-soon" id="cbfd480i" aria-labelledby="coming-soon-heading">
-                    <header class="coming-soon__header">
-                        <div>
-                            <p class="select-prompt">NEXT IN QUEUE</p>
-                            <h2 id="coming-soon-heading">Coming soon</h2>
-                        </div>
-                        <p class="coming-soon__count">03 PROJECTS QUEUED</p>
-                    </header>
-
-                    <article class="coming-soon__entry">
-                        <span class="coming-soon__index" aria-hidden="true">01</span>
-                        <div class="coming-soon__body">
-                            <p class="patch-status">In development</p>
-                            <h3>CBFD480i</h3>
-                            <p>Public builds are not available yet. Explore the related <a href="render-restore/conker-skyboxes.html">Conker skybox viewer</a> in Render Restore.</p>
-                        </div>
-                        <p class="coming-soon__availability">
-                            <strong>No public build</strong>
-                            <span>No release files yet</span>
-                        </p>
-                        <button class="tune-action" type="button" data-gallery-target="project-selector" data-select-patch="1">Bring into focus <span aria-hidden="true">&uarr;</span></button>
-                    </article>
-
-                    <article class="coming-soon__entry" id="dkr480i">
-                        <span class="coming-soon__index" aria-hidden="true">02</span>
-                        <div class="coming-soon__body">
-                            <p class="patch-status">In development &middot; Signal locked</p>
-                            <h3>DKR480i</h3>
-                            <p>Diddy Kong Racing 480i is under wraps. Public project details, releases, and downloads will transmit when the signal clears.</p>
-                        </div>
-                        <p class="coming-soon__availability">
-                            <strong>Signal locked</strong>
-                            <span>No release files yet</span>
-                        </p>
-                        <button class="tune-action" type="button" data-gallery-target="project-selector" data-select-patch="2">Bring into focus <span aria-hidden="true">&uarr;</span></button>
-                    </article>
-
-                    <article class="coming-soon__entry" id="ys6480i">
-                        <span class="coming-soon__index" aria-hidden="true">03</span>
-                        <div class="coming-soon__body">
-                            <p class="patch-status">In development</p>
-                            <h3>YS6480i</h3>
-                            <p>Yoshi&rsquo;s Story 6480i has joined the bench. Public project details, releases, and downloads are not available yet.</p>
-                        </div>
-                        <p class="coming-soon__availability">
-                            <strong>No public build</strong>
-                            <span>No release files yet</span>
-                        </p>
-                        <button class="tune-action" type="button" data-gallery-target="project-selector" data-select-patch="4">Bring into focus <span aria-hidden="true">&uarr;</span></button>
-                    </article>
-
-                </section>
-
-                <section class="station-routes" aria-labelledby="project-routes-heading">
-                    <h2 id="project-routes-heading">Continue through the station</h2>
-                    <div class="route-list">
-                        <a href="projects"><strong>Project Timeline</strong><span>Released work, research, and station history.</span></a>
-                        <a href="/"><strong>Station home</strong><span>Return to the latest transmission and site directory.</span></a>
-                    </div>
-                </section>
-            </main>
-        </div>
-
-        <footer id="footer" class="station-footer">
-      <section class="footer-outposts" aria-labelledby="outposts-heading">
-        <h2 id="outposts-heading">Outposts</h2>
-        <nav class="outpost-links" aria-label="Outposts">
-          <a class="icon-link" href="https://github.com/Cyiatic" target="_blank" rel="noopener"><img src="images/github-sgi.webp" width="32" height="32" loading="lazy" decoding="async" alt="">GitHub</a>
-          <a class="icon-link" href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><img src="images/iararenobg.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Internet Archive</a>
-          <a class="icon-link" href="https://x.com/Kypherion" target="_blank" rel="noopener"><img src="images/twitternobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Twitter</a>
-          <a class="icon-link" href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener"><img src="images/ytnobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">YouTube</a>
-          <a class="icon-link" href="aboutme"><img src="images/conktail.gif" width="32" height="32" loading="lazy" decoding="async" alt="">About CyStation</a>
-          <a class="icon-link" href="credits"><img src="images/goldballoon.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Credits</a>
-        </nav>
-      </section>
-      <div class="station-footer__bottom"><p>CyStation · Maintained by Cyiatic</p><a href="links">More links</a></div>
-    </footer>
-    </div>
-    <script src="patch-select.js?v=20261107-integration"></script>
+  <footer class="foot">
+    <h2 class="gilt gilt--sm foot__title">Outposts</h2>
+    <ul class="outposts">
+      <li><a href="https://github.com/Cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-github-sgi-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-iararenobg-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">Internet Archive<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://x.com/Kypherion" target="_blank" rel="noopener"><img src="images/site/outpost-twitternobgrare-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">Twitter<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-ytnobgrare-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">YouTube<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="aboutme"><img src="images/site/outpost-conktail-96.webp" width="19" height="48" loading="lazy" decoding="async" alt="">About</a></li>
+      <li><a href="credits"><img src="images/goldballoon.webp" width="39" height="50" loading="lazy" decoding="async" alt="">Credits</a></li>
+    </ul>
+    <p class="foot__links"><a href="navigation">Directory</a> <span aria-hidden="true">·</span> <a href="links">Links</a> <span aria-hidden="true">·</span> <a href="privacy">Privacy</a></p>
+    <p class="foot__fine">Kept by Cyiatic. Game artwork belongs to Rare Ltd. and Nintendo; CyStation is an unofficial fan site.</p>
+  </footer>
 </body>
 </html>

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://cystation.neocities.org/</loc></url>
-  <url><loc>https://cystation.neocities.org/patches</loc></url>
-  <url><loc>https://cystation.neocities.org/tnd6480i/</loc></url>
-  <url><loc>https://cystation.neocities.org/pd6480iperf/</loc></url>
-  <url><loc>https://cystation.neocities.org/why-480i</loc></url>
-  <url><loc>https://cystation.neocities.org/render-restore.html</loc></url>
-  <url><loc>https://cystation.neocities.org/render-restore/conker-skyboxes.html</loc></url>
-  <url><loc>https://cystation.neocities.org/render-restore/tools-of-the-trade.html</loc></url>
-  <url><loc>https://cystation.neocities.org/projects</loc></url>
-  <url><loc>https://cystation.neocities.org/navigation</loc></url>
-  <url><loc>https://cystation.neocities.org/aboutme</loc></url>
-  <url><loc>https://cystation.neocities.org/credits</loc></url>
-  <url><loc>https://cystation.neocities.org/links</loc></url>
+  <url><loc>https://cystation.neocities.org/</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/patches</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/pd6480iperf/</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/tnd6480i/</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/why-480i</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/render-restore.html</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/render-restore/conker-skyboxes.html</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/render-restore/tools-of-the-trade.html</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/projects</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/navigation</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/aboutme</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/credits</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/links</loc><lastmod>2026-11-07</lastmod></url>
+  <url><loc>https://cystation.neocities.org/privacy</loc><lastmod>2026-11-07</lastmod></url>
 </urlset>
