@@ -1,0 +1,32 @@
+:root { color-scheme: dark; font-family: Arial, sans-serif; background: #000; color: #eee; }
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+body { -webkit-tap-highlight-color: transparent; overscroll-behavior: none; }
+.workspace { position: fixed; inset: 0; }
+/* Fill the webpage with the active picture, without the capture's black frame.
+   The same 640x480 plane scales the artwork, cursor and clickable regions.
+   Preserve the A3D active-picture crop of three pixels left and one at top. */
+.display { position: relative; width: 100%; height: 100%; }
+.picture { position: absolute; inset: 0; overflow: hidden; }
+.screen { position: absolute; left: calc(-3 / 628 * 100%); top: calc(-1 / 478 * 100%); width: calc(640 / 628 * 100%); height: calc(480 / 478 * 100%); background: #230000 url('assets/console/modes.png') center / 100% 100% no-repeat; }
+canvas { display: block; width: 100%; height: 100%; }
+.screen[data-page="files"] { background-image: url('assets/console/save-select.png'); background-color: #000; }
+.save-folder { z-index: 1; }
+.front-folder { z-index: 2; }
+.hotspot { position: absolute; left: calc(var(--x) / 640 * 100%); top: calc(var(--y) / 480 * 100%); width: calc(var(--w) / 640 * 100%); height: calc(var(--h) / 480 * 100%); border: 0; margin: 0; padding: 0; background: none; color: transparent; font: inherit; text-decoration: none; touch-action: manipulation; }
+.screen:not(.ready) .hotspot { color: #111; background: #ffffffcc; font-size: 12px; }
+.screen.ready, .screen.ready .hotspot { cursor: none; }
+.hotspot:focus-visible { outline: 1px solid #940000; outline-offset: -2px; }
+[hidden] { display: none !important; }
+.sr-only, .skip-link:not(:focus) { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.skip-link:focus { position: fixed; inset: 12px auto auto 12px; z-index: 10; background: #fff; color: #111; padding: 12px; }
+#reading { color-scheme: light; width: min(100%, 74ch); max-width: 100%; max-height: 100dvh; margin: auto; padding: clamp(20px, 5vw, 48px); border: 0; background: #efefeb; color: #181818; font-size: 16px; line-height: 1.6; overflow-y: auto; overscroll-behavior: contain; }
+#reading::backdrop { background: #000c; }
+#reading h2, #reading h3 { color: #202020; }
+#reading a, .no-script a { color: #7d1313; text-underline-offset: 3px; }
+#reading code { font-size: .85em; overflow-wrap: anywhere; }
+#reading li { margin: 10px 0; }
+.reading-close { margin: 0 0 20px; }
+.reading-close button { padding: 10px 16px; border: 1px solid #666; background: transparent; color: #181818; font: inherit; cursor: pointer; }
+#reading :focus-visible { outline: 2px solid #940000; outline-offset: 3px; }
+.no-script { margin: 0 auto; padding: 20px; max-width: 74ch; background: #efefeb; color: #181818; }

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#230000">
+  <meta name="description" content="Tomorrow Never Dies 6480i. Download Cyiatic's 480i patch, read the mission briefing and prepare your Nintendo 64 build.">
+  <title>TND6480i · Mission dossier</title>
+  <link rel="canonical" href="https://cystation.neocities.org/tnd6480i/">
+  <link rel="icon" href="assets/console/crosshair1.png" type="image/png">
+  <link rel="stylesheet" href="dossier.css?v=20261107-fill">
+  <script src="assets/console/fonts.js" defer></script>
+  <script src="dossier.js?v=20261107-autoplay" defer></script>
+</head>
+<body>
+  <audio id="briefing-music" src="assets/music/briefing-clasiku.mp3" preload="auto" autoplay loop hidden></audio>
+  <!-- THESIS: The TND menu is the entire patch webpage.
+       OWN-WORLD: Extracted burgundy wallet, white dossier, bitmap lettering and red crosshair.
+       STORY: Choose a briefing, get the patch, prepare the console; settings live in OPTIONS.
+       FIRST VIEWPORT: Four save folders over the original gunbarrel, each opening the patch menu.
+       FORM: The approved console menu, promoted to a standalone CyStation project page. -->
+  <a class="skip-link" href="#reading">Read patch information</a>
+  <a class="skip-link" href="#options">Open options</a>
+  <main class="workspace">
+    <h1 class="sr-only">Tomorrow Never Dies 6480i</h1>
+    <div class="display"><div class="picture">
+    <div id="screen" class="screen" data-page="files" aria-label="TND6480i menu" aria-describedby="menu-help">
+      <canvas id="menu-canvas" width="640" height="480" aria-hidden="true"></canvas>
+      <nav id="save-options" aria-label="Select file" aria-describedby="save-help">
+        <a class="hotspot save-folder front-folder" data-action="file-1" data-cursor-x="226" data-cursor-y="178" href="#menu" style="--x:140;--y:60;--w:172;--h:201">File 1 · Open patch menu</a>
+        <a class="hotspot save-folder front-folder" data-action="file-2" data-cursor-x="508" data-cursor-y="178" href="#menu" style="--x:422;--y:60;--w:172;--h:201">File 2 · Open patch menu</a>
+        <a class="hotspot save-folder" data-action="file-3" data-cursor-x="132" data-cursor-y="283" href="#menu" style="--x:46;--y:165;--w:172;--h:201">File 3 · Open patch menu</a>
+        <a class="hotspot save-folder" data-action="file-4" data-cursor-x="414" data-cursor-y="283" href="#menu" style="--x:328;--y:165;--w:172;--h:201">File 4 · Open patch menu</a>
+      </nav>
+      <p id="save-help" class="sr-only">All four folders open the same patch menu. Copy and Erase are original screen artwork; this webpage stores no game saves.</p>
+      <nav id="menu-options" aria-label="Main menu" hidden>
+        <a class="hotspot option" data-action="overview" href="#overview" style="--x:216;--y:310;--w:218;--h:32">1. Patch briefing</a>
+        <a class="hotspot option" data-action="download-patch" href="assets/TND64_Expanded_11-24_480i-Cyiatic.xdelta" download style="--x:216;--y:342;--w:218;--h:32">2. Download patch</a>
+        <a class="hotspot option" data-action="q-branch" href="#q-branch" style="--x:216;--y:374;--w:218;--h:32">3. Installation</a>
+        <a class="hotspot option" data-action="options" href="#options" style="--x:216;--y:406;--w:218;--h:32">4. Options</a>
+      </nav>
+      <nav id="options-controls" aria-label="Options" hidden>
+        <button class="hotspot setting" id="music-toggle" data-action="music" type="button" aria-pressed="true" style="--x:77;--y:159;--w:450;--h:35">Music: on</button>
+        <button class="hotspot setting" id="sound-toggle" data-action="sound" type="button" aria-pressed="true" style="--x:77;--y:194;--w:450;--h:35">Sound effects: on</button>
+        <button class="hotspot setting" id="compare" data-action="compare" type="button" style="--x:77;--y:229;--w:450;--h:35">Compare game text</button>
+        <button class="hotspot setting" id="reading-toggle" data-action="read" type="button" aria-haspopup="dialog" aria-controls="reading" style="--x:77;--y:264;--w:450;--h:35">Read text</button>
+        <button class="hotspot setting" id="fullscreen-toggle" data-action="fullscreen" type="button" aria-pressed="false" style="--x:77;--y:299;--w:450;--h:35">Full screen: off</button>
+        <a class="hotspot setting" data-action="station" href="/patches#tnd6480i" style="--x:77;--y:334;--w:450;--h:35">Return to CyStation</a>
+      </nav>
+      <nav id="edge-tabs" aria-label="Dossier tabs" hidden>
+        <a class="hotspot tab" id="start-tab" data-action="start" href="assets/TND64_Expanded_11-24_480i-Cyiatic.xdelta" download style="--x:557;--y:57;--w:37;--h:132">Start</a>
+        <button class="hotspot tab" id="next-tab" data-action="next" type="button" style="--x:557;--y:191;--w:33;--h:132">Next</button>
+        <button class="hotspot tab" id="previous-tab" data-action="previous" type="button" style="--x:557;--y:326;--w:33;--h:132">Previous</button>
+      </nav>
+    </div></div></div>
+    <p class="sr-only" id="menu-help">Arrow keys select · Enter confirms · Escape goes back · O opens options. Read text and audio controls are in Options.</p>
+    <p class="sr-only" id="page-status" role="status"></p>
+  </main>
+    <dialog id="reading" aria-labelledby="reading-title" open>
+      <form method="dialog" class="reading-close"><button type="submit">Back to dossier</button></form>
+      <h2 id="reading-title">Patch information</h2>
+      <section id="briefing-transcript" hidden aria-labelledby="briefing-heading">
+        <h2 id="briefing-heading"></h2>
+        <p id="briefing-body"></p>
+      </section>
+      <h2>TND6480i · g1mcfix4</h2>
+      <p>Tomorrow Never Dies 64 Expanded 11-24 with Cyiatic's 480i patch. This dossier uses menu assets from that build.</p>
+      <p><a href="assets/TND64_Expanded_11-24_480i-Cyiatic.xdelta" download>Download the supplied xdelta patch</a></p>
+      <p>Patch file: <code>TND64_Expanded_11-24_480i-Cyiatic.xdelta</code>. Format: xdelta / VCDIFF. Target build: <code>g1mcfix4</code>. Later project releases are separate builds.</p>
+      <h3>Installation</h3>
+      <ol>
+        <li>Start with your own stock GoldenEye 007 (USA).z64 dump. Source MD5: <code>70c525880240c1e838b8b1be35666c3b</code>.</li>
+        <li>Apply the xdelta to that source with an xdelta-compatible patcher. Save to a new file.</li>
+        <li>Verify the output MD5: <code>fa93be061c59ef5cabad24fbf5f66b39</code>.</li>
+        <li>Use an Expansion Pak / 8 MB and the project's EEPROM 4K save setting.</li>
+      </ol>
+      <h3>References</h3>
+      <p><a href="assets/menu-capture.png">Hardware briefing capture</a> · <a href="assets/mission-capture.png">Mission-select capture</a> · <a href="https://github.com/Cyiatic/TND6480i">TND6480i project</a></p>
+      <p>Original engine and artwork: Rare / GoldenEye 007. TND64: TiJay, Wreck and the TND64 team. Earlier 480i work: SubDrag, Trevor and Zoinkity. TND6480i: Cyiatic.</p>
+      <p>Menu music: “Briefing” by Clasiku, from the Tomorrow Never Dies 64 album. Music is on when the page opens and loops through file selection, menus and briefings. If your browser blocks autoplay, selecting a folder starts it. Switch music off in OPTIONS; it stays off until you reload. Music and SFX have separate controls.</p>
+      <p>The <a href="https://github.com/n64decomp/007/blob/master/src/game/front.c">GoldenEye decompilation</a> informs menu geometry, glyph rendering and sound events. <a href="https://kholdfuzion.github.io/goldeneyestatus/">KholdFuzion's GoldenEye status page</a> was the original website reference.</p>
+      <p>The menu textures, model, fonts and cursor come from the supplied patch. The layout and framing follow the 480i captures taken on Analogue 3D with progressive output and horizontal scaling. Compare game text shows the four original briefings for visual comparison. Sound effects come from stock GoldenEye 007 without added reverb. Your display handles 1080i output; this page adds no scanline effect. Console filtering and the full audio mixer remain approximations.</p>
+    </dialog>
+  <noscript>
+    <style>body {overflow:auto} .workspace,.skip-link {display:none} #reading {display:block;position:static;max-height:none;margin:0 auto} .reading-close {display:none}</style>
+    <p class="no-script">The interactive menu needs JavaScript. The patch and installation information are available above. <a href="/patches#tnd6480i">Back to CyStation</a>.</p>
+  </noscript>
+</body>
+</html>

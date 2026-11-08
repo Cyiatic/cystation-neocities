@@ -24,9 +24,12 @@ The site is a static HTML, CSS, and JavaScript project published to Neocities an
 
 ## Capabilities and Constraints
 
-- The compact home gallery and dedicated `/patches` gallery cover TND6480i, CBFD480i, DKR480i, PD6480iPerf, and YS6480i.
+- The homepage features two released patches and one preservation collection. The dedicated `/patches` gallery covers TND6480i, CBFD480i, DKR480i, PD6480iPerf, and YS6480i.
 - TND6480i and PD6480iPerf are released; CBFD480i, DKR480i, and YS6480i have no public build or repository yet.
-- The homepage introduces CyStation and announces the latest release before presenting the project gallery.
+- Patches and Render Restore remain separate areas with links between related work. Timeline and Directory serve history and comprehensive navigation.
+- TND and PD use their game menus as the actual project pages at `/tnd6480i/` and `/pd6480iperf/`. Both return to the corresponding selection in `/patches`; download shortcuts bypass the intro.
+- Conker's Skyboxes opens as a panorama viewer; source files and research remain available in the same page.
+- Practice routes are development copies, excluded from the sitemap and marked noindex. Canonical project routes are the maintained visitor destinations.
 - The experience must remain functional with keyboard navigation, responsive layouts, and reduced-motion preferences.
 - The page must stay lightweight enough for static Neocities hosting and use no framework dependency.
 
@@ -45,7 +48,7 @@ The site is a static HTML, CSS, and JavaScript project published to Neocities an
 
 ## Product Principles
 
-- Make the homepage identify CyStation before asking visitors to browse the project gallery.
+- Keep the homepage short: identity, released work, preservation, and a small footer. Put the complete project list and site directory on their own pages.
 - Put each patch and its release state before decorative project detail.
 - Let authentic characters and project artwork carry navigation and personality.
 - Make unfinished work explicit without presenting dead download links.

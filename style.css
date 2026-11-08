@@ -1,3 +1,5 @@
+@import url("cursor.css?v=20261022-rareware");
+
 :root {
     --header-image: url('images/n64-cast-banner.webp?v=20260802');
     --body-bg-image: url('images/subtle-grunge.png');
@@ -100,7 +102,7 @@ body {
     list-style-type: none;
     padding: 0;
     min-height: 44px;
-    max-width: 46rem;
+    max-width: none;
     margin: 0 auto;
     justify-content: space-evenly;
 }
@@ -115,9 +117,9 @@ body {
     min-height: 44px;
     padding: 0.45rem 0.7rem;
     font-weight: 800;
-    letter-spacing: 0.06em;
+    letter-spacing: 0;
     text-decoration: none;
-    text-transform: uppercase;
+    text-transform: none;
 }
 #navbar li a:hover {
     color: var(--link-hover);
@@ -217,6 +219,21 @@ footer {
 }
 
 /* Headings */
+.station-footer { padding:24px 32px; text-align:left; border-color:rgb(153 204 255 / 35%); }
+.footer-outposts { display:grid; grid-template-columns:9rem minmax(0,1fr); gap:12px 24px; align-items:start; }
+.footer-outposts h2 { margin:10px 0 0; color:var(--cream); font-size:1.25rem; }
+.outpost-links { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px 24px; }
+.outpost-links .icon-link { font-size:.9rem; line-height:1.35; }
+.outpost-links img { flex-shrink:0; }
+.station-footer__bottom { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; margin-top:20px; font-size:.8rem; }
+.station-footer__bottom p { margin:0; }
+@media(max-width:700px) {
+    .station-footer { padding:24px 20px; }
+    .footer-outposts { grid-template-columns:minmax(0,1fr); gap:12px; }
+    .footer-outposts h2 { margin:0; }
+    .outpost-links { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 16px; }
+}
+
 h1, h2, h3 {
     color: var(--link);
     font-weight: 900;
@@ -3952,4 +3969,19 @@ img {
         font-size: 0.64rem;
         letter-spacing: 0.01em;
     }
+}
+
+/* Shared routes and focus destinations. */
+:where(h1,h2,h3,[id]) { scroll-margin-top:7rem; }
+#navbar li a { line-height:1.4; font-size:.94rem; }
+.gallery-quick { display:block; width:fit-content; margin-top:12px; font-size:.88rem; }
+.site-directory { display:grid; grid-template-columns:1fr 1fr; gap:12px 36px; }
+.site-directory section { min-width:0; }
+.site-directory ul { padding-left:20px; }
+.site-directory li { margin:10px 0; }
+@media(max-width:520px) {
+  #navbar ul { flex-wrap:wrap; }
+  #navbar li { flex:1 1 30%; }
+  #navbar li a { font-size:.82rem; padding:10px 6px; }
+  .site-directory { grid-template-columns:1fr; }
 }

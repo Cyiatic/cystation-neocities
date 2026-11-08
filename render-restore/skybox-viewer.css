@@ -1,0 +1,40 @@
+.skybox-page { background:#07131d; color:#ffffdd; letter-spacing:0; font-family:Arial,Helvetica,sans-serif; }
+.skybox-page main { padding:0; background:transparent; }
+.skybox-page a { color:#b9ddff; text-underline-offset:4px; }
+.skybox-page a:hover { color:#fff; }
+.skybox-page :is(a,button,select,summary):focus-visible { outline:3px solid #ffcc00; outline-offset:4px; }
+.skybox-page :is(button,select) { font:inherit; color:#ffffdd; background:#122c43; border:1px solid #62839f; min-height:44px; padding:8px 12px; touch-action:manipulation; }
+.skybox-page button { cursor:pointer; }
+.skybox-page button:hover { background:#234761; }
+.skybox-page select { min-width:0; max-width:100%; }
+.skybox-experience { min-height:100svh; display:flex; flex-direction:column; }
+.skybox-top { display:flex; align-items:baseline; flex-wrap:wrap; justify-content:space-between; gap:12px 24px; padding:16px max(20px,env(safe-area-inset-right)) 16px max(20px,env(safe-area-inset-left)); }
+.skybox-top h1 { margin:0; max-width:none; font-size:1.3rem; text-shadow:none; letter-spacing:0; }
+.skybox-top a { font-size:.9rem; }
+.skybox-stage { position:relative; flex:1; min-height:55svh; background-image:url('assets/conker-skyboxes/skybox_04.jpg'); background-position:0 center; background-size:auto 100%; background-repeat:repeat-x; cursor:grab; touch-action:pan-y; }
+.skybox-stage:focus-visible { outline:3px solid #ffcc00; outline-offset:-3px; }
+.skybox-stage.is-dragging { cursor:grabbing; user-select:none; }
+.skybox-stage:fullscreen { min-height:100vh; background-color:#07131d; }
+.skybox-error { position:absolute; inset:20px auto auto 20px; max-width:38ch; padding:12px 16px; color:#fff; background:#102b43; }
+.skybox-toolbar { padding:18px max(20px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(20px,env(safe-area-inset-left)); display:grid; grid-template-columns:minmax(220px,1fr) auto; gap:12px 24px; }
+.skybox-choice { display:flex; flex-wrap:wrap; align-items:center; gap:12px; min-width:0; }
+.skybox-actions { display:flex; flex-wrap:wrap; gap:8px; }
+.skybox-toolbar p { margin:0; font-size:.84rem; color:#b9d6e8; }
+.skybox-toolbar .skybox-caption { grid-column:1/-1; }
+.skybox-notes { margin:0 auto; max-width:1020px; padding:22px 24px 36px; line-height:1.65; }
+.skybox-notes > summary { cursor:pointer; font-weight:bold; padding:10px 0; color:#ffcc00; }
+.skybox-notes[open] > summary { margin-bottom:24px; }
+.skybox-notes h1 { font-size:2.2rem; }
+.skybox-notes .restore-panorama-gallery { display:block; }
+.skybox-notes .restore-panorama-frame { margin-bottom:30px; }
+.skybox-notes .restore-panorama-frame img { width:100%; height:auto; }
+.skybox-page [hidden] { display:none!important; }
+@media(max-width:700px) {
+  .skybox-toolbar { grid-template-columns:minmax(0,1fr); }
+  .skybox-top { padding:12px 16px; }
+  .skybox-top h1 { order:3; flex-basis:100%; font-size:1.2rem; }
+  .skybox-stage { min-height:48svh; }
+  .skybox-choice { display:grid; grid-template-columns:minmax(0,1fr); gap:4px; }
+  .skybox-actions { justify-content:flex-start; }
+  .skybox-notes { padding:18px; }
+}

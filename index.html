@@ -1,162 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="CyStation is Cyiatic's home for 480i patches, Rareware preservation work, project releases, and recovered game material.">
-    <title>CyStation &middot; Rareware Patches &amp; Preservation</title>
-    <link rel="stylesheet" href="style.css?v=20260915-pd-release">
-    <link rel="icon" href="images/goldballoon.webp" type="image/webp">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#003466">
+  <meta name="description" content="Cyiatic’s home for Nintendo 64 480i patches and game preservation. Explore Perfect Dark, Tomorrow Never Dies 64, and recovered Conker skyboxes.">
+  <title>CyStation · 480i Patches &amp; Game Preservation</title>
+  <link rel="canonical" href="https://cystation.neocities.org/">
+  <link rel="stylesheet" href="style.css?v=20261107-footer">
+  <link rel="stylesheet" href="home.css?v=20261107-lettering">
+  <link rel="icon" href="images/goldballoon.webp" type="image/webp">
 </head>
-<body class="home-page">
-    <!--
-    THESIS: CyStation is a Rarewhere station front desk first and a project switchboard second.
-    OWN-WORLD: Deep blue space, authentic character cutouts, gold project marks, cream copy, and illuminated circular controls.
-    STORY: Visitors meet CyStation, see the newest release, browse a compact project gallery, and choose a deeper route.
-    FIRST VIEWPORT: CyStation's identity and the latest PD6480iPerf transmission lead; the gallery follows as a featured section.
-    FORM: Editorial station home with one horizontal project shelf: a broadcast viewport above a signal-marked thumbnail rail.
-    -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <div id="container">
-        <div id="headerArea">
-            <div id="header" role="img" aria-label="CyStation Rareware-inspired header art"></div>
-            <nav id="navbar" aria-label="Primary navigation">
-                <ul>
-                    <li><a aria-current="page" href="/">Station</a></li>
-                    <li><a href="why-480i">Why 480i?</a></li>
-                    <li><a href="projects">Timeline</a></li>
-                    <li><a href="render-restore.html">Render Restore</a></li>
-                    <li><a href="navigation">Directory</a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <div id="flex">
-            <main id="main-content">
-                <div class="home-intro">
-                    <header class="home-intro__copy">
-                        <p class="station-label">CY STATION // SIGNAL ONLINE</p>
-                        <h1>CyStation</h1>
-                        <p class="home-intro__lede">480i patches, preservation work, and the best ways to play the games worth keeping.</p>
-                        <nav class="home-intro__actions" aria-label="Station shortcuts">
-                            <a class="patch-action" href="#patch-select">Tune the projects <span aria-hidden="true">&darr;</span></a>
-                            <a class="text-action" href="why-480i">Why 480i? <span aria-hidden="true">&rarr;</span></a>
-                            <a class="text-action" href="navigation">Browse the archive <span aria-hidden="true">&rarr;</span></a>
-                        </nav>
-                    </header>
-
-                    <article class="latest-release" aria-labelledby="latest-release-heading">
-                        <div class="latest-release__body">
-                            <p class="patch-status">New release &middot; September 2026</p>
-                            <h2 id="latest-release-heading">Latest transmission</h2>
-                            <p>PD6480iPerf is live, bringing a public 480i and performance patch to Perfect Dark with the release and technical details ready on GitHub.</p>
-                            <a class="patch-action" href="https://github.com/Cyiatic/PD6480iperf" target="_blank" rel="noopener">Open PD6480iPerf <span aria-hidden="true">&nearr;</span></a>
-                        </div>
-                    </article>
-                </div>
-
-                <section class="patch-select patch-select--compact" id="patch-select" aria-labelledby="patch-select-heading">
-                    <span class="station-watermark" aria-hidden="true"></span>
-                    <header class="select-heading">
-                        <p class="select-prompt">FEATURED SWITCHBOARD</p>
-                        <h2 id="patch-select-heading">Project select</h2>
-                        <p>Browse the current project signals here, or open the dedicated project page for the full-size view.</p>
-                        <a class="text-action" href="patches">Open 480i Projects <span aria-hidden="true">&rarr;</span></a>
-                    </header>
-
-                    <div class="project-gallery project-gallery--compact" id="home-project-selector" data-project-gallery data-initial-index="3">
-                        <article class="project-gallery__frame" id="home-project-panel" data-gallery-panel tabindex="0" role="tabpanel" aria-label="Selected project: Perfect Dark: 480i + Performance Patch. Use left and right arrow keys to change selection.">
-                            <div class="project-gallery__art is-pd" data-gallery-art aria-hidden="true">
-                                <img src="images/perfect-dark-selector-cover.webp?v=20260915-pd-release" width="959" height="667" decoding="async" alt="">
-                            </div>
-                            <div class="project-gallery__copy">
-                                <div class="project-gallery__readout">
-                                    <p class="project-gallery__counter" data-gallery-counter>04 / 05</p>
-                                    <p class="project-gallery__signal" data-gallery-signal aria-live="polite">ON AIR &middot; PD6480iPerf</p>
-                                </div>
-                                <p class="patch-status" data-gallery-status>Released &middot; September 2026</p>
-                                <h3 data-gallery-title>Perfect Dark: 480i + Performance Patch</h3>
-                                <p data-gallery-description>A public 480i and performance patch for Perfect Dark. Open the project page for the release and technical details.</p>
-                                <a class="patch-action" data-gallery-action href="https://github.com/Cyiatic/PD6480iperf" target="_blank" rel="noopener">Open patch on GitHub <span aria-hidden="true">&nearr;</span></a>
-                            </div>
-                            <div class="project-gallery__controls" aria-label="Project gallery controls">
-                                <button class="project-gallery__control" type="button" data-gallery-previous aria-label="Previous project"><span aria-hidden="true">&larr;</span></button>
-                                <button class="project-gallery__control" type="button" data-gallery-next aria-label="Next project"><span aria-hidden="true">&rarr;</span></button>
-                            </div>
-                        </article>
-
-                        <div class="project-gallery__thumbs" role="tablist" aria-label="Available projects">
-                            <button class="project-thumb project-thumb--cover project-thumb--tnd" id="home-project-tab-0" type="button" role="tab" data-patch-index="0" aria-selected="false" aria-controls="home-project-panel" tabindex="-1">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/tnd6480i-selector-cover.webp?v=20260726-selector-art-v4" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">TND6480i</span><span class="project-thumb__indicator" aria-hidden="true">RELEASED</span>
-                            </button>
-                            <button class="project-thumb project-thumb--cover project-thumb--cbfd" id="home-project-tab-1" type="button" role="tab" data-patch-index="1" aria-selected="false" aria-controls="home-project-panel" tabindex="-1">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/cbfd480i-selector-cover.webp?v=20260726-selector-art-v4" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">CBFD480i</span><span class="project-thumb__indicator" aria-hidden="true">STANDBY</span>
-                            </button>
-                            <button class="project-thumb project-thumb--cover project-thumb--dkr project-thumb--locked" id="home-project-tab-2" type="button" role="tab" data-patch-index="2" aria-selected="false" aria-controls="home-project-panel" tabindex="-1" aria-label="Diddy Kong Racing 480i project, signal locked">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/dkr480i-selector-classified.webp?v=20260729-coming-soon-spine" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">DKR480i</span><span class="project-thumb__indicator" aria-hidden="true">LOCKED</span>
-                            </button>
-                            <button class="project-thumb project-thumb--cover project-thumb--pd is-selected" id="home-project-tab-3" type="button" role="tab" data-patch-index="3" aria-selected="true" aria-controls="home-project-panel" tabindex="0" aria-label="Perfect Dark 480i and performance patch, public release">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/perfect-dark-selector-cover.webp?v=20260915-pd-release" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">PD6480iPerf</span><span class="project-thumb__indicator" aria-hidden="true">ON AIR</span>
-                            </button>
-                            <button class="project-thumb project-thumb--ys" id="home-project-tab-4" type="button" role="tab" data-patch-index="4" aria-selected="false" aria-controls="home-project-panel" tabindex="-1" aria-label="Yoshi's Story 6480i project, in development, no public build">
-                                <span class="project-thumb__art" aria-hidden="true"><img src="images/ys6480i-logo.webp?v=20260929-ys-motifs" loading="lazy" decoding="async" alt=""></span>
-                                <span class="project-thumb__label">YS6480i</span><span class="project-thumb__indicator" aria-hidden="true">STANDBY</span>
-                            </button>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="station-routes" aria-labelledby="station-routes-heading">
-                    <h2 id="station-routes-heading">Choose a route</h2>
-                    <div class="route-list">
-                        <a href="patches"><strong>480i Projects</strong><span>The full project gallery, release states, and the next signal.</span></a>
-                        <a href="why-480i"><strong>Why 480i?</strong><span>A plain-language guide to the signal behind the patches.</span></a>
-                        <a href="projects"><strong>Project Timeline</strong><span>Released work, research, and station history.</span></a>
-                        <a href="render-restore.html"><strong>Render Restore</strong><span>Recovered renders, versioned presentations, and archive notes.</span></a>
-                        <a href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><strong>Preservation archive</strong><span>Uploads and recovered game material on Internet Archive.</span></a>
-                    </div>
-                </section>
-            </main>
-
-            <aside id="rightSidebar" aria-labelledby="links-heading">
-                <h2 id="links-heading">Outposts</h2>
-                <p>Find CyStation elsewhere.</p>
-                <div class="sidebar-links">
-                    <a class="icon-link" href="https://github.com/Cyiatic" target="_blank" rel="noopener">
-                        <img src="images/github-sgi.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        GitHub
-                    </a>
-                    <a class="icon-link" href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener">
-                        <img src="images/iararenobg.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        Internet Archive
-                    </a>
-                    <a class="icon-link" href="https://x.com/Kypherion" target="_blank" rel="noopener">
-                        <img src="images/twitternobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        Twitter
-                    </a>
-                    <a class="icon-link" href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener">
-                        <img src="images/ytnobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        YouTube
-                    </a>
-                    <hr class="sidebar-divider">
-                    <a class="icon-link" href="aboutme">
-                        <img src="images/conktail.gif" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        About CyStation
-                    </a>
-                    <a class="icon-link" href="credits">
-                        <img src="images/goldballoon.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        Credits
-                    </a>
-                </div>
-            </aside>
-        </div>
-
-        <footer id="footer">CyStation 2026 &middot; Signal maintained by Cyiatic</footer>
+<body class="home-page home-edition">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="container">
+    <div id="headerArea">
+      <div id="header" role="img" aria-label="Nintendo 64 character collage"></div>
+      <nav id="navbar" aria-label="Primary navigation">
+        <ul>
+          <li><a href="/" aria-current="page">Station</a></li>
+          <li><a href="patches">480i Patches</a></li>
+          <li><a href="render-restore.html">Render Restore</a></li>
+          <li><a href="projects">Timeline</a></li>
+          <li><a href="navigation">Directory</a></li>
+        </ul>
+      </nav>
     </div>
-    <script src="patch-select.js?v=20260915-pd-release"></script>
+    <main id="main-content">
+      <header class="home-welcome">
+        <h1>CyStation</h1>
+        <p>Cyiatic’s home for 480i patches and game preservation.</p>
+      </header>
+      <section class="home-patches" aria-labelledby="patches-heading">
+        <div class="home-section-heading">
+          <h2 id="patches-heading">480i Patches</h2>
+          <a href="patches">All projects <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="home-releases">
+          <article class="home-release">
+            <img src="images/perfect-dark-selector-cover.webp" width="959" height="667" alt="" decoding="async" fetchpriority="high">
+            <div>
+              <p class="home-release-note">Latest patch · September 2026</p>
+              <h3>PD6480iPerf</h3>
+              <p>Perfect Dark in 480i, with the newer performance base.</p>
+              <a class="home-entry" href="pd6480iperf/">Enter Perfect Dark <span aria-hidden="true">→</span></a>
+              <a class="home-secondary" href="pd6480iperf/#editions">Downloads &amp; installation</a>
+            </div>
+          </article>
+          <article class="home-release">
+            <img src="images/tnd6480i-selector-cover.webp" width="720" height="405" alt="" decoding="async">
+            <div>
+              <p class="home-release-note">Released · July 2026</p>
+              <h3>TND6480i</h3>
+              <p>Tomorrow Never Dies 64, presented in 480i.</p>
+              <a class="home-entry" href="tnd6480i/">Open the dossier <span aria-hidden="true">→</span></a>
+              <a class="home-secondary" href="tnd6480i/#q-branch">Downloads &amp; installation</a>
+            </div>
+          </article>
+        </div>
+        <p class="home-guide">New to the picture mode? <a href="why-480i">Why 480i?</a></p>
+      </section>
+      <section class="home-preservation" aria-labelledby="preservation-heading">
+        <div class="home-section-heading">
+          <h2 id="preservation-heading">Render Restore</h2>
+          <a href="render-restore.html">Browse the archive <span aria-hidden="true">→</span></a>
+        </div>
+        <a class="home-panorama" href="render-restore/conker-skyboxes.html">
+          <img src="render-restore/assets/conker-skyboxes/skybox_04.jpg" width="1280" height="217" loading="lazy" decoding="async" alt="Windy’s daytime skyline from Conker’s Bad Fur Day">
+          <span><strong>Conker’s Skyboxes</strong><span>Explore seven recovered panoramas <span aria-hidden="true">→</span></span></span>
+        </a>
+      </section>
+      <p class="home-history">Releases, experiments, and the work in between: <a href="projects">Project timeline <span aria-hidden="true">→</span></a></p>
+    </main>
+    <footer id="footer" class="station-footer">
+      <section class="footer-outposts" aria-labelledby="outposts-heading">
+        <h2 id="outposts-heading">Outposts</h2>
+        <nav class="outpost-links" aria-label="Outposts">
+          <a class="icon-link" href="https://github.com/Cyiatic" target="_blank" rel="noopener"><img src="images/github-sgi.webp" width="32" height="32" loading="lazy" decoding="async" alt="">GitHub</a>
+          <a class="icon-link" href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><img src="images/iararenobg.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Internet Archive</a>
+          <a class="icon-link" href="https://x.com/Kypherion" target="_blank" rel="noopener"><img src="images/twitternobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Twitter</a>
+          <a class="icon-link" href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener"><img src="images/ytnobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">YouTube</a>
+          <a class="icon-link" href="aboutme"><img src="images/conktail.gif" width="32" height="32" loading="lazy" decoding="async" alt="">About CyStation</a>
+          <a class="icon-link" href="credits"><img src="images/goldballoon.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Credits</a>
+        </nav>
+      </section>
+      <div class="station-footer__bottom"><p>CyStation · Maintained by Cyiatic</p><a href="links">More links</a></div>
+    </footer>
+  </div>
 </body>
 </html>

@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Credits and acknowledgements for the tools and resources used to build CyStation.">
+    <meta name="theme-color" content="#003466">
     <title>CyStation &middot; Credits</title>
-    <link rel="stylesheet" href="style.css?v=20260915-pd-release">
+    <link rel="stylesheet" href="style.css?v=20261107-footer">
     <link rel="icon" href="images/goldballoon.webp" type="image/webp">
 </head>
 <body>
@@ -14,53 +15,36 @@
         <div id="headerArea">
             <div id="header" role="img" aria-label="CyStation Rareware-inspired header art"></div>
             <nav id="navbar" aria-label="Primary navigation">
-                <ul>
-                    <li><a href="/">Station</a></li>
-                    <li><a href="why-480i">Why 480i?</a></li>
-                    <li><a href="projects">Timeline</a></li>
-                    <li><a href="render-restore.html">Render Restore</a></li>
-                    <li><a href="navigation">Directory</a></li>
-                </ul>
-            </nav>
+        <ul>
+          <li><a href="/">Station</a></li>
+          <li><a href="patches">480i Patches</a></li>
+          <li><a href="render-restore.html">Render Restore</a></li>
+          <li><a href="projects">Timeline</a></li>
+          <li><a href="navigation">Directory</a></li>
+        </ul>
+      </nav>
         </div>
         <div id="flex">
             <main id="main-content">
                 <h1>Credits</h1>
+                <p>The timeline month lettering uses the Banjo-Kazooie and Banjo-Tooie dialogue font, ripped by Malek Masoud. Original game artwork by Rare Limited / Nintendo.</p>
                 <p>Credit to Sadgrl's layout builder for providing the template this site uses: <a href="https://codepen.io/sadness97/full/XJbLxNj" target="_blank" rel="noopener">Sadgrl Layout Builder</a>.</p>
             </main>
-            <aside id="rightSidebar" aria-labelledby="links-heading">
-                <h2 id="links-heading">Outposts</h2>
-                <p>Find CyStation elsewhere.</p>
-                <div class="sidebar-links">
-                    <a class="icon-link" href="https://github.com/Cyiatic" target="_blank" rel="noopener">
-                        <img src="images/github-sgi.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        GitHub
-                    </a>
-                    <a class="icon-link" href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener">
-                        <img src="images/iararenobg.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        Internet Archive
-                    </a>
-                    <a class="icon-link" href="https://x.com/Kypherion" target="_blank" rel="noopener">
-                        <img src="images/twitternobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        Twitter
-                    </a>
-                    <a class="icon-link" href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener">
-                        <img src="images/ytnobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        YouTube
-                    </a>
-                    <hr class="sidebar-divider">
-                    <a class="icon-link" href="aboutme">
-                        <img src="images/conktail.gif" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        About CyStation
-                    </a>
-                    <a class="icon-link" aria-current="page" href="credits">
-                        <img src="images/goldballoon.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        Credits
-                    </a>
-                </div>
-            </aside>
         </div>
-        <footer id="footer">CyStation 2026 &middot; Signal maintained by Cyiatic</footer>
+        <footer id="footer" class="station-footer">
+      <section class="footer-outposts" aria-labelledby="outposts-heading">
+        <h2 id="outposts-heading">Outposts</h2>
+        <nav class="outpost-links" aria-label="Outposts">
+          <a class="icon-link" href="https://github.com/Cyiatic" target="_blank" rel="noopener"><img src="images/github-sgi.webp" width="32" height="32" loading="lazy" decoding="async" alt="">GitHub</a>
+          <a class="icon-link" href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><img src="images/iararenobg.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Internet Archive</a>
+          <a class="icon-link" href="https://x.com/Kypherion" target="_blank" rel="noopener"><img src="images/twitternobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Twitter</a>
+          <a class="icon-link" href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener"><img src="images/ytnobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">YouTube</a>
+          <a class="icon-link" href="aboutme"><img src="images/conktail.gif" width="32" height="32" loading="lazy" decoding="async" alt="">About CyStation</a>
+          <a class="icon-link" href="credits"><img src="images/goldballoon.webp" width="32" height="32" loading="lazy" decoding="async" alt="">Credits</a>
+        </nav>
+      </section>
+      <div class="station-footer__bottom"><p>CyStation · Maintained by Cyiatic</p><a href="links">More links</a></div>
+    </footer>
     </div>
 </body>
 </html>

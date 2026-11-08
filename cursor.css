@@ -1,0 +1,32 @@
+/* Supplied gold/blue arrow; hotspot sits on the upper-left arrow tip. */
+@media (any-pointer: fine) {
+    :root {
+        --station-cursor: url("images/rareware-cursor-32.png?v=20261022") 2 2;
+    }
+
+    html,
+    body {
+        cursor: var(--station-cursor), auto;
+    }
+
+    #container a[href],
+    #container button:not(:disabled):not([aria-disabled="true"]),
+    #container [role="button"]:not([aria-disabled="true"]),
+    #container summary,
+    #container select,
+    #container input:is([type="button"], [type="submit"], [type="reset"], [type="checkbox"], [type="radio"]) {
+        cursor: var(--station-cursor), pointer;
+    }
+
+    #container textarea,
+    #container input:not([type]),
+    #container input:is([type="text"], [type="search"], [type="email"], [type="url"], [type="password"], [type="tel"], [type="number"]),
+    #container [contenteditable="true"] {
+        cursor: text;
+    }
+
+    #container :disabled,
+    #container [aria-disabled="true"] {
+        cursor: not-allowed;
+    }
+}

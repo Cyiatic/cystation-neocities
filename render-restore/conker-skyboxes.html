@@ -4,38 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#001b49">
-    <meta name="description" content="Render Restore filing RR-001: seven recovered Conker's Bad Fur Day skybox panoramas with ROM-confirmed identifiers and room usage.">
+    <meta name="description" content="Render Restore filing RR-001: seven recovered Conker's Bad Fur Day skybox panoramas with ROM identifiers and researched room usage.">
     <title>CyStation &middot; RR-001 &middot; Conker Skyboxes</title>
-    <link rel="stylesheet" href="../style.css?v=20260917-render-restore-reframe-1">
+    <link rel="stylesheet" href="../style.css?v=20261107-integration">
     <link rel="icon" href="../images/goldballoon.webp" type="image/webp">
     <link rel="preconnect" href="https://i.imgur.com">
     <link rel="preconnect" href="https://imgur.com">
+  <link rel="canonical" href="https://cystation.neocities.org/render-restore/conker-skyboxes.html">
+  <link rel="stylesheet" href="skybox-viewer.css?v=20261107">
+  <script src="skybox-viewer.js?v=20261107" defer></script>
 </head>
-<body class="render-restore-page render-restore-entry-page">
-    <!--
-    THESIS: RR-001 treats the seven skyboxes as one recoverable render set, with the picture sequence and its source trail kept together.
-    OWN-WORLD: Deep station blue, signal gold, cream copy, pale-blue rules, numbered channel marks, and an offset bench shadow give the filing the CyStation broadcast desk.
-    STORY: Visitors understand what was extracted, see the complete seven-frame image sequence, and know exactly where the source files live.
-    FIRST VIEWPORT: The RR-001 filing code, Conker title, date, set count, and direct previews establish the artifact before the ROM cross-reference; the seven images read as one sequence.
-    FORM: Experience-mode broadcast teletext magazine, assigned candidate 5 from seed 7ca624a0, adapted as a deep-linked collection record with a semantic panorama rail backed by direct-image URLs.
-    -->
-    <a class="skip-link" href="#main-content">Skip to main content</a>
-    <div id="container">
-        <div id="headerArea">
-            <div id="header" role="img" aria-label="CyStation Rareware-inspired header art"></div>
-            <nav id="navbar" aria-label="Primary navigation">
-                <ul>
-                    <li><a href="../">Station</a></li>
-                    <li><a href="../why-480i">Why 480i?</a></li>
-                    <li><a href="../projects">Timeline</a></li>
-                    <li><a aria-current="page" href="../render-restore.html">Render Restore</a></li>
-                    <li><a href="../navigation">Directory</a></li>
-                </ul>
-            </nav>
-        </div>
+<body class="skybox-page">
+<a class="skip-link" href="#viewer-controls">Skip to panorama controls</a>
+<main id="main-content">
+  <section class="skybox-experience" aria-label="Conker skybox viewer">
+    <header class="skybox-top"><a href="../render-restore.html">← Render Restore</a><h1>Conker’s Skyboxes</h1><a id="notes-link" href="#notes">Source files &amp; research</a></header>
+    <div id="panorama" class="skybox-stage" tabindex="0" role="region" aria-label="Windy daytime panorama. Use Left and Right to pan." aria-describedby="panorama-help">
+      <p id="skybox-error" class="skybox-error" role="status" hidden>The panorama could not load. Choose another skybox, or open the source files below.</p>
+    </div>
+    <div id="viewer-controls" class="skybox-toolbar" hidden>
+      <div class="skybox-choice"><label for="skybox-choice">Skybox</label><select id="skybox-choice" name="skybox"></select></div>
+      <div class="skybox-actions"><button id="pan-left" aria-label="Pan left">←</button><button id="pan-right" aria-label="Pan right">→</button><button id="pan-reset">Reset view</button><button id="skybox-fullscreen">Full screen</button></div>
+      <p id="panorama-help">Drag to look around, or use the arrow buttons. With the panorama focused, Left / Right pans and Home resets.</p>
+      <a id="original-panorama" href="assets/conker-skyboxes/skybox_04.jpg">Open panorama file</a>
+      <p id="skybox-caption" class="skybox-caption" aria-live="polite">Windy, Bats Tower, Barn Boys, Hungover and the Weasel transition.</p>
+    </div>
+  </section>
+  <details id="notes" class="skybox-notes">
+    <summary>Source files &amp; research</summary>
 
-        <div id="flex">
-            <main id="main-content">
                 <nav class="restore-breadcrumbs" aria-label="Breadcrumb">
                     <a href="../render-restore.html">Render Restore</a>
                     <span aria-hidden="true">/</span>
@@ -45,7 +42,7 @@
                 <header class="restore-entry-hero">
                     <div class="restore-entry-hero__copy">
                         <p class="station-label">RR-001 // CONKER&rsquo;S BAD FUR DAY</p>
-                        <h1>Conker&rsquo;s Skyboxes</h1>
+                        <h2>Conker&rsquo;s Skyboxes</h2>
                         <p class="restore-hero__lede">Seven extracted panoramas from the retail ROM, presented in recovery order.</p>
                         <div class="restore-entry-hero__actions">
                             <span class="restore-action restore-action--filed">Filed 16 Sep 2026</span>
@@ -81,57 +78,57 @@
 
                     <div class="restore-panorama-gallery" aria-label="Seven Conker skybox panoramas, in recovery order">
                         <figure class="restore-panorama-frame">
-                            <a href="https://i.imgur.com/joASOqj.jpeg" target="_blank" rel="noopener">
-                                <img src="https://i.imgur.com/joASOqj.jpeg" width="1280" height="217" loading="lazy" decoding="async" alt="Conker&rsquo;s Bad Fur Day panorama of Gregg&rsquo;s Room and its green cavern.">
+                            <a href="https://i.imgur.com/joASOqj.jpg" target="_blank" rel="noopener" referrerpolicy="no-referrer">
+                                <img src="assets/conker-skyboxes/skybox_03.jpg" width="1280" height="217" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Conker&rsquo;s Bad Fur Day green panorama from the It&rsquo;s War submarine and Tedi boss area.">
                             </a>
-                            <figcaption><strong>Gregg&rsquo;s Room &mdash; Green Cavern</strong><span>Gregg&rsquo;s room &middot; death/resurrection sequence &middot; Spooky context</span><small><code translate="no">skybox_03</code> &middot; <code translate="no">assets0D/0003.bin</code> &middot; <code translate="no">D_8008916C</code> &middot; room <code translate="no">0x22</code></small></figcaption>
+                            <figcaption><strong>It&rsquo;s War &mdash; Submarine Basin / Tedi Boss</strong><span>It&rsquo;s War &middot; submarine missile stations &middot; giant Tedi boss sequence</span><small><code translate="no">skybox_03</code> &middot; <code translate="no">assets0D/0003.bin</code> &middot; <code translate="no">D_8008916C</code> &middot; room <code translate="no">0x23</code></small></figcaption>
                         </figure>
                         <figure class="restore-panorama-frame">
-                            <a href="https://i.imgur.com/2Y3wsah.jpeg" target="_blank" rel="noopener">
-                                <img src="https://i.imgur.com/2Y3wsah.jpeg" width="1280" height="217" loading="lazy" decoding="async" alt="Conker&rsquo;s Bad Fur Day panorama of Windy in daytime.">
+                            <a href="https://i.imgur.com/2Y3wsah.jpg" target="_blank" rel="noopener" referrerpolicy="no-referrer">
+                                <img src="assets/conker-skyboxes/skybox_04.jpg" width="1280" height="217" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Conker&rsquo;s Bad Fur Day panorama of Windy in daytime.">
                             </a>
-                            <figcaption><strong>Windy &mdash; Daytime</strong><span>Windy &middot; Bats Tower &middot; Barn Boys &middot; It&rsquo;s War &middot; Hungover &middot; Weasel transition</span><small><code translate="no">skybox_04</code> &middot; <code translate="no">assets0D/0004.bin</code> &middot; <code translate="no">D_80089180</code> &middot; rooms <code translate="no">0x06</code>, <code translate="no">0x07</code>, <code translate="no">0x0B</code>, <code translate="no">0x0C</code>, <code translate="no">0x13</code>, <code translate="no">0x18</code>, <code translate="no">0x38</code></small></figcaption>
+                            <figcaption><strong>Windy &mdash; Daytime</strong><span>Windy &middot; Bats Tower &middot; Barn Boys &middot; Hungover &middot; Weasel transition</span><small><code translate="no">skybox_04</code> &middot; <code translate="no">assets0D/0004.bin</code> &middot; <code translate="no">D_80089180</code> &middot; rooms <code translate="no">0x06</code>, <code translate="no">0x07</code>, <code translate="no">0x0B</code>, <code translate="no">0x0C</code>, <code translate="no">0x18</code>, <code translate="no">0x38</code></small></figcaption>
                         </figure>
                         <figure class="restore-panorama-frame">
-                            <a href="https://i.imgur.com/nSsVhGt.jpeg" target="_blank" rel="noopener">
-                                <img src="https://i.imgur.com/nSsVhGt.jpeg" width="1280" height="217" loading="lazy" decoding="async" alt="Conker&rsquo;s Bad Fur Day shared default panorama of sea, island, and castle.">
+                            <a href="https://i.imgur.com/nSsVhGt.jpg" target="_blank" rel="noopener" referrerpolicy="no-referrer">
+                                <img src="assets/conker-skyboxes/skybox_00.jpg" width="1280" height="217" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Conker&rsquo;s Bad Fur Day shared default panorama of sea, island, and castle.">
                             </a>
                             <figcaption><strong>Shared Default &mdash; Sea / Island / Castle</strong><span>Shared/default bank &middot; 51 rooms across the game</span><small><code translate="no">skybox_00</code> &middot; <code translate="no">assets0D/0000.bin</code> &middot; <code translate="no">D_80089130</code></small></figcaption>
                         </figure>
                         <figure class="restore-panorama-frame">
-                            <a href="https://i.imgur.com/2yY3XfV.jpeg" target="_blank" rel="noopener">
-                                <img src="https://i.imgur.com/2yY3XfV.jpeg" width="1280" height="217" loading="lazy" decoding="async" alt="Conker&rsquo;s Bad Fur Day panorama of the blue starry mountain in It&rsquo;s War.">
+                            <a href="https://i.imgur.com/2yY3XfV.jpg" target="_blank" rel="noopener" referrerpolicy="no-referrer">
+                                <img src="assets/conker-skyboxes/skybox_02.jpg" width="1280" height="217" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Conker&rsquo;s Bad Fur Day blue, starry panorama of Windy at night.">
                             </a>
-                            <figcaption><strong>It&rsquo;s War &mdash; Tank / Tedi</strong><span>Tank area &middot; Tedi/submarine area &middot; debug</span><small><code translate="no">skybox_02</code> &middot; <code translate="no">assets0D/0002.bin</code> &middot; <code translate="no">D_80089158</code> &middot; rooms <code translate="no">0x0E</code>, <code translate="no">0x23</code>, <code translate="no">0x2A</code></small></figcaption>
+                            <figcaption><strong>Windy &mdash; Night</strong><span>Windy &middot; Nasty/Nice area after dark</span><small><code translate="no">skybox_02</code> &middot; <code translate="no">assets0D/0002.bin</code> &middot; <code translate="no">D_80089158</code> &middot; room <code translate="no">0x3B</code></small></figcaption>
                         </figure>
                         <figure class="restore-panorama-frame">
-                            <a href="https://i.imgur.com/Kq1tTbz.jpeg" target="_blank" rel="noopener">
-                                <img src="https://i.imgur.com/Kq1tTbz.jpeg" width="1280" height="217" loading="lazy" decoding="async" alt="Conker&rsquo;s Bad Fur Day starry, moonlit panorama of the Feral Reserve safe.">
+                            <a href="https://i.imgur.com/Kq1tTbz.jpg" target="_blank" rel="noopener" referrerpolicy="no-referrer">
+                                <img src="assets/conker-skyboxes/skybox_06.jpg" width="1280" height="217" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Conker&rsquo;s Bad Fur Day starry, moonlit panorama of the Feral Reserve safe.">
                             </a>
                             <figcaption><strong>The Heist &mdash; Feral Reserve Safe</strong><span>Feral Reserve safe</span><small><code translate="no">skybox_06</code> &middot; <code translate="no">assets0D/0006.bin</code> &middot; <code translate="no">D_800891A8</code> &middot; room <code translate="no">0x3A</code></small></figcaption>
                         </figure>
                         <figure class="restore-panorama-frame">
-                            <a href="https://i.imgur.com/vckWXkM.jpeg" target="_blank" rel="noopener">
-                                <img src="https://i.imgur.com/vckWXkM.jpeg" width="1280" height="217" loading="lazy" decoding="async" alt="Conker&rsquo;s Bad Fur Day panorama of Windy at moonlit night.">
+                            <a href="https://i.imgur.com/vckWXkM.jpg" target="_blank" rel="noopener" referrerpolicy="no-referrer">
+                                <img src="assets/conker-skyboxes/skybox_05.jpg" width="1280" height="217" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Conker&rsquo;s Bad Fur Day night panorama for Haunted Castle and Raptor.">
                             </a>
-                            <figcaption><strong>Windy &mdash; Moonlit</strong><span>Windy &middot; Spooky Haunted Castle &middot; Raptor multiplayer</span><small><code translate="no">skybox_05</code> &middot; <code translate="no">assets0D/0005.bin</code> &middot; <code translate="no">D_80089194</code> &middot; rooms <code translate="no">0x3B</code>, <code translate="no">0x3C</code>, <code translate="no">0x3F</code></small></figcaption>
+                            <figcaption><strong>Haunted Castle / Raptor &mdash; Night</strong><span>Spooky Haunted Castle &middot; Raptor multiplayer</span><small><code translate="no">skybox_05</code> &middot; <code translate="no">assets0D/0005.bin</code> &middot; <code translate="no">D_80089194</code> &middot; rooms <code translate="no">0x3C</code>, <code translate="no">0x3F</code></small></figcaption>
                         </figure>
                         <figure class="restore-panorama-frame">
-                            <a href="https://i.imgur.com/pi44Mkz.jpeg" target="_blank" rel="noopener">
-                                <img src="https://i.imgur.com/pi44Mkz.jpeg" width="1280" height="217" loading="lazy" decoding="async" alt="Conker&rsquo;s Bad Fur Day overcast sea and windmill panorama for Bats Tower.">
+                            <a href="https://i.imgur.com/pi44Mkz.jpg" target="_blank" rel="noopener" referrerpolicy="no-referrer">
+                                <img src="assets/conker-skyboxes/skybox_01.jpg" width="1280" height="217" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="Conker&rsquo;s Bad Fur Day overcast panorama from the opening It&rsquo;s War base area.">
                             </a>
-                            <figcaption><strong>Bats Tower &mdash; Inside Water of Safe</strong><span>Inside Water of Safe</span><small><code translate="no">skybox_01</code> &middot; <code translate="no">assets0D/0001.bin</code> &middot; <code translate="no">D_80089144</code> &middot; room <code translate="no">0x12</code></small></figcaption>
+                            <figcaption><strong>It&rsquo;s War &mdash; Opening Base</strong><span>Just through the War door &middot; before the General&rsquo;s knockout sequence</span><small><code translate="no">skybox_01</code> &middot; <code translate="no">assets0D/0001.bin</code> &middot; <code translate="no">D_80089144</code> &middot; room <code translate="no">0x13</code></small></figcaption>
                         </figure>
                     </div>
 
-                    <p class="restore-source-note">Source: <a href="https://imgur.com/a/PaunjPC" target="_blank" rel="noopener">the Seven-Image Imgur Album <span aria-hidden="true">&nearr;</span></a>. The external host carries the previews and full-size originals; this page keeps the sequence and ROM cross-reference.</p>
+                    <p class="restore-source-note">Source: <a href="https://imgur.com/a/PaunjPC" target="_blank" rel="noopener">the Seven-Image Imgur Album <span aria-hidden="true">&nearr;</span></a>. The original album remains linked above. This viewer keeps local copies of those seven panoramas alongside the researched room cross-reference.</p>
                 </section>
 
                 <section class="restore-research" aria-labelledby="restore-research-heading">
                     <header class="restore-section-heading">
                         <p class="select-prompt">ROM CROSS-REFERENCE</p>
                         <h2 id="restore-research-heading">Files, Labels, and Room Usage</h2>
-                        <p>The ROM stores the renders as numeric <code translate="no">assets0D</code> entries, not friendly names. Chapter strings live in <code translate="no">assets08</code>; room assignments are confirmed through <code translate="no">assets15</code> byte <code translate="no">0x09</code>.</p>
+                        <p>The ROM stores the renders as numeric <code translate="no">assets0D</code> entries, not friendly names. Chapter strings live in <code translate="no">assets08</code>; the room labels below follow the community level-ID research and the scene read from each panorama.</p>
                     </header>
 
                     <div class="restore-research__table-wrap" tabindex="0" role="region" aria-label="Numeric skybox identifiers and room usage">
@@ -152,28 +149,28 @@
                                 </tr>
                                 <tr>
                                     <th scope="row"><code translate="no">skybox_01</code><small><code translate="no">assets0D/0001.bin</code><br><code translate="no">D_80089144</code></small></th>
-                                    <td>Bats Tower &mdash; Inside Water of Safe</td>
-                                    <td><code translate="no">0x12</code> &mdash; Bats Tower, Inside Water of Safe.</td>
+                                    <td>It&rsquo;s War &mdash; Opening Base</td>
+                                    <td><code translate="no">0x13</code> &mdash; Beginning spot of War, immediately after entering the base.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><code translate="no">skybox_02</code><small><code translate="no">assets0D/0002.bin</code><br><code translate="no">D_80089158</code></small></th>
-                                    <td>It&rsquo;s War &mdash; Tank / Tedi</td>
-                                    <td><code translate="no">0x0E</code> &mdash; It&rsquo;s War tank area; <code translate="no">0x23</code> &mdash; It&rsquo;s War Tedi/submarine area; <code translate="no">0x2A</code> &mdash; debug.</td>
+                                    <td>Windy &mdash; Night</td>
+                                    <td><code translate="no">0x3B</code> &mdash; Nasty/Nice area at night in Windy.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><code translate="no">skybox_03</code><small><code translate="no">assets0D/0003.bin</code><br><code translate="no">D_8008916C</code></small></th>
-                                    <td>Gregg&rsquo;s Room &mdash; Green Cavern</td>
-                                    <td><code translate="no">0x22</code> &mdash; Gregg&rsquo;s room and death/resurrection sequence; Spooky context.</td>
+                                    <td>It&rsquo;s War &mdash; Submarine Basin / Tedi Boss</td>
+                                    <td><code translate="no">0x23</code> &mdash; It&rsquo;s War: fighting the Tedi boss and submarines.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><code translate="no">skybox_04</code><small><code translate="no">assets0D/0004.bin</code><br><code translate="no">D_80089180</code></small></th>
                                     <td>Windy &mdash; Daytime</td>
-                                    <td>Windy <code translate="no">0x06</code>; Bats Tower <code translate="no">0x07</code>, <code translate="no">0x0B</code>; Barn Boys <code translate="no">0x0C</code>; It&rsquo;s War <code translate="no">0x13</code>; Hungover <code translate="no">0x18</code>; Weasel transition <code translate="no">0x38</code>.</td>
+                                    <td>Windy <code translate="no">0x06</code>; Bats Tower <code translate="no">0x07</code>, <code translate="no">0x0B</code>; Barn Boys <code translate="no">0x0C</code>; Hungover <code translate="no">0x18</code>; Weasel transition <code translate="no">0x38</code>.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><code translate="no">skybox_05</code><small><code translate="no">assets0D/0005.bin</code><br><code translate="no">D_80089194</code></small></th>
-                                    <td>Windy &mdash; Moonlit</td>
-                                    <td>Windy <code translate="no">0x3B</code>; Spooky Haunted Castle <code translate="no">0x3C</code>; multiplayer Raptor <code translate="no">0x3F</code>.</td>
+                                    <td>Haunted Castle / Raptor &mdash; Night</td>
+                                    <td>Spooky Haunted Castle <code translate="no">0x3C</code>; multiplayer Raptor <code translate="no">0x3F</code>.</td>
                                 </tr>
                                 <tr>
                                     <th scope="row"><code translate="no">skybox_06</code><small><code translate="no">assets0D/0006.bin</code><br><code translate="no">D_800891A8</code></small></th>
@@ -184,54 +181,21 @@
                         </table>
                     </div>
 
-                    <p class="restore-research__source-note">Exact chapter spellings in the ROM include Hungover, Windy, Bats Tower, Barn Boys, Sloprano, Ugga Bugga, Spooky, It&rsquo;s War, and The Heist. Room mappings are ROM-confirmed; chapter grouping is inferred when a room has no chapter string. Cross-check the level-ID research at <a href="https://github-wiki-see.page/m/mkst/conker/wiki/Research" target="_blank" rel="noopener">mkst&rsquo;s community research wiki <span aria-hidden="true">&nearr;</span></a>.</p>
+                    <p class="restore-research__source-note">Exact chapter spellings in the ROM include Hungover, Windy, Bats Tower, Barn Boys, Sloprano, Ugga Bugga, Spooky, It&rsquo;s War, and The Heist. Room IDs follow the level-ID research, while the chapter grouping is inferred from the room and panorama. Cross-check the level-ID research at <a href="https://github-wiki-see.page/m/mkst/conker/wiki/Research" target="_blank" rel="noopener">mkst&rsquo;s community research wiki <span aria-hidden="true">&nearr;</span></a>.</p>
                 </section>
 
                 <section class="station-routes" aria-labelledby="restore-entry-routes-heading">
                     <h2 id="restore-entry-routes-heading">Continue through the station</h2>
                     <div class="route-list">
-                        <a href="../patches"><strong>Project gallery</strong><span>See Conker&rsquo;s place in the 480i project shelf.</span></a>
+                        <a href="../patches#cbfd480i"><strong>CBFD480i</strong><span>Related Conker patch work — in development, no public build.</span></a>
                         <a href="../projects"><strong>Project Timeline</strong><span>Follow the preservation work by year.</span></a>
                         <a href="../render-restore.html"><strong>Render Restore index</strong><span>Return to the latest filing and archive list.</span></a>
                         <a href="../"><strong>Station home</strong><span>Return to the latest transmission and site directory.</span></a>
                     </div>
                 </section>
-            </main>
 
-            <aside id="rightSidebar" aria-labelledby="links-heading">
-                <h2 id="links-heading">Outposts</h2>
-                <p>Find CyStation elsewhere.</p>
-                <div class="sidebar-links">
-                    <a class="icon-link" href="https://github.com/Cyiatic" target="_blank" rel="noopener">
-                        <img src="../images/github-sgi.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        GitHub
-                    </a>
-                    <a class="icon-link" href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener">
-                        <img src="../images/iararenobg.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        Internet Archive
-                    </a>
-                    <a class="icon-link" href="https://x.com/Kypherion" target="_blank" rel="noopener">
-                        <img src="../images/twitternobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        Twitter
-                    </a>
-                    <a class="icon-link" href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener">
-                        <img src="../images/ytnobgrare.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        YouTube
-                    </a>
-                    <hr class="sidebar-divider">
-                    <a class="icon-link" href="../aboutme">
-                        <img src="../images/conktail.gif" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        About CyStation
-                    </a>
-                    <a class="icon-link" href="../credits">
-                        <img src="../images/goldballoon.webp" width="32" height="32" loading="lazy" decoding="async" alt="">
-                        Credits
-                    </a>
-                </div>
-            </aside>
-        </div>
-
-        <footer id="footer">CyStation 2026 &middot; Signal maintained by Cyiatic</footer>
-    </div>
+  </details>
+  <noscript><p class="skybox-notes">JavaScript enables panorama panning. Open Source files &amp; research above to browse all seven images.</p></noscript>
+</main>
 </body>
 </html>
