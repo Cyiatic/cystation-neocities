@@ -1,10 +1,10 @@
 # Asset provenance (redesign, 7 Nov 2026)
 
-Every raster below was derived with ImageMagick 7 from an existing CyStation asset (authentic Rare/Nintendo renders or the owner’s own artwork). None is AI-generated. Kept here rather than as per-file sidecars so the public images folder stays clean.
+Every raster in the first table was derived with ImageMagick 7 from an existing CyStation asset (authentic Rare/Nintendo renders or the owner’s own artwork). None is AI-generated. Kept here rather than as per-file sidecars so the public images folder stays clean.
 
 | File | Source | Transformation | SHA-256 (first 16) |
 | --- | --- | --- | --- |
-| `images/site/conker-rare.webp` | `images/cbfd-conker-rare.png` | re-encoded to WebP q90 with alpha | `377ea15c22f4725f` |
+| `images/site/conker-rare.webp` | `images/cbfd-conker-rare.png` | re-encoded to WebP q90 with alpha (8 Nov: re-encoded with Pillow, method 6, from the cleaned render; was `377ea15c22f4725f`) | `90a674ca8e6dedff` |
 | `images/site/bond-tnd-400.webp` | `images/tnd-bond-selector-full.webp` | resized to 400px wide, WebP q86 | `23498f3ba51e7d6c` |
 | `images/site/pd-cover-640.webp` | `images/perfect-dark-selector-cover.webp` | resized to 640px wide, WebP q84 | `8c3fc15689a2adbf` |
 | `images/site/ys-logo-600.webp` | `images/ys6480i-logo.webp` | resized to 600px wide, WebP q88 | `d95946098e73d28f` |
@@ -25,11 +25,16 @@ Every raster below was derived with ImageMagick 7 from an existing CyStation ass
 | `apple-touch-icon.png` | `images/goldballoon.png` | padded square, Lanczos upscale to 140px on #000060 180px canvas | `d3ce0f5370d72519` |
 | `favicon.ico` | `images/goldballoon.png` | 16/32/48px Lanczos downscales | `e3256fe23f4e303c` |
 | `favicon-32.png` | `images/goldballoon.png` | 32px Lanczos downscale | `19bfb72e27d05e62` |
-| `images/site/og-cystation.jpg` | `images/cbfd-conker-rare.png` | 1200x630 composite: render on #000060, CYSTATION set in Arial Black with offset shadow, Georgia Italic subtitle | `3f184d71cf466411` |
+| `images/site/og-cystation.jpg` | `images/cbfd-conker-rare.png` | 1200x630 composite: render on #000060, CYSTATION set in Arial Black with offset shadow, Georgia Italic subtitle (8 Nov: the cleaned render's changed pixels repainted at (70,61), 442x519, re-saved at the original q88 4:2:0; was `3f184d71cf466411`) | `98917e3c4bb4a448` |
 | `images/site/og-pd6480iperf.jpg` | `images/perfect-dark-selector-cover.webp` | 1200x630 composite: box art on #04080D, Arial Black title, Georgia Italic line, CYSTATION mark | `afa27650dc9e37a9` |
 | `images/site/og-tnd6480i.jpg` | `images/tnd-bond-selector-full.webp + images/tnd6480i-logo.webp` | 1200x630 composite on #230000, Georgia Italic line, CYSTATION mark | `6c2de35031fec5c3` |
-| `images/site/fzerox-logo.webp` | `fzerox/assets/aTitleLogoTex.png (original ROM texture, F-Zero/KI job)` | 2x point-filter upscale to 320x130, lossless WebP | `4a510d8e328137b5` |
-| `images/site/kig-title-480.webp` | `killer-instinct-gold/assets/native-scene-poster.webp (title render from the recomp, F-Zero/KI job)` | cropped 800x660 at +240+30, resized to 480px wide, WebP q86 | `cc90567f3109d8c2` |
+
+Owner-supplied logos (8 Nov 2026): finished transparent artwork the owner provided for the In-the-works list on `patches.html`; this table records only how the web copies were made. They replace `images/site/fzerox-logo.webp` (ROM title texture, `4a510d8e328137b5`) and `images/site/kig-title-480.webp` (title-screen crop, `cc90567f3109d8c2`), now retired; copies of both are in `output/bench-logos-20261108/before/`. Originals and the script are in `output/bench-logos-20261108/`.
+
+| File | Source | Transformation | SHA-256 (first 16) |
+| --- | --- | --- | --- |
+| `images/site/f0x6480idd-logo-600.webp` | F-Zero X 6480i:DD logo, 1983x793 (`source/f0x6480idd-logo-owner.webp`) | alpha 240 and up set to 255 (the attachment's lossy alpha), trimmed to 1983x780, resized to 600x236 (Lanczos), WebP q90 with lossless alpha (Pillow, method 6) | `615cf22a551d4bdb` |
+| `images/site/kig480i-logo-600.webp` | Killer Instinct Gold 480i logo, 1706x922 (`source/kig480i-logo-owner.webp`) | same steps; trimmed to 1691x912, resized to 600x324 | `eb4962601d21a83f` |
 
 Fonts: `fonts/limelight-latin.woff2` is the unmodified Latin subset of Limelight (Sorkin Type, SIL OFL 1.1) from fonts.gstatic.com; licence in `fonts/OFL-Limelight.txt`.
 Diagrams: `images/480i-signal-path*.svg` recoloured (#001b49 to #00003c, #003466 to #0b0b78); originals in `before/images/`.
