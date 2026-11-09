@@ -72,7 +72,9 @@ Nintendo. See `credits.html` for per-asset credits.
 
 ## License
 
-No license has been chosen yet, so all rights are reserved by default.
+The site's own code and writing are MIT-licensed; see [LICENSE](LICENSE). Game
+renders, logos, lettering and other third-party artwork are not covered and
+remain the property of their rights holders.
 
 ## AI Assistance Disclosure
 
