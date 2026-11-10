@@ -216,6 +216,8 @@ a:hover { color: var(--white); text-decoration-thickness: 2px; }
 }
 
 .page > :first-child { margin-top: 0; }
+/* Only the page's bottom padding sits above the footer, so the gap is the same on every page. */
+.page > :last-child, .page > .prose:last-child > :last-child { margin-bottom: 0; }
 .page > section { margin-top: clamp(2.25rem, 5vw, 3rem); }
 .page > section > .rows { margin-top: 1.5rem; margin-bottom: 0; }
 
@@ -375,6 +377,7 @@ h3 { color: var(--white); font: 700 1.125rem/1.3 var(--serif); }
 .row--big { --art: 15rem; }
 .row--tall { --art: 9rem; }
 .row--sm { --art: 7rem; }
+.row--xs { --art: 5.25rem; }
 
 /* Box art and screenshots sit in a plain frame; cut-out renders sit straight on the field. */
 .frame {
@@ -395,6 +398,7 @@ h3 { color: var(--white); font: 700 1.125rem/1.3 var(--serif); }
   border-block: 2px solid var(--gold-rule);
 }
 .plate__body { margin-top: 1.1rem; }
+.plate__body > :last-child { margin-bottom: 0; }
 .plate a:has(> .plate__img) { display: block; }
 .plate a:hover .plate__img { filter: brightness(1.08); }
 
@@ -457,50 +461,35 @@ h3 { color: var(--white); font: 700 1.125rem/1.3 var(--serif); }
   border-top: 1px solid var(--gold-rule);
 }
 
-/* ---------- Why 480i? ---------- */
+/* ---------- Prose pages (About, Credits, Privacy) ---------- */
 
 .prose { max-width: 62ch; }
 .prose h2 { margin: 2.6rem 0 .9rem; }
 .prose p { margin-bottom: 1.05rem; }
 
-.modes {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem 1.5rem;
-  margin: 1.5rem 0;
-}
-.modes > div { padding: 1rem 1.1rem 1.1rem; background: var(--navy-deep); border-top: 2px solid var(--gold-rule); }
-.modes dt { color: var(--gold); font: 400 1.6rem/1 var(--title); letter-spacing: .04em; }
-.modes dd { margin: .5rem 0 .8rem; }
-.modes__lines { display: block; height: 3.25rem; background: repeating-linear-gradient(180deg, #ffd84a 0 2px, transparent 2px 6px); opacity: .9; }
-.modes__fields { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; height: 3.25rem; }
-.modes__fields i:first-child { background: repeating-linear-gradient(180deg, #ffd84a 0 2px, transparent 2px 6px); }
-.modes__fields i:last-child { background: repeating-linear-gradient(180deg, transparent 0 3px, #aaccff 3px 5px, transparent 5px 6px); }
+/* ---------- Why 480i? ---------- */
 
-.chain { margin: 1.75rem 0 1rem; }
-.chain img { display: block; width: 100%; }
-.stages { margin: 0 0 1rem; padding-left: 1.6rem; }
-.stages li { padding-left: .25rem; }
-.stages li + li { margin-top: .65rem; }
-.stages b { color: var(--white); }
-.stages span { color: var(--sky); font-style: italic; }
+/* Row art drawn in the page: one 240-line pass beside the two interleaved 480i fields. */
+.fields { display: block; width: 100%; height: auto; }
+.fields text { font: 400 30px var(--title); fill: var(--gold-soft); }
+.fields__odd { stroke: var(--gold-soft); }
+.fields__even { stroke: var(--sky); }
 
-.effects { margin: 1rem 0; }
-.effects dt { color: var(--white); font-weight: 700; }
-.effects dd { margin: .15rem 0 1rem; }
-
-.note {
-  margin: 2.25rem 0;
-  padding: 1.2rem 1.35rem 1.25rem;
+/* A diagram in a plate: the same deep band between gold rules, shown whole rather than cropped. */
+.plate__fig {
+  margin: 0;
+  padding: clamp(.75rem, 2.5vw, 1.25rem) clamp(.75rem, 3vw, 1.75rem);
   background: var(--navy-deep);
-  border-block: 1px solid var(--gold-rule);
+  border-block: 2px solid var(--gold-rule);
 }
-.note h2 { margin-bottom: .5rem; }
-.note p:last-child { margin-bottom: 0; }
+.plate__fig img { display: block; width: 100%; }
 
-.catalog { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 1.25rem 2rem; align-items: center; margin-top: 2.75rem; scroll-margin-top: 1.5rem; }
-.catalog img { display: block; width: 100%; }
-.catalog p { margin-bottom: .6rem; }
+/* Lists with a bold lead-in on each item. */
+.points { margin: .9rem 0 1rem; padding-left: 1.6rem; }
+.points li { padding-left: .25rem; }
+.points li + li { margin-top: .65rem; }
+.points b { color: var(--white); }
+.points span { color: var(--sky); font-style: italic; }
 
 /* ---------- Render Restore ---------- */
 
@@ -631,8 +620,6 @@ h3 { color: var(--white); font: 700 1.125rem/1.3 var(--serif); }
   .hero { display: block; }
   .hero__copy { display: contents; }
   .releases { clear: both; }
-  .catalog { grid-template-columns: minmax(0, 1fr); }
-  .catalog img { max-width: 20rem; }
 }
 
 @media (max-width: 40rem) {
@@ -647,11 +634,12 @@ h3 { color: var(--white); font: 700 1.125rem/1.3 var(--serif); }
   .row, .row--flip { --art: 5.75rem; grid-template-columns: var(--art) minmax(0, 1fr); align-items: start; gap: .9rem 1rem; }
   .row--flip .row__art { order: 0; }
   .row--tall, .row--sm { --art: 5.75rem; }
+  /* Same lane as the other rows so the text still lines up; the art itself drops to three-quarters. */
+  .row--xs .row__art img { width: 75%; }
   .row--big, .row--stack { grid-template-columns: minmax(0, 1fr); }
   .row--big .row__art, .row--stack .row__art { width: 100%; max-width: 18rem; justify-self: start; }
   .bench__item { grid-template-columns: 7rem minmax(0, 1fr); gap: .5rem 1rem; }
   .bench__item > img { height: 4.25rem; }
-  .modes { grid-template-columns: minmax(0, 1fr); }
   .log { grid-template-columns: minmax(0, 1fr); gap: .35rem; }
   /* Years in an even grid, so no wrapped line starts with a stray bullet. */
   .subbar { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); justify-items: center; padding-inline: .25rem; }

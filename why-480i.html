@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/limelight-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20261108">
+  <link rel="stylesheet" href="style.css?v=20261109-2">
   <script src="analytics.js" defer></script>
 </head>
 <body class="p-why">
@@ -41,66 +41,74 @@
   <main id="main" class="page">
     <p class="crumb"><a href="patches"><span>480<span class="lc">i</span> Patches</span></a></p>
     <h1 class="gilt">Why 480<span class="lc">i</span>?</h1>
-    <div class="prose">
-      <p class="lede dropcap">A 480i patch is the game-side link in a better picture chain: it gives the game a denser interlaced signal. From there, Analogue 3D can optionally change how that image is delivered and scaled before it reaches your display.</p>
+    <p class="lede">A 480i patch is the game-side link in a better picture chain: it gives the game a denser interlaced signal. From there, Analogue 3D can optionally change how that image is delivered and scaled before it reaches your display.</p>
 
-      <h2 class="gilt gilt--sm">Start in the game, finish at the screen</h2>
-      <p><strong>First, the patch changes the game.</strong> Many N64 titles spend most of their time in 240p: one 240-line picture at a time. A 480i-patched ROM instead uses the console’s 480-line mode, sending odd and even lines as two fast fields.</p>
-      <dl class="modes" aria-label="240p compared with 480i">
-        <div>
-          <dt>240p</dt>
-          <dd>One 240-line picture in each pass.</dd>
-          <span class="modes__lines" aria-hidden="true"></span>
+    <div class="rows">
+      <section class="row" aria-labelledby="why-game">
+        <figure class="row__art frame">
+          <svg class="fields" viewBox="0 0 200 172" role="img" aria-labelledby="fields-title">
+            <title id="fields-title">240p draws one 240-line picture per pass, with gaps between the lines. 480i fills the gaps with a second field: odd lines, then even lines.</title>
+            <text x="52" y="36" text-anchor="middle">240p</text>
+            <text x="148" y="36" text-anchor="middle">480i</text>
+            <path class="fields__odd" d="M16 58 H88 M16 72 H88 M16 86 H88 M16 100 H88 M16 114 H88 M16 128 H88 M16 142 H88 M16 156 H88" stroke-width="5"/>
+            <path class="fields__odd" d="M112 58 H184 M112 72 H184 M112 86 H184 M112 100 H184 M112 114 H184 M112 128 H184 M112 142 H184 M112 156 H184" stroke-width="5"/>
+            <path class="fields__even" d="M112 65 H184 M112 79 H184 M112 93 H184 M112 107 H184 M112 121 H184 M112 135 H184 M112 149 H184 M112 163 H184" stroke-width="5"/>
+          </svg>
+        </figure>
+        <div class="row__body">
+          <h2 class="gilt gilt--md" id="why-game">Start in the game</h2>
+          <p class="meta">Game side · the patched ROM</p>
+          <p>Many N64 titles spend most of their time in 240p: one 240-line picture at a time. A 480i-patched ROM instead uses the console’s 480-line mode, sending odd and even lines as two fast fields.</p>
         </div>
-        <div>
-          <dt>480i</dt>
-          <dd>Two alternating 240-line fields: odd lines, then even lines.</dd>
-          <span class="modes__fields" aria-hidden="true"><i></i><i></i></span>
+      </section>
+
+      <section class="plate" aria-labelledby="why-screen">
+        <figure class="plate__fig">
+          <picture>
+            <source media="(max-width: 520px)" srcset="images/480i-signal-path-mobile.svg?v=20261109" width="640" height="700">
+            <img src="images/480i-signal-path.svg?v=20261109" width="1600" height="340" loading="lazy" decoding="async" alt="Signal path: a 480i-patched Nintendo 64 ROM, then optional Analogue 3D Progressive Output and Horizontal Upscaling, then your display">
+          </picture>
+        </figure>
+        <div class="plate__body">
+          <h2 class="gilt gilt--md" id="why-screen">Finish at the screen</h2>
+          <p>On original hardware, that 480i signal can go straight to a CRT or scaler. On Analogue 3D, Progressive Output and Horizontal Upscaling are optional, separate stages, not substitutes for the patch itself.</p>
+          <ol class="points" aria-label="Signal path stages">
+            <li><b>480i-patched ROM</b> <span>(game side)</span>: creates the denser, interlaced picture at the source.</li>
+            <li><b>Progressive Output</b> <span>(optional, Analogue 3D)</span>: a beta mode that delivers the full source image every frame.</li>
+            <li><b>Horizontal Upscaling</b> <span>(optional, Analogue 3D)</span>: doubles 3D horizontal detail while 2D stays native.</li>
+            <li><b>Your display</b> <span>(display side)</span>: choose the CRT, scaler or 4K mode that suits the game.</li>
+          </ol>
+          <p>The patch is the game-side link; Analogue 3D’s options are display-side links. Compare them per game instead of treating the chain as a universal multiplier. Games that use field-rendered screens may still need individual testing.</p>
         </div>
-      </dl>
-      <p><strong>Then the display path can change the delivery.</strong> On original hardware, that 480i signal can go straight to a CRT or scaler. On Analogue 3D, Progressive Output and Horizontal Upscaling are optional, separate stages, not substitutes for the patch itself.</p>
+      </section>
     </div>
 
-    <figure class="chain">
-      <picture>
-        <source media="(max-width: 520px)" srcset="images/480i-signal-path-mobile.svg?v=20261107">
-        <img src="images/480i-signal-path.svg?v=20261107" width="1600" height="340" loading="lazy" decoding="async" alt="Signal path: a 480i-patched Nintendo 64 ROM, then optional Analogue 3D Progressive Output and Horizontal Upscaling, then your display">
-      </picture>
-    </figure>
-
-    <div class="prose">
-      <ol class="stages" aria-label="Signal path stages">
-        <li><b>480i-patched ROM</b> <span>(game side)</span>: creates the denser, interlaced picture at the source.</li>
-        <li><b>Progressive Output</b> <span>(optional, Analogue 3D)</span>: a beta mode that delivers the full source image every frame.</li>
-        <li><b>Horizontal Upscaling</b> <span>(optional, Analogue 3D)</span>: doubles 3D horizontal detail while 2D stays native.</li>
-        <li><b>Your display</b> <span>(display side)</span>: choose the CRT, scaler or 4K mode that suits the game.</li>
-      </ol>
-      <p>The patch is the game-side link; Analogue 3D’s options are display-side links. Compare them per game instead of treating the chain as a universal multiplier. Games that use field-rendered screens may still need individual testing.</p>
-
-      <h2 class="gilt gilt--sm">What changes on screen</h2>
-      <dl class="effects">
-        <dt>Finer vertical detail</dt>
-        <dd>A 480-line image gives a compatible game more room for details that stack upward: type, thin edges, distant scenery and busy menus can read with more definition.</dd>
-        <dt>Still an N64 signal</dt>
-        <dd>It stays in the console’s standard-definition world. On a CRT or a good scaler it is a native kind of output, not a filter laid over the game.</dd>
-        <dt>Tuned per game</dt>
-        <dd>No switch improves every N64 title. Each patch is its own piece of work, built around the way that game draws its picture.</dd>
-      </dl>
-
-      <aside class="note" aria-labelledby="tradeoff">
-        <h2 class="gilt gilt--sm" id="tradeoff">The trade-off</h2>
-        <p>Interlaced video is made from alternating fields. A good CRT or quality scaler can make that look great, but a display that handles 480i poorly can show flicker or motion artifacts. 480i on its own gives a game a better picture option; it doesn’t replace the original look, and it isn’t a performance boost.</p>
-      </aside>
-    </div>
-
-    <section class="catalog" id="catalog" aria-labelledby="catalog-title">
-      <img src="images/n64-new-soft-catalog-logo-v2.webp?v=20260916-catalog-v2" width="1722" height="841" loading="lazy" decoding="async" alt="N64 New Soft Catalog logo (N64新作ソフトカタログ) in gold lettering">
-      <div>
-        <h2 class="gilt gilt--sm" id="catalog-title">On the bench</h2>
-        <p>Out now: <a href="pd6480iperf/">PD6480iPerf</a> for Perfect Dark and <a href="tnd6480i/">TND6480i</a> for Tomorrow Never Dies 64. In the works, with no public builds yet: Conker’s Bad Fur Day, Diddy Kong Racing, <a href="ys6480i/">Yoshi’s Story</a>, <a href="fzerox/">F-Zero X</a> and <a href="killer-instinct-gold/">Killer Instinct Gold</a>.</p>
-        <p><a class="go" href="patches"><span>All 480<span class="lc">i</span> patches</span> <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
-      </div>
+    <section aria-labelledby="why-changes">
+      <h2 class="gilt gilt--md" id="why-changes">What changes on screen</h2>
+      <ul class="points">
+        <li><b>Finer vertical detail.</b> A 480-line image gives a compatible game more room for details that stack upward: type, thin edges, distant scenery and busy menus can read with more definition.</li>
+        <li><b>Still an N64 signal.</b> It stays in the console’s standard-definition world. On a CRT or a good scaler it is a native kind of output, not a filter laid over the game.</li>
+        <li><b>Tuned per game.</b> No switch improves every N64 title. Each patch is its own piece of work, built around the way that game draws its picture.</li>
+      </ul>
     </section>
+
+    <section aria-labelledby="why-tradeoff">
+      <h2 class="gilt gilt--md" id="why-tradeoff">The trade-off</h2>
+      <p>Interlaced video is made from alternating fields. A good CRT or quality scaler can make that look great, but a display that handles 480i poorly can show flicker or motion artifacts. 480i on its own gives a game a better picture option; it doesn’t replace the original look, and it isn’t a performance boost.</p>
+    </section>
+
+    <div class="rows">
+      <section class="row row--flip row--big" id="catalog" aria-labelledby="catalog-title">
+        <figure class="row__art"><img src="images/n64-new-soft-catalog-logo-v2.webp?v=20260916-catalog-v2" width="1722" height="841" loading="lazy" decoding="async" alt="N64 New Soft Catalog logo (N64新作ソフトカタログ) in gold lettering"></figure>
+        <div class="row__body">
+          <h2 class="gilt gilt--md" id="catalog-title">On the bench</h2>
+          <p>Out now: <a href="pd6480iperf/">PD6480iPerf</a> for Perfect Dark and <a href="tnd6480i/">TND6480i</a> for Tomorrow Never Dies 64. In the works, with no public builds yet: Conker’s Bad Fur Day, Diddy Kong Racing, <a href="ys6480i/">Yoshi’s Story</a>, <a href="fzerox/">F-Zero X</a> and <a href="killer-instinct-gold/">Killer Instinct Gold</a>.</p>
+          <ul class="acts">
+            <li><a class="go" href="patches"><span>All 480<span class="lc">i</span> patches</span> <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="foot">
