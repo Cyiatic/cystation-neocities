@@ -60,14 +60,6 @@ body {
 img, svg { max-width: 100%; }
 img { height: auto; }
 
-/* The supplied gold Rareware arrow; hotspot on the arrow tip. */
-@media (any-pointer: fine) {
-  :root { --cursor: url("images/rareware-cursor-32.png?v=20261022") 2 2; }
-  html, body { cursor: var(--cursor), auto; }
-  a[href], button:not(:disabled), summary, select, label[for] { cursor: var(--cursor), pointer; }
-  input:not([type="button"], [type="submit"], [type="checkbox"], [type="radio"]), textarea { cursor: text; }
-}
-
 /* ---------- Links, focus, skip ---------- */
 
 a {
@@ -491,6 +483,133 @@ h3 { color: var(--white); font: 700 1.125rem/1.3 var(--serif); }
 .points b { color: var(--white); }
 .points span { color: var(--sky); font-style: italic; }
 
+/* ---------- iQue Player: a homage to iQue's own website ---------- */
+
+/* Inside its yellow frame the page borrows the look of www.ique.com at the end of 2004: a yellow field, an indigo
+   panel with one big rounded corner and the glass orb logo, yellow folder tabs, a grey well, white rounded boxes
+   under black title bars, and a steel-blue feature panel. The bar and the footer stay CyStation's, and the One Field
+   and Gold Means Go rules stop at the yellow frame. */
+.p-ique { --col: var(--frame); }
+.iq {
+  --iq-yellow: #ffff00;
+  --iq-indigo: #2e3192;
+  --iq-grey: #a9a9a7;
+  --iq-steel: #b8c4d2;
+  --iq-ink: #222;
+  padding: 10px;
+  background: var(--iq-yellow);
+}
+.iq__panel {
+  padding: 1.25rem 1.25rem 1rem;
+  background: var(--iq-indigo);
+  border-top-left-radius: 3.5rem;
+  color: #fff;
+}
+.iq__head { display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "orb title" "orb lede"; align-items: center; gap: 0 1.1rem; }
+.iq__orb { grid-area: orb; width: 88px; height: auto; }
+.iq__title { grid-area: title; align-self: end; margin: 0; color: #fff; font: 700 clamp(1.9rem, 4.6vw, 2.6rem)/1.1 var(--ui); letter-spacing: -.01em; }
+.iq__zh { margin-left: .3em; color: var(--iq-yellow); font-size: .6em; letter-spacing: .08em; }
+.iq__lede { grid-area: lede; align-self: start; max-width: 62ch; margin: .55rem 0 0; color: #e8ebff; font: 400 1.0625rem/1.55 var(--serif); }
+
+/* Folder tabs: a yellow tab before each label. */
+.iq__tabs ul { display: flex; flex-wrap: wrap; gap: 0 1.2rem; margin: .9rem 0 0; padding: 0 0 0 .75rem; list-style: none; }
+.iq__tabs li { margin: 0; }
+.iq__tabs a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-left: .85rem;
+  color: #dfe3ff;
+  font: 700 .875rem/1.1 var(--ui);
+  text-decoration: none;
+}
+.iq__tabs a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: .6rem;
+  width: 7px;
+  height: 1.4rem;
+  background: var(--iq-yellow);
+  border-radius: 4px 4px 0 0;
+}
+.iq__tabs a:hover { color: #fff; text-decoration: underline; text-underline-offset: .3em; }
+
+.iq__inner { display: grid; gap: .9rem; padding: .9rem; background: var(--iq-grey); border-top-left-radius: 1.4rem; }
+.iq__box { padding: 0 1.25rem 1.15rem; background: #fff; border-radius: 10px; color: var(--iq-ink); scroll-margin-top: 1rem; }
+.iq__box p { margin: 0 0 .8rem; font-size: 1.0625rem; line-height: 1.6; }
+.iq__box > :last-child, .iq__row > div > :last-child { margin-bottom: 0; }
+.iq__box a { color: var(--iq-indigo); }
+.iq__box a:visited { color: #5b2a8c; }
+.iq__box a:hover { color: #000; }
+.iq__box :focus-visible { outline-color: var(--iq-indigo); }
+/* The black title bar across the top of each box, with the Chinese name the site used. */
+.iq__bar {
+  margin: 0 -1.25rem 1rem;
+  padding: .55rem 1.25rem .5rem;
+  background: #000;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  font: 400 1.125rem/1.25 var(--ui);
+  letter-spacing: .06em;
+}
+.iq__bar span { margin-left: .45em; color: #d9d9d9; font-size: .9em; }
+.iq__meta { color: var(--iq-indigo); font-style: italic; }
+.iq__row { display: grid; grid-template-columns: 13rem minmax(0, 1fr); align-items: center; gap: 1rem 1.5rem; }
+.iq__row--flip { grid-template-columns: minmax(0, 1fr) 7.5rem; }
+.iq__art { display: block; width: 100%; height: auto; }
+
+/* "Watch on the TV" appears only once tv.js has built the TV. */
+.iq__box .tv-cue { margin: .2rem 0 0; }
+.iq__go {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  min-height: 2.75rem;
+  padding: .3rem 1.15rem .3rem .35rem;
+  color: #fff;
+  background: linear-gradient(180deg, #6c6c6c 0%, #3a3a3a 55%, #2a2a2a 100%);
+  border: 0;
+  border-radius: 999px;
+  font: 700 .9375rem/1.1 var(--ui);
+  cursor: pointer;
+}
+.iq__go svg { width: 1.75rem; height: 1.75rem; flex: none; }
+.iq__go:hover { background: linear-gradient(180deg, #7c7c7c 0%, #474747 55%, #333 100%); }
+
+/* GoldeniQue in the steel-blue feature panel: its logo, then a grey pill with the slanted step. */
+.iq__box--club { padding-top: 1.15rem; background: var(--iq-steel); color: #1c1c34; }
+.iq__logo { margin: 0 0 .9rem; }
+.iq__logo img { display: block; width: 100%; height: auto; background: #151515; border-radius: 8px; }
+.iq__box .iq__pill {
+  padding: .45rem 2.5rem .45rem 1rem;
+  background: linear-gradient(105deg, #4f4d4d 0 64%, #8c8a8a 64% 100%);
+  border-radius: 999px;
+  color: #fff;
+  font: 700 .9375rem/1.3 var(--ui);
+}
+.iq__note { margin: .9rem .25rem 0 0; color: #dfe3ff; font: italic .875rem/1.4 var(--serif); text-align: right; }
+
+@media (max-width: 48rem) {
+  .iq__row, .iq__row--flip { grid-template-columns: minmax(0, 1fr); }
+  .iq__row .iq__art { max-width: 15rem; }
+  .iq__row--flip .iq__art { order: -1; max-width: 8rem; }
+}
+@media (max-width: 40rem) {
+  .iq { padding: 6px; }
+  .iq__panel { padding: 1rem .75rem .85rem; border-top-left-radius: 2rem; }
+  .iq__head { grid-template-areas: "orb title" "lede lede"; gap: 0 .75rem; }
+  .iq__orb { width: 56px; }
+  .iq__title { align-self: center; }
+  .iq__box .iq__pill { font-size: .875rem; }
+  .iq__tabs ul { gap: 0 .9rem; padding-left: .25rem; }
+  .iq__inner { padding: .6rem; border-top-left-radius: 1rem; }
+  .iq__box { padding: 0 .9rem .95rem; }
+  .iq__bar { margin: 0 -.9rem .9rem; padding-inline: .9rem; }
+  .iq__box--club { padding-top: .9rem; }
+}
+
 /* ---------- Render Restore ---------- */
 
 .facts {
@@ -606,11 +725,176 @@ h3 { color: var(--white); font: 700 1.125rem/1.3 var(--serif); }
 .outposts img { width: 48px; height: 48px; object-fit: contain; transition: transform .2s ease-out; }
 .outposts a:hover, .outposts a[aria-current="page"], .foot__links a[aria-current="page"] { color: var(--white); }
 .outposts a:hover img { transform: translateY(-3px) rotate(-4deg); }
+
+/* Following eyes (eyes.js): a layer of moving pupils stacked on a googly-eyed image, in the image's own grid cell. */
+.has-eyes > img, .has-eyes > .eyes { grid-area: 1 / 1; }
+.eyes { display: block; pointer-events: none; }
+.eyes__pupil { transition: transform .15s ease-out; }
+.outposts .eyes { width: 48px; height: 48px; transition: transform .2s ease-out; }
+.outposts a:hover .eyes { transform: translateY(-3px) rotate(-4deg); }
+.row__art .eyes { width: 100%; height: auto; }
 .foot__links { margin: 1.5rem 0 .4rem; font: italic 700 .8125rem/1.6 var(--ui); letter-spacing: .08em; text-transform: uppercase; }
 .foot__links a { color: var(--gold-soft); text-decoration: none; display: inline-block; padding: .5rem .35rem; }
 .foot__links a:hover { color: var(--white); text-decoration: underline; }
 .foot__links span { color: var(--gold-rule); }
 .foot__fine { margin: 0; color: var(--sky); font: italic .875rem/1.5 var(--serif); }
+
+/* ---------- Rare TV (tv.js) ---------- */
+
+/* A gold-framed set fixed in the bottom-right corner. On wide screens it sits in the margin beside the frame;
+   on smaller ones, or once put away, it folds into a TV icon. tv.js builds it, so without the script there is no TV. */
+.tv {
+  --tv-w: clamp(12rem, calc((100vw - var(--frame)) / 2 - 1.75rem), 15rem);
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 25;
+}
+.tv [hidden] { display: none !important; }
+.tv button {
+  margin: 0;
+  padding: 0;
+  color: var(--gold);
+  background: none;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgb(255 221 0 / 25%);
+}
+.tv button:hover { color: var(--white); }
+.tv svg { display: block; width: 1.25rem; height: 1.25rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.tv .tv__icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--navy-deep);
+  border: 1px solid var(--gold-rule);
+  border-radius: 3px;
+}
+.tv__icon svg { width: 1.75rem; height: 1.75rem; stroke-width: 1.6; }
+
+.tv__set {
+  position: relative;
+  width: var(--tv-w);
+  padding: .45rem .5rem .15rem;
+  background: var(--navy-deep);
+  border: 1px solid var(--gold-rule);
+}
+/* Gold end caps, as on the bar. */
+.tv__set::before, .tv__set::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  width: 7px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #8a5a12 0%, #ffd970 45%, #b07a1c 100%);
+}
+.tv__set::before { left: -4px; }
+.tv__set::after { right: -4px; }
+
+/* The screen is a button: it switches the set on, then makes it bigger or smaller. */
+.tv .tv__screen {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: radial-gradient(130% 95% at 25% 15%, rgb(170 204 255 / 15%), transparent 46%), #04040b;
+  border: 1px solid #000;
+  border-radius: 3px;
+  cursor: zoom-in;
+}
+.tv:not(.tv--on) .tv__screen { cursor: pointer; }
+.tv--big .tv__screen { cursor: zoom-out; }
+.tv__video, .tv__snow { position: absolute; inset: 0; width: 100%; height: 100%; }
+.tv__video { object-fit: cover; background: #000; opacity: 0; }
+.tv--on .tv__video, .tv--cool .tv__video { opacity: 1; }
+.tv__snow { opacity: 0; }
+.tv--tuning .tv__snow { opacity: 1; }
+.tv__ident {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: .4rem;
+}
+.tv--on .tv__ident { display: none; }
+.tv__brand { color: #e9b949; font: 400 1.15rem/1.2 var(--title); letter-spacing: .08em; text-transform: uppercase; }
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .tv__brand {
+    background: linear-gradient(180deg, #c48a26 0%, #ffe08a 48%, #d39a2c 70%, #a8711c 100%) 0 0 / 100% 1.2em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.tv__hint { color: var(--gold); font: italic 700 .6875rem/1 var(--ui); letter-spacing: .12em; text-transform: uppercase; }
+.tv__screen:hover .tv__hint { color: var(--white); text-decoration: underline; text-underline-offset: .35em; }
+.tv__osd {
+  position: absolute;
+  top: .5rem;
+  right: .6rem;
+  color: var(--white);
+  font: 900 .9375rem/1 var(--mark);
+  letter-spacing: .03em;
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 rgb(0 0 0 / 60%);
+  opacity: 0;
+  transition: opacity .35s;
+}
+.tv--osd .tv__osd { opacity: 1; }
+
+/* What's on: channel, game and what the clip is, on two lines at most so the set never jumps. */
+.tv__now {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: 2.6em;
+  margin: .4rem .1rem .05rem;
+  color: var(--sky);
+  font: italic 400 .8125rem/1.3 var(--serif);
+}
+.tv__now b { color: var(--cream); font-style: normal; }
+.tv__ch { margin-right: .1rem; color: var(--gold-soft); font: italic 700 .6875rem/1 var(--ui); letter-spacing: .1em; text-transform: uppercase; }
+
+.tv__bar { display: flex; align-items: center; margin: 0 -.35rem; }
+.tv .tv__btn { display: grid; place-items: center; width: 2.25rem; height: 2.25rem; border-radius: 2px; }
+.tv .tv__power[aria-pressed="true"] { color: var(--white); }
+.tv .tv__away { margin-left: auto; }
+.tv__sound svg + svg { display: none; }
+.tv--loud .tv__sound svg { display: none; }
+.tv--loud .tv__sound svg + svg { display: block; }
+
+/* Switching on opens the picture out of a bright line; switching off shrinks it back into one. */
+@keyframes tv-warm {
+  from, 40% { transform: scale(1, .01); filter: brightness(3); }
+  to { transform: none; filter: none; }
+}
+@keyframes tv-cool {
+  from { transform: none; filter: none; opacity: 1; }
+  55% { transform: scale(1, .01); filter: brightness(3); opacity: 1; }
+  to { transform: scale(.02, .01); filter: brightness(3); opacity: 0; }
+}
+.tv--warm .tv__video, .tv--warm .tv__snow { animation: tv-warm .34s ease-out; }
+.tv--cool .tv__video { animation: tv-cool .3s ease-in forwards; }
+
+.tv.tv--big { --tv-w: min(24rem, calc(100vw - 2.5rem)); }
+.tv--big .tv__now { min-height: 1.3em; }
+@media (max-width: 79.99rem) {
+  .tv { --tv-w: min(15rem, calc(100vw - 2.5rem)); }
+}
+@media (pointer: coarse) {
+  .tv { --tv-w: min(16.5rem, calc(100vw - 2.5rem)); }
+  .tv .tv__btn { width: 2.75rem; height: 2.75rem; }
+}
+/* Where the corner overlaps the page, the footer gets room to scroll clear of the icon. */
+@media (max-width: 63rem) {
+  .has-tv .foot { padding-bottom: 2.75rem; }
+}
 
 /* ---------- Responsive ---------- */
 
@@ -636,6 +920,7 @@ h3 { color: var(--white); font: 700 1.125rem/1.3 var(--serif); }
   .row--tall, .row--sm { --art: 5.75rem; }
   /* Same lane as the other rows so the text still lines up; the art itself drops to three-quarters. */
   .row--xs .row__art img { width: 75%; }
+  .row--xs .row__art .eyes { width: 75%; }
   .row--big, .row--stack { grid-template-columns: minmax(0, 1fr); }
   .row--big .row__art, .row--stack .row__art { width: 100%; max-width: 18rem; justify-self: start; }
   .bench__item { grid-template-columns: 7rem minmax(0, 1fr); gap: .5rem 1rem; }
@@ -666,7 +951,7 @@ h3 { color: var(--white); font: 700 1.125rem/1.3 var(--serif); }
 
 @media print {
   html, body { background: #fff; color: #000; }
-  .masthead, .foot, .skip { display: none; }
+  .masthead, .foot, .skip, .tv { display: none; }
   .gilt { -webkit-text-fill-color: #000; background: none; filter: none; color: #000; }
   a { color: #000; }
 }

@@ -12,7 +12,7 @@ SHOTS = OUT / ('shots-live' if LIVE else 'shots')
 SHOTS.mkdir(exist_ok=True)
 PAGES = ['/', '/patches', '/why-480i', '/render-restore.html', '/render-restore/conker-skyboxes.html',
          '/render-restore/tools-of-the-trade.html', '/projects', '/navigation', '/aboutme', '/credits',
-         '/links', '/privacy', '/no-such-page/deeper']
+         '/links', '/privacy', '/ique', '/no-such-page/deeper']
 VIEWPORTS = {'desktop': (1440, 900), 'mobile': (390, 844), 'small': (320, 640)}
 
 PAGE_CHECKS = r'''() => {

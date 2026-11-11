@@ -129,7 +129,7 @@ One saturated field does almost all the work; gold is the voice; cream carries r
 - **Label** (Arial 700 italic, 0.8125rem, 0.07–0.12em, uppercase): bar, buttons, text actions, Outposts.
 
 ### Named Rules
-**The Lowercase i Rule.** In uppercase lettering, the "i" of 480i stays lowercase (`<span class="lc">i</span>`).
+**The Lowercase i Rule.** In uppercase lettering, the "i" of 480i, iQue and GoldeniQue stays lowercase (`<span class="lc">i</span>`).
 **The Engraving Rule.** The hatch appears only at headline size and up; small gilt keeps a clean gradient.
 
 ## Layout
@@ -164,6 +164,39 @@ Render on one side, gilt title, a meta line in sky italic, two or three lines of
 
 ### Outposts footer
 Gilt "Outposts", six 48px googly-eyed icons with italic caps labels (the outbound four say "opens in a new tab" to screen readers), then Directory · Links · Privacy and a one-line fan-site notice.
+
+### Cursor
+The browser's own, on every main page (since 10 November 2026). The gold Rareware arrow is retired for now; `images/rareware-cursor-32.png` is kept. The game menus keep their own cursors.
+
+### Following eyes
+The googly eyes on the Outposts icons, the home quill and the Render Restore temple turn toward the pointer, the link with keyboard focus or a tap (`eyes.js`, loaded on every main page).
+- **How:** the script redraws each image with its pupils filled in from the eye white, and slides the original pupils in an SVG layer. The layer sits in the image's own grid cell (`.has-eyes`) and is masked to each eye.
+- **Geometry:** each eye's white and resting pupil are measured ellipses in `eyes.js`. New googly-eyed art needs its eyes measured before it joins.
+- **When it's off:** without JavaScript and with reduced motion, the art is unchanged and the layout is identical.
+
+### iQue Player page (a homage)
+The owner asked on 11 November 2026 for the iQue page to reference the official iQue site's UI. Inside a yellow frame, the page borrows the look of www.ique.com at the end of 2004, from the Wayback Machine's capture of 11 December 2004. The bar and the footer stay CyStation's, and the One Field and Gold Means Go rules stop at the yellow frame.
+- **Parts:**
+  - a `#ffff00` field;
+  - an indigo `#2e3192` panel with one big rounded corner, carrying the glass orb logo (cut from iQue's own game reel);
+  - yellow folder tabs;
+  - a grey `#a9a9a7` well holding white rounded boxes under black title bars, each with its Chinese name (神游机, 神游卡, 游戏专区);
+  - a steel-blue `#b8c4d2` feature panel with a grey slanted pill, used for GoldeniQue.
+- **Type:** Arial bold for bars and tabs, Georgia for reading text; indigo links and focus rings inside the boxes.
+- **Fan page, not an official one:** a closing line says the page borrows iQue's 2004 look, and the CyStation bar, footer and fan-site notice stay.
+
+### Rare TV
+A small gold-framed TV in the bottom-right corner of every main page that plays old Rare and Nintendo 64 ads and trailers (`tv.js`, clips in `tv/`). The owner asked for a corner miniplayer of trailers on 9 November 2026.
+- **Lineups:** on the iQue Player page (`<body data-tv="ique">`) it becomes the iQue TV and plays only iQue videos, one channel per iQue game in release order. Each lineup keeps its own channel and spot. Power, sound, size and put-away are shared, so a TV that's on stays on when you move between them. A page can add its own button for the TV with `data-tv-on`, inside a hidden `.tv-cue`; tv.js shows it only when the TV is there.
+- **Look:** a navy-deep box with a 1px rule-gold border and the bar's gold end caps, and a 4:3 screen. Below the screen it shows "CH n", the game in cream and what the clip is in sky italic. The buttons are gold icons: power, channel down, channel up, sound and put away. When the set is off, the screen shows "Rare TV" in small gilt above a gold "Switch on".
+- **Playing:** it starts off and loads nothing until someone switches it on. Sound stays off until someone turns it on, and that choice lasts for the visit. Changing channel shows a blink of static. When an ad ends, the next channel starts. Clicking the screen makes the set bigger or smaller.
+- **Across pages:** for the rest of the visit, the next page carries on with the same ad from the same spot. It also remembers the channel, the size and whether the set was put away.
+- **Where it sits:** from 80rem up it sits in the margin beside the frame. Below that, or once put away, it becomes a 48px TV icon. Under 63rem the footer gets extra room so the page can scroll clear of the icon.
+- **When it stays off:**
+  - With reduced motion or data saver it never starts by itself.
+  - Reduced motion also drops the static and the warm-up, and stops at the end of each ad.
+  - Without JavaScript or H.264 video there is no TV.
+- **Clips:** 4:3 H.264/AAC MP4s, trimmed to the ad itself and evened to −17 LUFS. The 384×288 ones are cut from 360p and 480p sources, the 320×240 ones from 240p sources; each is about 1–4 MB. Sources are listed on the Credits page. To add a clip, add it to the `CH` list in `tv.js`.
 
 ## Do's and Don'ts
 
