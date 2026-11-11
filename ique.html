@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="preload" href="fonts/limelight-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20261111">
+  <link rel="stylesheet" href="style.css?v=20261111b">
   <script src="analytics.js" defer></script>
   <script src="eyes.js?v=20261110" defer></script>
   <script src="tv.js?v=20261111" defer></script>
@@ -45,6 +45,8 @@
       <div class="iq__panel">
         <header class="iq__head">
           <img class="iq__orb" src="images/site/ique-orb-140.webp" width="145" height="146" decoding="async" alt="">
+          <img class="iq__hi" id="iq-hi" src="images/site/ique-nand-welcome.webp" width="344" height="144" decoding="async" alt="">
+          <script>(function () { var d = new Date(); if (d.getMonth() === 10 && d.getDate() === 18) document.getElementById('iq-hi').src = 'images/site/ique-nand-birthday.webp'; })();</script>
           <h1 class="iq__title">iQue Player <span class="iq__zh" lang="zh-Hans">神游机</span></h1>
           <p class="iq__lede">Nintendo’s console for mainland China, launched in November 2003: a whole Nintendo 64 built into the controller, with games loaded onto a flash card at a kiosk in the shop. I have one, and CyStation began the day after I researched it in March 2025.</p>
         </header>
@@ -52,6 +54,7 @@
           <ul>
             <li><a href="#ique-console">The console</a></li>
             <li><a href="#ique-card">The card</a></li>
+            <li><a href="#ique-nand">Inside the card</a></li>
             <li><a href="#ique-homebrew">Homebrew</a></li>
             <li><a href="#goldenique">GoldeniQue</a></li>
           </ul>
@@ -78,6 +81,26 @@
               </div>
               <img class="iq__art" src="images/site/ique-card-300.webp" width="300" height="351" loading="lazy" decoding="async" alt="An iQue Card: a dark grey flash card with a white iQue label">
             </div>
+          </section>
+
+          <section class="iq__box" aria-labelledby="ique-nand">
+            <h2 class="iq__bar" id="ique-nand">Inside my iQue Card</h2>
+            <p>The iQue Card holds the console’s system software, menus and all, as well as its games. These pictures come from the NAND flash on mine.</p>
+            <div class="iq__shots">
+              <figure><img src="images/site/ique-nand-logo.webp" width="360" height="270" loading="lazy" decoding="async" alt="The iQue logo in black letters with a gold glow, on black with soft light streaks"><figcaption>The iQue logo</figcaption></figure>
+              <figure><img src="images/site/ique-nand-sky.webp" width="640" height="324" loading="lazy" decoding="async" alt="A rainbow arching over a blue horizon"><figcaption>A menu background</figcaption></figure>
+              <figure><img src="images/site/ique-nand-newyear.webp" width="640" height="324" loading="lazy" decoding="async" alt="A red Chinese New Year scene with lanterns, a 福 sign and a smiling cartoon monkey"><figcaption>A Chinese New Year background</figcaption></figure>
+            </div>
+            <figure class="iq__cast">
+              <ul>
+                <li><img src="images/site/ique-nand-mario.webp" width="360" height="324" loading="lazy" decoding="async" alt="Mario in his kart, holding up a green shell"></li>
+                <li><img src="images/site/ique-nand-link.webp" width="360" height="324" loading="lazy" decoding="async" alt="Link playing the Ocarina of Time"></li>
+                <li><img src="images/site/ique-nand-waverace.webp" width="328" height="324" loading="lazy" decoding="async" alt="A Wave Race 64 rider standing on a jet ski"></li>
+                <li><img src="images/site/ique-nand-peach.webp" width="256" height="324" loading="lazy" decoding="async" alt="Princess Peach with her hands clasped"></li>
+              </ul>
+              <figcaption>Character art from the menus</figcaption>
+            </figure>
+            <p>There’s a <span lang="zh-Hans">生日快乐!</span> (Happy birthday!) in there too. It takes over from the <span lang="zh-Hans">欢迎!!</span> (Welcome!!) at the top of this page every 18 November, the iQue Player’s birthday.</p>
           </section>
 
           <section class="iq__box" aria-labelledby="ique-homebrew">

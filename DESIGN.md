@@ -183,6 +183,8 @@ The owner asked on 11 November 2026 for the iQue page to reference the official 
   - a grey `#a9a9a7` well holding white rounded boxes under black title bars, each with its Chinese name (神游机, 神游卡, 游戏专区);
   - a steel-blue `#b8c4d2` feature panel with a grey slanted pill, used for GoldeniQue.
 - **Type:** Arial bold for bars and tabs, Georgia for reading text; indigo links and focus rings inside the boxes.
+- **From the owner's iQue Card:** the "Inside my iQue Card" box shows pictures ripped from the card's NAND on 10 November 2026. Its screens sit in dark 16:10 tiles; its character cut-outs sit in indigo tiles, which hide their hard crop edges.
+- **Greeting:** the menu's 欢迎!! greets visitors at the top of the panel. A small inline script swaps in 生日快乐! every 18 November, the iQue Player's launch day.
 - **Fan page, not an official one:** a closing line says the page borrows iQue's 2004 look, and the CyStation bar, footer and fan-site notice stay.
 
 ### Rare TV
