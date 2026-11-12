@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iQue Player · CyStation</title>
+  <meta name="description" content="The iQue Player, Nintendo’s 2003 console for mainland China: its story, and homebrew ports for it, starting with GoldeniQue, GoldenEye 007 on the iQue.">
+  <link rel="canonical" href="https://cystation.neocities.org/ique">
+  <meta name="theme-color" content="#000060">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CyStation">
+  <meta property="og:title" content="iQue Player · CyStation">
+  <meta property="og:description" content="Nintendo’s 2003 console for mainland China: its story, and homebrew ports for it, starting with GoldenEye 007.">
+  <meta property="og:url" content="https://cystation.neocities.org/ique">
+  <meta property="og:image" content="https://cystation.neocities.org/images/site/og-cystation.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Conker leaning on the Rareware R beside the CyStation wordmark">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="preload" href="fonts/limelight-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20261111c">
+  <script src="analytics.js" defer></script>
+  <script src="eyes.js?v=20261110" defer></script>
+  <script src="tv.js?v=20261111" defer></script>
+</head>
+<body class="p-ique" data-tv="ique">
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="masthead">
+    <nav class="bar" aria-label="Main">
+      <a class="bar__brand" href="./"><img src="images/goldballoon.webp" width="39" height="50" alt=""><span>CyStation</span></a>
+      <ul class="bar__nav">
+        <li><a href="patches"><span>480<span class="lc">i</span> Patches</span></a></li>
+        <li><a href="render-restore.html">Render Restore</a></li>
+        <li><a href="projects">Timeline</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="page">
+    <div class="iq">
+      <div class="iq__panel">
+        <header class="iq__head">
+          <img class="iq__orb" src="images/site/ique-orb-140.webp" width="145" height="146" decoding="async" alt="">
+          <img class="iq__hi" id="iq-hi" src="images/site/ique-nand-welcome.webp" width="344" height="144" decoding="async" alt="">
+          <script>(function () { var d = new Date(); if (d.getMonth() === 10 && d.getDate() === 18) document.getElementById('iq-hi').src = 'images/site/ique-nand-birthday.webp'; })();</script>
+          <h1 class="iq__title">iQue Player <span class="iq__zh" lang="zh-Hans">神游机</span></h1>
+          <p class="iq__lede">Nintendo’s console for mainland China, launched in November 2003: a whole Nintendo 64 built into the controller, with games loaded onto a flash card at a kiosk in the shop. I have one, and CyStation began the day after I researched it in March 2025.</p>
+        </header>
+        <nav class="iq__tabs" aria-label="On this page">
+          <ul>
+            <li><a href="#ique-console">The console</a></li>
+            <li><a href="#ique-card">The card</a></li>
+            <li><a href="#ique-nand">Inside the card</a></li>
+            <li><a href="#ique-homebrew">Homebrew</a></li>
+            <li><a href="#goldenique">GoldeniQue</a></li>
+          </ul>
+        </nav>
+        <div class="iq__inner">
+          <section class="iq__box" aria-labelledby="ique-console">
+            <h2 class="iq__bar" id="ique-console">The console <span lang="zh-Hans">神游机</span></h2>
+            <div class="iq__row">
+              <img class="iq__art" src="images/site/ique-player-480.webp" width="480" height="398" decoding="async" alt="The iQue Player: a grey controller with an analogue stick, a D-pad and coloured buttons, with the whole console inside it">
+              <div>
+                <p class="iq__meta">Launched 18 November 2003 · CN¥498 · made by iQue, Ltd.</p>
+                <p>China had banned home game consoles in 2000, and pirated cartridges were everywhere. So in December 2002 Nintendo set up iQue with Wei Yen, who had helped create the Nintendo 64 at Silicon Graphics.</p>
+                <p>The iQue Player hides the whole N64 inside the controller, which plugs straight into the TV. Every game is locked to one console by encryption from BroadOn, another of Wei Yen’s companies.</p>
+                <p class="tv-cue" hidden><button class="iq__go" type="button" data-tv-on><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="11" fill="#fff"/><path d="M9.5 7.5v9l7.5-4.5z" fill="#2e3192"/></svg>Watch iQue’s own trailers on the TV</button></p>
+              </div>
+            </div>
+          </section>
+
+          <section class="iq__box" aria-labelledby="ique-card">
+            <h2 class="iq__bar" id="ique-card">The card and the depot <span lang="zh-Hans">神游卡</span></h2>
+            <div class="iq__row iq__row--flip">
+              <div>
+                <p>There are no cartridges. Games live on the iQue Card, 64 MB of flash memory, which you took to an iQue Depot kiosk in a shop to load new ones. From October 2004, iQue@Home let you buy games on a PC and copy them to the console over USB, until the service closed at the end of 2016.</p>
+              </div>
+              <img class="iq__art" src="images/site/ique-card-300.webp" width="300" height="351" loading="lazy" decoding="async" alt="An iQue Card: a dark grey flash card with a white iQue label">
+            </div>
+          </section>
+
+          <section class="iq__box" aria-labelledby="ique-nand">
+            <h2 class="iq__bar" id="ique-nand">Inside my iQue Card</h2>
+            <p>The iQue Card holds the console’s system software, menus and all, as well as its games. These pictures come from the NAND flash on mine.</p>
+            <div class="iq__shots">
+              <figure><img src="images/site/ique-nand-logo.webp" width="360" height="270" loading="lazy" decoding="async" alt="The iQue logo in black letters with a gold glow, on black with soft light streaks"><figcaption>The iQue logo</figcaption></figure>
+              <figure><img src="images/site/ique-nand-sky.webp" width="640" height="324" loading="lazy" decoding="async" alt="A rainbow arching over a blue horizon"><figcaption>A menu background</figcaption></figure>
+              <figure><img src="images/site/ique-nand-newyear.webp" width="640" height="324" loading="lazy" decoding="async" alt="A red Chinese New Year scene with lanterns, a 福 sign and a smiling cartoon monkey"><figcaption>A Chinese New Year background</figcaption></figure>
+            </div>
+            <figure class="iq__cast">
+              <ul>
+                <li><img src="images/site/ique-nand-mario.webp" width="360" height="324" loading="lazy" decoding="async" alt="Mario in his kart, holding up a green shell"></li>
+                <li><img src="images/site/ique-nand-link.webp" width="360" height="324" loading="lazy" decoding="async" alt="Link playing the Ocarina of Time"></li>
+                <li><img src="images/site/ique-nand-waverace.webp" width="328" height="324" loading="lazy" decoding="async" alt="A Wave Race 64 rider standing on a jet ski"></li>
+                <li><img src="images/site/ique-nand-peach.webp" width="256" height="324" loading="lazy" decoding="async" alt="Princess Peach with her hands clasped"></li>
+              </ul>
+              <figcaption>Character art from the menus</figcaption>
+            </figure>
+            <p>There’s a <span lang="zh-Hans">生日快乐!</span> (Happy birthday!) in there too. It takes over from the <span lang="zh-Hans">欢迎!!</span> (Welcome!!) at the top of this page every 18 November, the iQue Player’s birthday.</p>
+          </section>
+
+          <section class="iq__box" aria-labelledby="ique-homebrew">
+            <h2 class="iq__bar" id="ique-homebrew">Homebrew <span lang="zh-Hans">游戏专区</span></h2>
+            <p>In 2018, researchers found holes in the iQue Player’s security, which opened it up to homebrew. These are ports of games it never had, starting with GoldeniQue.</p>
+          </section>
+
+          <section class="iq__box iq__box--club" id="goldenique" aria-labelledby="goldenique-title">
+            <h2 class="iq__logo" id="goldenique-title"><img src="images/site/goldenique-logo-1000.webp" srcset="images/site/goldenique-logo-560.webp 560w, images/site/goldenique-logo-1000.webp 1000w" sizes="(max-width: 53rem) 90vw, 46rem" width="1000" height="249" loading="lazy" decoding="async" alt="GoldeniQue"></h2>
+            <p class="iq__pill">GoldenEye 007 on the iQue Player · made with Zoinkity’s Q-Vert</p>
+            <p>GoldenEye 007 never came out on the iQue Player. GoldeniQue runs it there, thanks to Q-Vert, Zoinkity’s converter from 2023. It patches most NTSC versions of GoldenEye so the same ROM runs on both the iQue and the N64, with working saves on either and the Rumble Pak on N64.</p>
+            <p>Q-Vert can convert many existing GoldenEye mods too, such as Goldfinger and SubDrag’s 640i patch.</p>
+            <p class="iq__acts"><a class="iq__go iq__go--link" href="https://www.romhacking.net/utilities/1747/" target="_blank" rel="noopener">Get Q-Vert on Romhacking.net <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2.5 8h10M8.5 3.5 13 8l-4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden"> (opens in a new tab)</span></a></p>
+          </section>
+        </div>
+        <p class="iq__note">This page borrows the look of iQue’s own website from 2004.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <h2 class="gilt gilt--sm foot__title">Outposts</h2>
+    <ul class="outposts">
+      <li><a href="https://github.com/Cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-github-sgi-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://archive.org/details/@cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-iararenobg-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">Internet Archive<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://x.com/Kypherion" target="_blank" rel="noopener"><img src="images/site/outpost-twitternobgrare-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">Twitter<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="https://www.youtube.com/@Cyiatic" target="_blank" rel="noopener"><img src="images/site/outpost-ytnobgrare-96.webp" width="48" height="48" loading="lazy" decoding="async" alt="">YouTube<span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a href="aboutme"><img src="images/site/outpost-conktail-96.webp" width="19" height="48" loading="lazy" decoding="async" alt="">About</a></li>
+      <li><a href="credits"><img src="images/goldballoon.webp" width="39" height="50" loading="lazy" decoding="async" alt="">Credits</a></li>
+    </ul>
+    <p class="foot__links"><a href="navigation">Directory</a> <span aria-hidden="true">·</span> <a href="links">Links</a> <span aria-hidden="true">·</span> <a href="privacy">Privacy</a></p>
+    <p class="foot__fine">Kept by Cyiatic. Game artwork belongs to Rare Ltd. and Nintendo; CyStation is an unofficial fan site.</p>
+  </footer>
+</body>
+</html>

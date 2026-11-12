@@ -1,0 +1,49 @@
+/* A small editorial front page. Game imagery supplies the detail. */
+.home-edition { letter-spacing:0; }
+.home-edition #header { height:clamp(165px,23vw,235px); background-position:center 60%; }
+.home-edition #main-content { padding:28px 32px 24px; order:0; }
+.home-edition h1,.home-edition h2,.home-edition h3 { text-transform:none; text-shadow:none; letter-spacing:0; }
+.home-welcome { margin:0 0 38px; }
+.home-welcome h1 { margin:0 0 12px; max-width:none; color:var(--signal); font-family:"Arial Narrow","Helvetica Neue Condensed",Arial,sans-serif; font-weight:900; font-size:clamp(2.3rem,7vw,4rem); line-height:1; letter-spacing:-.04em; text-transform:uppercase; text-shadow:2px 2px 0 var(--content),4px 4px 0 rgb(0 0 0 / 45%); }
+.home-welcome p { margin:0; font-size:1.06rem; max-width:54ch; }
+.home-section-heading { display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:20px; }
+.home-section-heading h2 { margin:0; color:var(--cream); font-size:1.5rem; }
+.home-section-heading > a { flex-shrink:0; font-size:.9rem; }
+.home-releases { display:grid; grid-template-columns:1fr 1fr; gap:32px; }
+.home-release { display:grid; grid-template-columns:minmax(0, .85fr) minmax(0,1.15fr); align-items:start; gap:18px; }
+.home-release > img { width:100%; height:auto; margin-top:3px; }
+.home-release > div { min-width:0; }
+.home-release h3 { font-size:1.35rem; color:var(--amber); margin:4px 0 10px; }
+.home-release p { font-size:.94rem; line-height:1.5; margin:0 0 10px; }
+.home-release .home-release-note { color:var(--link); font-size:.76rem; margin:0; }
+#container .home-entry { display:block; color:var(--cream); line-height:1.45; padding:8px 0; }
+#container .home-secondary { display:block; font-weight:400; font-size:.84rem; padding:6px 0; }
+.home-guide { margin:24px 0 0; font-size:.9rem; }
+.home-preservation { margin-top:38px; padding-top:28px; border-top:1px solid rgb(153 204 255 / 35%); }
+.home-panorama { display:block; text-decoration:none; }
+.home-panorama > img { display:block; width:100%; height:auto; }
+.home-panorama > span { display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:10px 0; }
+.home-panorama strong { color:var(--cream); font-size:1.12rem; }
+.home-panorama span span { font-size:.88rem; font-weight:400; }
+.home-panorama:hover strong { color:var(--amber); text-decoration:underline; }
+.home-history { font-size:.88rem; margin:30px 0 2px; }
+.home-edition a:hover { color:var(--cream); text-decoration:underline; }
+@media(max-width:800px) {
+  .home-releases { gap:24px; }
+  .home-release { display:block; }
+  .home-release > img { width:100%; max-width:240px; margin:0 0 12px; }
+}
+@media(max-width:520px) {
+  .home-edition #main-content { padding:24px 20px; }
+  .home-welcome { margin-bottom:28px; }
+  .home-section-heading { align-items:flex-start; gap:10px; }
+  .home-section-heading h2 { font-size:1.25rem; }
+  .home-section-heading > a { font-size:.82rem; }
+  .home-releases { grid-template-columns:1fr; gap:28px; }
+  .home-release { display:grid; grid-template-columns:110px minmax(0,1fr); gap:16px; }
+  .home-release h3 { font-size:1.25rem; }
+  .home-release > img { margin:4px 0 0; }
+  .home-preservation { margin-top:28px; }
+  .home-panorama > span { display:block; }
+  .home-panorama > span > span { display:block; margin-top:3px; }
+}

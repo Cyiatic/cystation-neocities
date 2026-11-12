@@ -2,16 +2,20 @@
     const patches = [
         {
             key: 'tnd',
+            hash: '#tnd6480i',
+            quick: 'tnd6480i/#q-branch',
             status: 'Released \u00b7 July 2026',
             signal: 'ON AIR \u00b7 TND6480i',
             title: 'Tomorrow Never Dies 6480i Patch',
-            description: 'A released 480i patch for Tomorrow Never Dies. Open the project page for the release and technical details.',
-            action: 'Open patch on GitHub',
-            href: 'https://github.com/Cyiatic/TND6480i',
-            external: true,
+            description: 'Enter the TND dossier for the 480i patch, mission briefing and installation instructions.',
+            action: 'Enter mission dossier',
+            href: 'tnd6480i/',
+            external: false,
             heroImage: 'images/tnd-bond-selector-full.webp',
+            heroSize: [859, 1832],
             heroAlt: 'James Bond holding a silenced pistol for Tomorrow Never Dies 6480i',
             heroLogo: 'images/tnd6480i-logo.webp?v=20260723-cover',
+            logoSize: [483, 125],
             heroClass: 'is-tnd'
         },
         {
@@ -25,6 +29,7 @@
             external: false,
             hash: '#cbfd480i',
             heroImage: 'images/cbfd480i-full-cigar.webp',
+            heroSize: [850, 550],
             heroAlt: "Conker's Bad Fur Day 480i project artwork",
             heroLogo: null,
             heroClass: 'is-cbfd'
@@ -40,20 +45,25 @@
             external: false,
             hash: '#dkr480i',
             heroImage: 'images/dkr-diddy-plane.webp',
+            heroSize: [406, 407],
             heroAlt: 'Diddy Kong Racing 480i project, signal locked render',
             heroLogo: 'images/dkr-coming-soon.webp',
+            logoSize: [1877, 838],
             heroClass: 'is-dkr'
         },
         {
             key: 'pd',
+            hash: '#pd6480iperf',
+            quick: 'pd6480iperf/#editions',
             status: 'Released \u00b7 September 2026',
             signal: 'ON AIR \u00b7 PD6480iPerf',
             title: 'Perfect Dark: 480i + Performance Patch',
-            description: 'A public 480i and performance patch for Perfect Dark. Open the project page for the release and technical details.',
-            action: 'Open patch on GitHub',
-            href: 'https://github.com/Cyiatic/PD6480iperf',
-            external: true,
+            description: 'Perfect Dark in 480i, with the newer performance base. Explore the menu, choose an edition, and read the installation briefing.',
+            action: 'Enter Perfect Dark',
+            href: 'pd6480iperf/',
+            external: false,
             heroImage: 'images/perfect-dark-selector-cover.webp?v=20260915-pd-release',
+            heroSize: [959, 667],
             heroAlt: 'Perfect Dark Nintendo 64 cover artwork',
             heroLogo: null,
             heroClass: 'is-pd'
@@ -68,7 +78,8 @@
             href: 'patches#ys6480i',
             external: false,
             hash: '#ys6480i',
-            heroImage: 'images/ys6480i-logo.webp?v=20260929-ys-logo2',
+            heroImage: 'images/ys6480i-logo.webp?v=20260929-ys-final',
+            heroSize: [966, 216],
             heroAlt: "Yoshi's Story 6480i project logo",
             heroLogo: null,
             heroClass: 'is-ys'
@@ -87,6 +98,7 @@
         const description = gallery.querySelector('[data-gallery-description]');
         const action = gallery.querySelector('[data-gallery-action]');
         const counter = gallery.querySelector('[data-gallery-counter]');
+        const quick = gallery.querySelector('[data-gallery-quick]');
         const signal = gallery.querySelector('[data-gallery-signal]');
         const tabRail = gallery.querySelector('[role="tablist"]');
         const tabs = [...gallery.querySelectorAll('[data-patch-index]')];
@@ -97,11 +109,7 @@
 
         const requestedIndex = Number(gallery.dataset.initialIndex);
         const hashIndex = getHashIndex();
-        let selected = Number.isInteger(requestedIndex) && requestedIndex >= 0 && requestedIndex < patches.length
-            ? requestedIndex
-            : hashIndex >= 0
-                ? hashIndex
-                : 0;
+        let selected = hashIndex >= 0 ? hashIndex : Number.isInteger(requestedIndex) && requestedIndex >= 0 && requestedIndex < patches.length ? requestedIndex : 0;
         let transitionTimer;
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -128,6 +136,7 @@
 
             const image = document.createElement('img');
             image.src = patch.heroImage;
+            [image.width, image.height] = patch.heroSize;
             image.alt = '';
             image.decoding = 'async';
             art.append(image);
@@ -137,6 +146,7 @@
             const logo = document.createElement('img');
             logo.className = 'project-gallery__art-logo';
             logo.src = patch.heroLogo;
+            [logo.width, logo.height] = patch.logoSize;
             logo.alt = '';
             logo.decoding = 'async';
             art.append(logo);
@@ -147,6 +157,8 @@
             const activeTab = tabs[selected];
 
             gallery.dataset.activeProject = patch.key;
+            if (quick) { quick.hidden=!patch.quick; if(patch.quick) quick.href=patch.quick; }
+            if (location.hash !== patch.hash) history.replaceState(null,'',patch.hash);
             status.textContent = patch.status;
             signal.textContent = patch.signal;
             title.textContent = patch.title;
@@ -187,8 +199,7 @@
 
             window.clearTimeout(transitionTimer);
             panel.classList.remove('is-changing-forward', 'is-changing-backward');
-            void panel.offsetWidth;
-            panel.classList.add(direction > 0 ? 'is-changing-forward' : 'is-changing-backward');
+            window.requestAnimationFrame(() => panel.classList.add(direction > 0 ? 'is-changing-forward' : 'is-changing-backward'));
             transitionTimer = window.setTimeout(() => {
                 panel.classList.remove('is-changing-forward', 'is-changing-backward');
             }, 340);
@@ -230,6 +241,7 @@
         });
 
         panel.addEventListener('keydown', (event) => {
+            if (event.target !== panel) return;
             if (event.key === 'ArrowLeft') {
                 event.preventDefault();
                 move(-1);

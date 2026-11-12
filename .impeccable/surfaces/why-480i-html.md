@@ -2,15 +2,18 @@
 version: 1
 slug: "why-480i-html"
 primary_target: "why-480i.html"
-related_targets: ["index.html","patches.html"]
+related_targets: ["patches.html","images/480i-signal-path.svg","images/480i-signal-path-mobile.svg"]
 ---
 
 # Why 480i?
 
 - **Mode:** Read.
-- **Audience and job:** Retro-game players and preservation-minded visitors who have encountered a CyStation patch label and want to understand the picture-mode benefit without video-engineering jargon.
-- **Action:** Understand the 240p-to-480i trade-off, then browse the specific project whose signal they want to follow.
-- **Proof and content:** A keyed authentic N64 New Soft Catalog mark integrated into the actual project shelf header, a field-level 240p/480i explainer, original wide and compact signal-path illustrations with a responsive HTML stage legend, and explicit compatibility limits.
-- **Direction:** A Rareware service-catalog feature. The page begins with the plain-English answer against a deep-blue station field, turns the signal into a two-field visual readout and a four-stage path diagram, then ends with the active project catalog.
-- **Memorable moment:** The gold catalog logo is a small catalog seal beside the project heading, keeping the project art in the lead while binding the shelf together.
-- **Constraints:** Preserve the established CyStation blue-era Rareware language, avoid AI-made character art and generic card grids, distinguish 480i from 480p, keep all details readable on mobile, and never put essential small copy inside an illustration that must scale.
+- **Reader's question:** what does a 480i patch change, and where does Analogue 3D fit?
+- **Structure (rebuilt 9 Nov 2026, after the owner said the page didn't match the site):** crumb, gilt title and a plain lede, then only the site's own blocks:
+  - a zig-zag row, "Start in the game", whose art is a framed in-page drawing of one 240p pass beside the two interleaved 480i fields;
+  - the signal-path diagram as a plate, with "Finish at the screen" and the four stages beneath it. The diagram is flat (no drop shadows) and uses only palette colours: navy deep and raise, bar gold, sky, cream;
+  - "What changes on screen" and "The trade-off" as plain gilt sections;
+  - `#catalog` as a flipped big row with the N64 New Soft Catalog mark and one line on what is out and in the works.
+
+  No card grid, callout panel, drop cap or page-only layout.
+- **Constraints:** plain language; no promise that 480i alone improves performance; keep the `#catalog` anchor (Render Restore links to it); no project card catalogue duplicating /patches.

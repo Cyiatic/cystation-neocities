@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /practice/
+Disallow: /output/
+
+Sitemap: https://cystation.neocities.org/sitemap.xml

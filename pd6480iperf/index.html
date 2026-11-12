@@ -1,0 +1,82 @@
+<!doctype html>
+<!--
+THESIS: A usable patch page inside Perfect Dark's compact 480i menu.
+OWN-WORLD: Verified v88 bitmap fonts and dry SFX, translucent cyan/navy panels,
+native coordinates, moving projection beams, Carrington Institute pause blur.
+STORY: Choose a patch edition, read its differences, install against a clean ROM.
+FIRST VIEWPORT: The centered six-option menu; all settings live in its Options sibling.
+FORM: A native 640x480 canvas scaled to the browser viewport, with matching semantic controls and a reading view.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#04080d">
+  <title>PD6480iPerf · Perfect Dark 480i Patch</title>
+  <meta name="description" content="Perfect Dark 480i and performance patches. Choose an edition, read installation instructions, and explore the animated Perfect Dark menu.">
+  <link rel="canonical" href="https://cystation.neocities.org/pd6480iperf/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CyStation">
+  <meta property="og:title" content="PD6480iPerf · Perfect Dark 480i Patch">
+  <meta property="og:description" content="Perfect Dark in 480i on the performance base: choose an edition, read the install guide, explore the animated menu.">
+  <meta property="og:url" content="https://cystation.neocities.org/pd6480iperf/">
+  <meta property="og:image" content="https://cystation.neocities.org/images/site/og-pd6480iperf.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Perfect Dark box art beside the PD6480iPerf title">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css?v=20261107-fill">
+  <script defer src="assets/fonts.js"></script>
+  <script defer src="assets/hud/model.js"></script>
+  <script defer src="hud.js"></script>
+  <script defer src="assets/music/loop.js"></script>
+  <script defer src="audio.js"></script>
+  <script defer src="menu.js"></script>
+</head>
+<body>
+  <main>
+    <section class="console" aria-label="Perfect Dark patch menu">
+      <div class="screen" id="screen">
+        <canvas id="menu-canvas" width="640" height="480" aria-hidden="true"></canvas>
+        <nav id="menu-controls" aria-label="Patch menu" aria-describedby="menu-description menu-instructions"></nav>
+        <p id="menu-description" class="sr-only"></p>
+        <p id="menu-instructions" class="sr-only">Up and Down select. Enter confirms. Escape goes back. Left or Right opens Options for Music, SFX, Motion and Reading View.</p>
+        <p class="loading" id="loading" role="status">Loading Perfect Menu…</p>
+      </div>
+      <p class="sr-only" id="announcement" aria-live="polite"></p>
+      <span id="menu-music" data-state="loading" hidden></span>
+    </section>
+    <article id="reading" hidden>
+      <a class="return" href="#menu">← Return to Perfect Menu</a> · <a href="/patches#pd6480iperf">All 480i Patches</a>
+      <p class="edition">Perfect Dark / Nintendo 64</p>
+      <h1>PD6480iPerf</h1>
+      <p class="lead">640×480 interlaced output on the newer performance base, with menu, pause-blur and CamSpy fixes.</p>
+      <h2>Choose your edition</h2>
+      <p>Both builds are prerelease candidates. Apply either one directly to a clean USA v1.1 ROM; do not stack them.</p>
+      <h3>v88 · No graph</h3>
+      <p>The FPS graph is removed and stock L / D-pad bindings are restored. Controller style 1.2 keeps D-pad movement, stick look, and L aim.</p>
+      <p><a href="https://github.com/Cyiatic/PD6480iperf/releases/download/v88-no-graph/PD6480iperf-v88-no-graph-candidate.xdelta">Download v88 patch</a> · <a href="https://github.com/Cyiatic/PD6480iperf/releases/download/v88-no-graph/PD6480iperf-v88-no-graph-patch-and-Dark-save.zip">v88 patch + Dark save</a></p>
+      <h3>v87 · FPS graph</h3>
+      <p>L toggles the FPS graph. Stock L / D-pad bindings are disabled in this edition.</p>
+      <p><a href="https://github.com/Cyiatic/PD6480iperf/releases/download/v87-camspy/PD6480iperf-v87-camspy-candidate.xdelta">Download v87 patch</a> · <a href="https://github.com/Cyiatic/PD6480iperf/releases/download/v87-camspy/PD6480iperf-v87-camspy-patch-and-Dark-save.zip">v87 patch + Dark save</a></p>
+      <h2>Installation</h2>
+      <ol>
+        <li>Use a clean <strong>Perfect Dark (USA) v1.1</strong> big-endian <code>.z64</code> ROM.</li>
+        <li>Verify source MD5: <code>e03b088b6ac9e0080440efed07c1e40f</code>.</li>
+        <li>Apply one edition's <code>.xdelta</code> patch with a compatible xdelta patcher. Keep your original ROM.</li>
+        <li>Use an <strong>Expansion Pak (8 MiB)</strong> on original Nintendo 64 hardware. Output is fixed at 640×480i; the Hi-Res menu item is intentionally inactive.</li>
+      </ol>
+      <p>The optional 2,048-byte Dark EEPROM provides 100% unlocks with stock settings and controls. Cheats are unlocked, not activated. It does not force controller style 1.2. Back up your existing save before using it.</p>
+      <h2>Test status</h2>
+      <p>v87 has user-confirmed CamSpy behavior on Analogue 3D. v88 has software control tests and an original-N64 intro boot check; its Analogue 3D check is pending. These checks do not establish exhaustive compatibility or a guaranteed frame rate.</p>
+      <p><a href="https://github.com/Cyiatic/PD6480iperf/blob/mods/performance/docs/INSTALL.md">Full installation instructions</a> · <a href="https://github.com/Cyiatic/PD6480iperf/blob/mods/performance/docs/V88_NO_GRAPH.md">v88 evidence and limitations</a></p>
+      <h2>Credits &amp; this page</h2>
+      <p>Perfect Dark by Rare. Patch by Cyiatic, built on the Perfect Dark decompilation and performance work credited in the project. <a href="https://github.com/Cyiatic/PD6480iperf">Patch source and credits</a> · <a href="https://github.com/n64decomp/perfect_dark">Perfect Dark decompilation</a>.</p>
+      <p>Menu music: “Institute Menu” by Grant Kirkhope, from the Perfect Dark Dual CD Soundtrack. Music starts enabled on each visit: the intro plays once, followed by a continuous loop without the album fade-out. Use the in-menu Options to toggle Music, SFX or Motion, or open Reading View. SFX and Motion choices are saved. If autoplay is blocked, the first click or keypress starts music. Audio pauses in Reading view and while the tab is hidden.</p>
+      <p>This menu recreation uses fonts, dry sound samples, and the animated 3D HUD projector extracted from the verified v88 build. Its background uses the project's Carrington Institute capture. The original HUD deployment, joint motion, texture scrolling, and menu timing drive the presentation. Web copy and a mouse chevron adapt it to patch downloads. Projection-wall texture sampling and console VI/RDP filtering still differ; frame-for-frame parity is unverified.</p>
+      <a class="return" href="#menu">← Return to Perfect Menu</a> · <a href="/patches#pd6480iperf">All 480i Patches</a>
+    </article>
+    <noscript><p class="fallback">JavaScript is needed for the interactive menu. <a href="https://github.com/Cyiatic/PD6480iperf/releases">Get the patches and installation instructions on GitHub.</a></p></noscript>
+  </main>
+</body>
+</html>

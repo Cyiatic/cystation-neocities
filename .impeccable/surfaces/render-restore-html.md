@@ -2,16 +2,14 @@
 version: 1
 slug: "render-restore-html"
 primary_target: "render-restore.html"
-related_targets: ["index.html","projects.html","why-480i.html","render-restore/conker-skyboxes.html"]
+related_targets: ["render-restore/conker-skyboxes.html","render-restore/tools-of-the-trade.html","render-restore/skybox-viewer.css","render-restore/skybox-viewer.js"]
 ---
 
 # Render Restore
 
-- **Mode:** Experience.
-- **Audience and job:** Preservation-minded visitors and retro-game players who want to inspect recovered render sets, understand what changed, and reach the source files without wading through a general blog.
-- **Action:** Open the newest filing, scan its numbered set register, then follow the external source or a dedicated collection entry.
-- **Proof and content:** The Conker&rsquo;s Bad Fur Day filing is presented as seven panorama records with explicit dimensions, date, state, and an external-file handoff; the N64 New Soft Catalog mark remains a related filed item.
-- **Direction:** A broadcast teletext magazine adapted to the established CyStation station desk. The index leads with a numbered RR channel instrument and latest filing, then keeps older entries in a compact dated register.
-- **Memorable moment:** The seven Conker skyboxes read as one channel filing rather than seven unrelated thumbnails; the pending external-host state is honest and still gives the set a complete shape.
-- **Constraints:** Keep the deep-blue/gold/cream/pale-blue/live-green visual world, avoid generic card grids and broken remote-image placeholders, use semantic direct-image slots when URLs exist, preserve the external-host boundary, and keep every entry usable on narrow screens.
-- **Unresolved decisions:** Attach the public Internet Archive item URL and per-file URLs when the first external set is filed.
+- **Mode:** Experience (hub) and Read (filing records).
+- **Visitor job:** open the newest filing, understand what was recovered and where the originals live.
+- **Composition:** gilt title and one-line lede; RR-001 as a wide panorama plate with facts (filing, date, set, source) and actions (viewer, sources & research, original Imgur set); RR-000 as a framed row; the Internet Archive as a flipped row; one related-links line (CBFD480i, Why 480i? #catalog, Timeline).
+- **Conker's Skyboxes:** full-bleed pannable stage under the bar; select, pan buttons, reset, full screen, caption, help and file link below; loading state dims the stage and shows "Loading panorama…" if slow; all seven figures, Imgur links, the ROM cross-reference table and the mkst wiki link stay in the collapsible "Sources & research" (`#notes`). Never call the strips a 3D reconstruction.
+- **Tools of the Trade:** local display copy, full local file and the Imgur original linked; no third-party image load by default.
+- **Constraints:** no fake channel instruments, status meters or "FILED" badges; filing codes stay as plain facts.
